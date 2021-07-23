@@ -1,0 +1,126 @@
+%%%% Paramétrage du TD %%%%
+
+%\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Modélisation multiphysique}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+%\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
+%\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
+%\item \textit{Res2.C6 : } stabilité des SLCI : position des pôles dans le plan complexe
+%\item \textit{Res2.C7 : } stabilité des SLCI : marges de stabilité (de gain et de phase)
+\end{itemize}
+}}
+
+
+\def\xxfigures{
+\includegraphics[width=3cm]{fig_01_b}\\
+%\textit{}
+}%figues de la page de garde
+
+\def\xxtitreexo{Direction automatique découplée}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Banque PT -- SI A 2017}}
+\def\xxactivite{{ Application 02} \ifprof  -- Corrigé \else \fi}
+
+%\iflivret
+\input{../../../Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+%\subsection*{Exercice 1 -- Réponse impulsionnelle (entrée Dirac)}
+\setcounter{numques}{0}
+
+Depuis maintenant de nombreuses années, les commandes de vol d'avions sont passées d'une
+technologie purement mécanique à la technologie par fil (Fly by Wire). Le secteur automobile suit cette
+tendance qui présente de nombreux avantages. C'est le système de direction par fil (Steer by Wire), encore nommé direction découplée, qui fait l'objet de l'étude proposée.
+
+
+La \autoref{fig_09} donne une vue de cette unité sous la forme d'une maquette numérique à laquelle est
+associé le schéma cinématique qui servira de base à l'étude mécanique.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.6\linewidth]{fig_09}
+
+\caption{Unité de pilotage (chaîne d'énergie) et schéma cinématique  \label{fig_09}}
+\end{figure}
+
+L'unité de pilotage est constituée d'une chaîne d'énergie chargée de solliciter le volant par un
+couple $C_{\text{mv}} \vect{x_v}$ qui résiste à l'action du conducteur $C_{c} \vect{x_v}$
+quand celui-ci cherche à tourner le volant.
+
+En effet, la simple dynamique du système mécanique de l'unité de pilotage ne donnerait pas au
+conducteur la sensation de manier la direction d'une automobile. La composante $C_{\text{mv}}$ est donc élaborée pour que la dynamique du volant en termes d'inertie et de raideur soit équivalente à celle d'une direction conventionnelle optimisée selon le type de conduite visée.
+
+La composante $C_{\text{mv}}$ est élaborée à partir de la consigne d'angle du volant $C_{\text{v\_ref}}$, transmise par le
+générateur de consigne intégré au contrôleur de modèles, et de la composante $C_c$ du couple
+conducteur.
+
+Le modèle de la structure sous la forme d'un schéma bloc décrivant le comportement asservi de cette
+unité est donné \autoref{fig_10}. On précise que la variable d'entrée est $\theta_{\text{v\_ref}}(p)$, que la variable de sortie est $\theta_{v}(p)$ et que la variable $C_c(p)$ est considérée comme une perturbation. Un signal de commande $U_{\text{mv}}(p)$ pilote la motorisation.
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{fig_10}
+
+\caption{Unité de pilotage (chaîne d'énergie) et schéma cinématique  \label{fig_10}}
+\end{figure}
+
+Un modèle acausal de cette structure dont certains composants ne sont pas reliés aux autres, est
+donné sur le cahier réponses.
+
+
+\question{Compléter ce modèle en traçant les liens manquants qui donneraient un modèle équivalent au
+schéma bloc de la \autoref{fig_10}.}
+\ifprof
+\begin{corrige}
+~\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\linewidth]{cor_02}
+\end{figure}
+\end{corrige}
+\else
+\fi
+
+
+
+
+\end{multicols}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{dr_01}
+\end{figure}
