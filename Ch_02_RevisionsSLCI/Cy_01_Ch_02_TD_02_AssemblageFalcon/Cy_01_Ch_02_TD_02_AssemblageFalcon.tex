@@ -1,95 +1,44 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Modélisation systèmes multiphysiques : définitions et performances},
-    pdfauthor={Xavier Pessoles}]{hyperref}
+%%%% Paramétrage du TD %%%%
 
-\input{style/new_style}
-\input{style/macros_SII}
-
-\fichetrue
-%\fichefalse
-
-\proffalse
-\proftrue
-
-\tdtrue
-
-%\tdfalse
-
-%\courstrue
-\coursfalse
-
-%%%%%%%%%%%%%%%%%%%
-\usepackage{numprint}
-\usetikzlibrary{calc}
-%definition style pour mettre un fond blanc dans un node sans avoir des marges énormes
-\tikzset{fondblanc/.style={ inner sep=2pt,fill=white,outer sep = 5pt}} 
-\tikzset{fondblanc2/.style={ inner sep=2pt,fill=white}} 
-\tikzset{fondblanc3/.style={ inner sep=1pt,fill=white,outer sep = 2pt}} 
-\usetikzlibrary{calc,circuits.ee.IEC}
-\usetikzlibrary{shapes}
-\usepackage[european resistor, european voltage, european current]{circuitikz}
-\usetikzlibrary{babel}
-\usepackage{standalone}
-\standaloneconfig{mode=buildnew}
-
-\usepackage{siunitx}
-
-%\usepackage{picins}
-
-% -------------------------------------
-% Déclaration des titres
-% -------------------------------------
-
-\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-\def\xxtete{Sciences Industrielles de l'Ingénieur}
-
-\def\classe{Cy01 - Rév}
-\def\xxnumpartie{Cycle 01}
-\def\xxpartie{Modéliser le comportement linéaire et non linéaire des systèmes multiphysiques}
-
-\def\xxnumchapitre{Révisions \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm}}% Définitions préliminaires et détermination des performances}
-
-\def\xxposongletx{2}
-\def\xxposonglettext{1.45}
-\def\xxposonglety{16}%16
-
-\def\xxonglet{Cycle 01 -- Rév 1}
-
-\def\xxactivite{TD 02}
-\def\xxauteur{\textsl{Xavier Pessoles} \\ \textsl{PSI -- MP -- Lycée La Martinière Monplaisir Lyon}}
-
-
-\def\xxtitreexo{Cellule d'assemblage pour avion Falcon}
-\def\xxsourceexo{D'après concours E3A -- PSI 2015.}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
 
 \def\xxcompetences{%
 \textsl{%
 \textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
 }}
 
 \def\xxfigures{
-\includegraphics[width=.8\textwidth]{images/image1}
+\includegraphics[width=3cm]{fig_01}\\
+%\textit{}
 }%figues de la page de garde
 
-\def\xxpied{%
-Cycle 01 -- Modéliser le comportement des systèmes multiphysiques\\
-Révisions %1 -- \xxactivite%
-}
+\def\xxtitreexo{Cellule d'assemblage pour avion Falcon}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours E3A -- PSI 2015.}}
+\def\xxactivite{{TD 02} \ifprof  -- Corrigé \else \fi}
 
-\setcounter{secnumdepth}{5}
-%---------------------------------------------------------------------------
+%\iflivret
+\input{../../../Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
 
+\setlength{\columnseprule}{.1pt}
 
-\begin{document}
-%\chapterimage{png/Fond_Cin}
-\input{style/new_pagegarde}
-\vspace{5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
-\setlength{\columnseprule}{0.4pt}
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
 \section*{Mise en situation}
 \ifprof
@@ -99,7 +48,7 @@ Révisions %1 -- \xxactivite%
 Le tronçon central du fuselage du Falcon 7X est assemblé par rivetage grâce à un robot 6 axes. Les rivets sont stockés dans des cassettes rangées verticalement. Un chariot de sélection se déplace verticalement pour déplacer une buse d'aspiration qui permettra d'acheminer les rivets contenus dans la cassette vers l'effecteur (robot). Le chariot fait l'objet de cette étude.
 
 \begin{center}
-\includegraphics[width=7cm]{images/image5}
+\includegraphics[width=7cm]{image5}
 \end{center} 
 
  
@@ -108,7 +57,7 @@ L'objectif de cette partie est de valider les choix effectués par la société 
 \vfill
 
 \begin{center}
-\includegraphics[width=7cm]{images/Exigences}
+\includegraphics[width=7cm]{Exigences}
 \end{center} 
 
 
@@ -119,14 +68,14 @@ L'objectif de cette partie est de valider les choix effectués par la société 
 Le déplacement du chariot est assuré par un axe numérique asservi en vitesse et en position. Cet axe est composé d'un moteur à courant continu, d'un système de transmission de puissance de type poulies / courroie et d'un rail.
  
 \begin{center}
-\includegraphics[width=7cm]{images/image7}
+\includegraphics[width=7cm]{image7}
 \end{center} 
 
 
 \subsection*{Modélisation du système de déplacement du chariot}
 
 \begin{center}
-\includegraphics[width=7cm]{images/image8}
+\includegraphics[width=7cm]{image8}
 \end{center} 
 
 
@@ -145,7 +94,7 @@ L'étude se fera dans le cas le plus défavorable c'est-à-dire un déplacement 
 
 Les notations entre le domaine temporel et celui de Laplace sont données dans la suite. Ainsi, si la fonction $f(t)$ possède une transformée de Laplace, elle sera notée : $F(p) = \mathcal{L}[f(t)]$.
 Les équations caractéristiques du moteur à courant continu sont rappelées ci-dessous (les conditions de Heaviside sont respectées) :
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 \item $u(t)=e(t)+L \dfrac{di(t)}{\text{d} t}+Ri(t)$;
 \item $e(t)=K_E \omega_m (t)$ ;
 \item $C_M (t)=K_C i(t)$ ;
@@ -153,7 +102,7 @@ Les équations caractéristiques du moteur à courant continu sont rappelées ci
 \end{itemize}
 
 Avec : 
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 \item $u(t)$ : tension moteur ;
 \item $i(t)$ : courant moteur ; 
 \item $e(t)$ : force contre-électromotrice ;
@@ -185,8 +134,7 @@ erreur statique par rapport à une consigne de vitesse constante
 
 \fi
 \subsection*{Choix d'une architecture de la chaine de transmission}
-\subparagraph{}
-\textit{Proposer sous la forme d'un schéma une autre solution permettant le déplacement du chariot. La conversion de l'énergie électrique en énergie mécanique par un moteur doit être conservée.}
+\question{Proposer sous la forme d'un schéma une autre solution permettant le déplacement du chariot. La conversion de l'énergie électrique en énergie mécanique par un moteur doit être conservée.}
 
 \ifprof
 \begin{corrige}
@@ -221,8 +169,7 @@ Rapport de réduction réducteur ($\omega_r/\omega_m$)	& $\lambda$	&$1/5$ \\ \hl
 \end{center}
 \fi
 
-\subparagraph{}
-\textit{À partir des grandeurs définies déterminer l'expression littérale de l'inertie équivalente $J_{eq}$ de l'ensemble $\Sigma=$\{moteur+réducteur+poulies+chariot\} ramenée sur l'arbre moteur. Cette inertie équivalente est définie par $E_c (\Sigma)=1/2 J_{eq} \omega_m^2$.}
+\question{À partir des grandeurs définies déterminer l'expression littérale de l'inertie équivalente $J_{eq}$ de l'ensemble $\Sigma=$\{moteur+réducteur+poulies+chariot\} ramenée sur l'arbre moteur. Cette inertie équivalente est définie par $E_c (\Sigma)=1/2 J_{eq} \omega_m^2$.}
 \ifprof
 \begin{corrige}
 $\mathcal{E}_c(\Sigma)=\mathcal{E}_c (\text{moteur})+\mathcal{E}_c (\text{réducteur})+\mathcal{E}_c (\text{poulies})+\mathcal{E}_c (\text{chariot})$.
@@ -238,8 +185,7 @@ On a donc $J_{\text{eq}}=MR_p^2 \lambda^2+(J_{\text{Pm}}+J_{\text{PR}}  ) \lambd
 \else
 \fi
 
-\subparagraph{}
-\textit{Déterminer la valeur numérique de l'expression précédente.}
+\question{Déterminer la valeur numérique de l'expression précédente.}
 \ifprof
 \begin{corrige}
 $J_{eq}=\SI{0,0068}{kg.m^2}$
@@ -253,20 +199,17 @@ $J_{eq}=\SI{0,0068}{kg.m^2}$
 L'objectif de cette partie est d'établir un modèle de la motorisation de l'axe afin de simuler un déplacement.
 \end{obj}
 
-\subparagraph{}
-\textit{À partir des équations du moteur à courant continu, réaliser le schéma bloc du moteur à courant continu.}
+\question{À partir des équations du moteur à courant continu, réaliser le schéma bloc du moteur à courant continu.}
 \ifprof
 \begin{corrige} ~\\
 
 \begin{center}
-\includegraphics[width=7cm]{images/corr_01}
+\includegraphics[width=7cm]{corr_01}
 \end{center} 
 \end{corrige}
 \else
 \fi
-
-\subparagraph{}
-\textit{En considérant que $C_R (p)=0$, déterminer la fonction de transfert $H_M (p)=\dfrac{\Omega_m (p)}{U(p)}$ sous sa forme canonique.}
+\question{En considérant que $C_R (p)=0$, déterminer la fonction de transfert $H_M (p)=\dfrac{\Omega_m (p)}{U(p)}$ sous sa forme canonique.}
 \ifprof
 \begin{corrige}
 $H_m (p)=\dfrac{\dfrac{K_C}{K_c K_E+Rf}}{1+\dfrac{RJ_eq+Lf}{K_c K_E+Rf}p+\dfrac{LJ_eq}{K_c K_E+Rf} p^2}$
@@ -274,8 +217,7 @@ $H_m (p)=\dfrac{\dfrac{K_C}{K_c K_E+Rf}}{1+\dfrac{RJ_eq+Lf}{K_c K_E+Rf}p+\dfrac{
 \else
 \fi
 
-\subparagraph{}
-\textit{Montrer que la fonction de transfert $H_M (p)$ peut se mettre sous la forme $H_M (p)=\dfrac{K_C}{K_C K_e+RJ_{eq} p+LJ_{eq} p^2 }$. Justifier la réponse. Pour cette question, la valeur numérique de $J_{eq}$ considérée sera $J_{eq}=\num{7d-3}\si{kg.m^2}$ indépendamment du résultat numérique calculé précédemment.}
+\question{Montrer que la fonction de transfert $H_M (p)$ peut se mettre sous la forme $H_M (p)=\dfrac{K_C}{K_C K_e+RJ_{eq} p+LJ_{eq} p^2 }$. Justifier la réponse. Pour cette question, la valeur numérique de $J_{eq}$ considérée sera $J_{eq}=\num{7d-3}\si{kg.m^2}$ indépendamment du résultat numérique calculé précédemment.}
 \ifprof
 \begin{corrige}
 En faisant les applications numériques on montre que $Rf$ est négligeable devant $K_c K_E$ et que $Lf$ et négligeable devant $RJ_{eq}$. On a donc : 
@@ -285,8 +227,7 @@ $H_m (p)=\dfrac{\dfrac{K_C}{K_c K_E}}{1+\dfrac{RJ_{eq}}{K_c K_E }p+\dfrac{LJ_{eq
 \else
 \fi
 
-\subparagraph{}
-\textit{Montrer qu'avec l'expression, $H_M (p)$ peut s'écrire sous la forme $H_M (p)=\dfrac{K_M}{(1+T_E p)(1+T_M p)}$  avec $T_E<T_M$.}
+\question{Montrer qu'avec l'expression, $H_M (p)$ peut s'écrire sous la forme $H_M (p)=\dfrac{K_M}{(1+T_E p)(1+T_M p)}$  avec $T_E<T_M$.}
 \ifprof
 \begin{corrige}
 $
@@ -314,7 +255,7 @@ $Te=\dfrac{\dfrac{RJ_{eq}}{K_c K_e}-\sqrt{\left(\dfrac{RJ_{eq}}{K_c K_e}\right)^
 La partie précédente a permis de déterminer un modèle du moteur. La suite de l'étude va permettre, par simulation, de déterminer les réglages nécessaires de l'axe vis-à-vis du cahier des charges. La figure suivante présente le principe de l'asservissement de l'axe du chariot.
  
 \begin{center}
-\includegraphics[width=7cm]{images/image9}
+\includegraphics[width=7cm]{image9}
 \end{center} 
 
 Les grandeurs caractéristiques des blocs de l'asservissement de l'axe chariot sont données dans le tableau ci-dessous :
@@ -331,8 +272,7 @@ Correcteur amplificateur	 & $C(p)$ & Variable \\
 \end{center}
 \fi
 
-\subparagraph{}
-\textit{Quelle doit être la valeur de $K_G$ pour assurer un asservissement correct (c'est-à-dire l'écart $\varepsilon$ doit être nul si la position de l'axe est identique à la consigne) ?}
+\question{Quelle doit être la valeur de $K_G$ pour assurer un asservissement correct (c'est-à-dire l'écart $\varepsilon$ doit être nul si la position de l'axe est identique à la consigne) ?}
 \ifprof
 \begin{corrige} ~\\
 
@@ -341,13 +281,12 @@ On doit avoir $K_G=K_{\text{capt}} \dfrac{1}{\lambda} \dfrac{1}{R_p}=\SI{0,556}{
 \else
 \fi
 
-\subparagraph{}
-\textit{Donner le schéma-blocs de l'asservissement.}
+\question{Donner le schéma-blocs de l'asservissement.}
 \ifprof
 \begin{corrige} ~\\
 
 \begin{center}
-\includegraphics[width=7cm]{images/corr_02}
+\includegraphics[width=7cm]{corr_02}
 \end{center} 
 
 \end{corrige}
@@ -360,7 +299,7 @@ On doit avoir $K_G=K_{\text{capt}} \dfrac{1}{\lambda} \dfrac{1}{R_p}=\SI{0,556}{
 Afin de faciliter les calculs, le schéma bloc à retour unitaire est donné figure suivante. Le couple résistant $C_R$ dû à l'action de pesanteur est supposé constant.
  
  \begin{center}
-\includegraphics[width=7cm]{images/image10}
+\includegraphics[width=7cm]{image10}
 \end{center} 
 
 
@@ -373,8 +312,7 @@ Avec :
 \end{itemize}
 \fi
 
-\subparagraph{}
-\textit{Donner l'expression de $Y(p)$.}
+\question{Donner l'expression de $Y(p)$.}
 \ifprof
 \begin{corrige}~\\
 On raisonne par superposition :
@@ -411,24 +349,21 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \else
 \fi
 
-\subparagraph{}
-\textit{On souhaite déterminer l'erreur en position du système. Calculer l'écart statique pour $C(p)=K_p$ puis $C(p)=\dfrac{K_i}{p}$.}
+\question{On souhaite déterminer l'erreur en position du système. Calculer l'écart statique pour $C(p)=K_p$ puis $C(p)=\dfrac{K_i}{p}$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}
-\textit{On souhaite que lorsque le système se déplace à vitesse constante, l'erreur sur la vitesse atteinte par le système soit nulle. Quelle sollicitation doit-on utiliser. Calculer l'écart statique pour $C(p)=K_p$ puis $C(p)=\dfrac{K_i}{p}$.}
+\question{On souhaite que lorsque le système se déplace à vitesse constante, l'erreur sur la vitesse atteinte par le système soit nulle. Quelle sollicitation doit-on utiliser. Calculer l'écart statique pour $C(p)=K_p$ puis $C(p)=\dfrac{K_i}{p}$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}
-\textit{Conclure.}
+\question{Conclure.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -443,8 +378,7 @@ Afin de vérifier maintenant le critère de rapidité, on donne la réponse temp
 
 \fi
 
-\subparagraph{}
-\textit{Conclure sur la conformité au cahier des charges du système ainsi réglé.}
+\question{Conclure sur la conformité au cahier des charges du système ainsi réglé.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -455,14 +389,13 @@ Afin de vérifier maintenant le critère de rapidité, on donne la réponse temp
 \else
  
  \begin{center}
-\includegraphics[width=7cm]{images/image11}
+\includegraphics[width=7cm]{image11}
 \end{center} 
 
 \fi
  
 
-\subparagraph{}
-\textit{Tracer de diagramme de Bode.}
+\question{Tracer de diagramme de Bode.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -475,16 +408,14 @@ Afin de vérifier maintenant le critère de rapidité, on donne la réponse temp
 On considère $C_R (p)=0$. On prendra $K_M=\SI{0,8}{rad.s^{-1}.V^{-1}}$, $T_e=\SI{0,0051}{s}$,$T_m=\SI{0,0074}{s}$.
 \fi
 
-\subparagraph{}
-\textit{Tracer le diagramme de Bode de la fonction de transfert en boucle ouverte pour $C(p)=1$. Déterminer les marges de phase et les marges de gain.}
+\question{Tracer le diagramme de Bode de la fonction de transfert en boucle ouverte pour $C(p)=1$. Déterminer les marges de phase et les marges de gain.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
  
-\subparagraph{}
-\textit{Tracer le diagramme de Bode de la fonction de transfert en boucle ouverte pour $C(p)=\dfrac{1}{p}$. Déterminer les marges de phase et les marges de gain.}
+\question{Tracer le diagramme de Bode de la fonction de transfert en boucle ouverte pour $C(p)=\dfrac{1}{p}$. Déterminer les marges de phase et les marges de gain.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -504,8 +435,7 @@ On donne ci-dessous les diagrammes de Bode avec les correcteurs optimisés. Dét
 Afin de vérifier les réglages précédents, un essai sur le système réel est réalisé. Une consigne de \SI{2}{m} est donnée. L'absence de système d'acquisition dédié impose un système de mesure extérieur au système réel. C'est un dispositif d'analyse d'image qui est retenu pour ces mesures.
 \fi
 
-\subparagraph{}
-\textit{À partir des relevés ci-dessous, conclure sur le respect des exigences fonctionnelles de l'axe du magasin de stockage des rivets (Exigence 1.1).}
+\question{À partir des relevés ci-dessous, conclure sur le respect des exigences fonctionnelles de l'axe du magasin de stockage des rivets (Exigence 1.1).}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -519,17 +449,17 @@ Afin de vérifier les réglages précédents, un essai sur le système réel est
 
 \begin{center}
 \begin{tabular}{cc}
-\includegraphics[width=7cm]{images/image13} &
-\includegraphics[width=7cm]{images/image14}
+\includegraphics[width=7cm]{image13} &
+\includegraphics[width=7cm]{image14}
 
 \end{tabular}
 \end{center}
 
  \begin{center}
-\includegraphics[width=\textwidth]{images/image12}
+\includegraphics[width=\textwidth]{image12}
 \end{center} 
 \fi
 
-\end{document}
+
 
 
