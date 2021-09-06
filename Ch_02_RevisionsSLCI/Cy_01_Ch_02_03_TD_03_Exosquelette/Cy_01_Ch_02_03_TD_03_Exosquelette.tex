@@ -39,9 +39,10 @@
 \setlength{\columnseprule}{0.4pt} 
 \setcounter{numques}{0}
 %%%%%%%%%%%%%%%%%%%%%%%
-
+\ifprof
+\else
 \begin{multicols}{2}
-%\fi
+\fi
 \section*{Mise en situation}
 \ifprof
 \else
@@ -342,7 +343,10 @@ Eléments de corrigé :
 \normalsize
 \fi
 \fi
+\ifprof
+\else
 \end{multicols}
+\fi
 \ifprof
 \begin{center}
 \includegraphics[width=.8\linewidth]{cor_02}

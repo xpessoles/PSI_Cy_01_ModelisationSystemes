@@ -39,7 +39,10 @@
 \setlength{\columnseprule}{0.4pt} 
 \setcounter{numques}{0}
 %%%%%%%%%%%%%%%%%%%%%%%
+\ifprof
+\else
 \begin{multicols}{2}
+\fi
 \section*{Mise en situation}
 \ifprof
 \else
@@ -441,8 +444,12 @@ Afin de vérifier les réglages précédents, un essai sur le système réel est
 \end{corrige}
 \else
 \fi
+
  
+\ifprof
+\else
 \end{multicols}
+\fi
 
 \ifprof
 \else

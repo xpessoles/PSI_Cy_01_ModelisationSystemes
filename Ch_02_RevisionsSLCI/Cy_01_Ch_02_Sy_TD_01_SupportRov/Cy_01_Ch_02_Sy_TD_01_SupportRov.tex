@@ -40,7 +40,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 
+\ifprof
+\else
 \begin{multicols}{2}
+\fi
 \section*{Introduction}
 On s'intéresse à une grue permettant la dépose sur fond marin d'un robot dont l'objectif est d'enfouir des câbles.
 %
@@ -797,6 +800,8 @@ $$\tau=\tau_1+\dfrac{\beta}{\gamma K_1} \ \ ; \ \ \omega_n=\sqrt{\frac{\gamma K_
 
 On utilisera dans toute la suite la relation $\tau \omega_0= 2\zeta$.\\
 
+\fi
+
 %
 %\begin{figure}[H]
 %\centering
@@ -1217,4 +1222,7 @@ Le réglage de PHC 4 est celui qui respecte le mieux l’exigence Id1.1.
 %\end{corrige}
 %\else
 %\fi
+\ifprof
+\else
 \end{multicols}
+\fi
