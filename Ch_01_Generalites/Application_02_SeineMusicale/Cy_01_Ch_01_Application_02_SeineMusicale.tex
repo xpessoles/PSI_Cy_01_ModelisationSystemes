@@ -51,13 +51,15 @@
 
 
 \ifprof
+\vspace{1cm}
 \else
 \begin{multicols}{2}
 \fi
 
 %\subsection*{Exercice 1 -- Réponse impulsionnelle (entrée Dirac)}
 \setcounter{numques}{0}
-
+\ifprof
+\else
 La Seine Musicale est un équipement à vocation musicale à fort rayonnement culturel, dont l’objet est de créer
 ou d’aménager des espaces pour des concerts, des expositions, des installations permanentes ou provisoires.
 
@@ -130,6 +132,7 @@ consommation électrique du moteur en fonctionnement.
 
 Le modèle \autoref{fig_08} a donc été enrichi de nouveaux blocs, à savoir : un capteur de courant, un capteur de tension
 et l’effort extérieur lié au vent (échelon).
+\fi
 
 
 \question{\label{q5}}\textit{Sur la figure suivante, compléter les liens du modèle proposé pour prendre en compte
@@ -149,9 +152,12 @@ les deux capteurs.}
 \end{multicols}
 \fi
 
+\ifprof
+\else
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{dr_01}
 \caption{Modèle multiphysique du déplacement d’une demi-voile \label{dr_01}}
 \end{figure}
 
+\fi

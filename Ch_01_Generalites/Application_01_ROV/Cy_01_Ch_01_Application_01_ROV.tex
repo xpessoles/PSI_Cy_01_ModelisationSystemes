@@ -51,6 +51,7 @@
 
 
 \ifprof
+\vspace{1cm}
 \else
 \begin{multicols}{2}
 \fi
@@ -58,6 +59,8 @@
 %\subsection*{Exercice 1 -- Réponse impulsionnelle (entrée Dirac)}
 \setcounter{numques}{0}
 
+\ifprof
+\else
 Pour réaliser l’ensouillage sous-marin de câbles, ceux-ci sont déposés sur le fond marin par un navire câblier. Le robot sous-marin ROV (Remotely Operated Vehicle) est déposé sur le fond marin par un bateau support et ensouille le câble provenant
 du navire câblier après l’avoir détecté et s’être aligné dans l’axe de celui-ci.
 
@@ -75,15 +78,26 @@ nécessaire pour assurer l’horizontalité du ROV pendant la descente.
 \begin{center}
 \includegraphics[width=\linewidth]{fig_03}
 \end{center}
+\fi
 
 \question{À partir des figures précédentes, relier les composants du modèle de simulation
 multiphysique de la grue portique. Quel(s) ensemble(s) n’ont pas été
 modélisés ?}
 \ifprof
+\begin{corrige}~\\
+
+\begin{center}
+\includegraphics[width=\linewidth]{cor_01}
+\end{center}
+\end{corrige}
+
 \else
 \end{multicols}
 \fi
 
+\ifprof
+\else
 \begin{center}
 \includegraphics[width=.8\linewidth]{fig_04}
 \end{center}
+\fi

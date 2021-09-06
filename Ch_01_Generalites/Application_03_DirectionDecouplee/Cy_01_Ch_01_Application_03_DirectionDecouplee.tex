@@ -25,7 +25,7 @@
 
 \def\xxtitreexo{Direction automatique découplée}
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Banque PT -- SI A 2017}}
-\def\xxactivite{{ Application 02} \ifprof  -- Corrigé \else \fi}
+\def\xxactivite{{ Application 03} \ifprof  -- Corrigé \else \fi}
 
 %\iflivret
 \input{\repRel/Style/pagegarde_TD}
@@ -51,6 +51,7 @@
 
 
 \ifprof
+\vspace{1cm}
 \else
 \begin{multicols}{2}
 \fi
@@ -58,6 +59,8 @@
 %\subsection*{Exercice 1 -- Réponse impulsionnelle (entrée Dirac)}
 \setcounter{numques}{0}
 
+\ifprof
+\else
 Depuis maintenant de nombreuses années, les commandes de vol d'avions sont passées d'une
 technologie purement mécanique à la technologie par fil (Fly by Wire). Le secteur automobile suit cette
 tendance qui présente de nombreux avantages. C'est le système de direction par fil (Steer by Wire), encore nommé direction découplée, qui fait l'objet de l'étude proposée.
@@ -99,6 +102,7 @@ unité est donné \autoref{fig_10}. On précise que la variable d'entrée est $\
 Un modèle acausal de cette structure dont certains composants ne sont pas reliés aux autres, est
 donné sur le cahier réponses.
 
+\fi
 
 \question{Compléter ce modèle en traçant les liens manquants qui donneraient un modèle équivalent au
 schéma bloc de la \autoref{fig_10}.}
@@ -116,11 +120,16 @@ schéma bloc de la \autoref{fig_10}.}
 
 
 
-
+\ifprof
+\else
 \end{multicols}
+\fi
 
 
+\ifprof
+\else
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{dr_01}
 \end{figure}
+\fi
