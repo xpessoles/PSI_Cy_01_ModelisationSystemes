@@ -315,7 +315,7 @@ Au vu du tracé, la phase est supérieure à $-135\degres$ lorsque le gain est n
 
 %On admet que le système est stable pour $k_{45}=0,0767$.
 
-\question{Calculer%, pour la valeur $k_{45}$ de $k$ établie précédemment, 
+\question{Calculer %, pour la valeur $k_{45}$ de $k$ établie précédemment, 
 l’écart statique $\varepsilon_{\text{cons} \infty}$ en incréments lorsque la consigne est un échelon de position : $\text{Cons}(t) = 1\cdot u(t)$.}
 \ifprof
 \begin{corrige}~\\
@@ -635,6 +635,40 @@ Le filtre $T_2 = \SI{0,1}{s}$ permet d'atténuer le gain à une pulsation de $\S
 \else
 \end{multicols}
 \fi
+
+
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+ \begin{enumerate} 
+ \item $U(p) = R I(p) + LpI(p)+ E(p)$; $E(p) = k_e  \Omega_{\text{réd}}(p)$; $C_{\text{réd}} (p)= k_c  I(p)$;
+ $C_{\text{réd}} (p) - C_r(p) - f_v \Omega_{\text{réd}}(p)= J_{\text{équ}}  p \Omega_{\text{réd}}(p)$. 
+ \item $ M(p)=\dfrac{\dfrac{k_c}{k_e k_c+Rf_v}}{  \dfrac{ J_{\text{équ}}   L}{k_e k_c+Rf_v}p^2 +\dfrac{ RJ_{\text{équ}}    +  L f_v}{k_e k_c+Rf_v}p +1 }$.
+ \item .
+ \item .
+ \item $  M_2(p)=\dfrac{\dfrac{k_c}{k_e k_c+Rf_v}}{  \dfrac{ RJ_{\text{équ}}  }{k_e k_c+Rf_v}p +1 }$.
+ \item $G_S = \SI{0,439}{rad.s^{-1}.V^{-1}} $, on a $\tau = \SI{0,02}{s}$.
+ \item $B(p)=\dfrac{1}{50p}$, $C=\dfrac{360}{2\pi}\text{ incr/rad} $, $H_O(p)=\dfrac{1}{50p}\dfrac{360}{2\pi} \dfrac{kG_S}{1+Tp}$.
+ \item .
+ \item L'écart statique est nul.
+ \item $\varepsilon_{\text{pert} \infty} = 0,2 \dfrac{ 10}{2,1   1 } =\SI{0,95}{incr}$.
+ \item $H_2 =\dfrac{x}{\Theta}=\SI{19,2}{mm.rad^{-1}}=\SI{0,0192}{m.rad^{-1}}$
+ \item .
+ \item .
+ \item .
+ \item $H_3(p)=\dfrac{1}{1+\dfrac{2\cdot 0,2}{27}p+\dfrac{p^2}{27^2}}$.
+ \item .
+ \item $\omega_{03}^2=\dfrac{k_0}{m_1}$ et $\xi_3 =\dfrac{f_0}{2}\sqrt {\dfrac{1}{k_0m_1}}$.
+ \item $\Rightarrow k_0 <\SI{1010}{N.m^{-1}}$.
+ \item \begin{itemize}
+\item Écart dynamique maximal : $\SI{5}{mm}$.
+\item Écart de traînage (ou de vitesse) $\varepsilon_v$ en régime établi : $\SI{4}{mm}$.
+\item Retard de traînage : $\SI{0,02}{s}$ -- cahier des charges validé -- Req 4.
+\end{itemize}
+\item .
+\item $T_2 = \SI{0,1}{s}$.
+\end{enumerate}\\
+\hline
+\end{tabular}
 %\end{document}
 %
 %\question{}

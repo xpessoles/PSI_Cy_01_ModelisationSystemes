@@ -158,7 +158,7 @@ du déplacement vertical du point d’ancrage du ROV et $Y_{\text{vague}}(p)$ la
 \fi
 
 
-\question{ Rappeler la définition du gain en décibel. En déduire la valeur en décibel traduisant l’exigence Id 1.1.}
+\question{ Rappeler la définition du gain en décibel. En déduire la valeur en décibel traduisant l’exigence\~Id 1.1.}
 
 \ifprof
 \begin{corrige}
@@ -1222,6 +1222,24 @@ Le réglage de PHC 4 est celui qui respecte le mieux l’exigence Id1.1.
 %\end{corrige}
 %\else
 %\fi
+
+\ifprof
+\else
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+\begin{enumerate}
+\item  $G_{\text{dB}}(\omega)=20\log \left \vert \dfrac{Y_S(j\omega)}{Y_{\text{vague}}(j\omega)}\right \vert$ et 
+$G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ \forall \ \ \omega\in[0,5;1,7]  \ \text{rad/s}$.
+\item ...
+\item $K_1=\dfrac{SrP_{G0}}{V_{G0}}$ et $\tau=\dfrac{V_{G0}}{rP_{G0}C_{qR}}.$
+\item $\tau=\tau_1+\dfrac{\beta}{\gamma K_1}$, $\omega_n=\sqrt{\frac{\gamma K_1}{\alpha}}$; $\zeta=\dfrac{1}{2}\dfrac{\beta+\gamma K_1 \tau_1}{\sqrt{\alpha \gamma K_1}}.$
+\item .
+\item .
+\item PHC4.
+\end{enumerate}\\
+\hline
+\end{tabular}
+\fi
 \ifprof
 \else
 \end{multicols}
