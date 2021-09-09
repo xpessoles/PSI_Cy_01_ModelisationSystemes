@@ -101,7 +101,7 @@ Les équations caractéristiques du moteur à courant continu sont rappelées ci
 \item $u(t)=e(t)+L \dfrac{di(t)}{\text{d} t}+Ri(t)$;
 \item $e(t)=K_E \omega_m (t)$ ;
 \item $C_M (t)=K_C i(t)$ ;
-\item $J_{eq}  \dfrac{d\omega_m)}{\text{d} t}+f\omega_m (t)=C_M (t)-C_R (t)$.
+\item $J_{eq}  \dfrac{d\omega_m(t)}{\text{d} t}+f\omega_m (t)=C_M (t)-C_R (t)$.
 \end{itemize}
 
 Avec : 
@@ -220,6 +220,8 @@ $H_m (p)=\dfrac{\dfrac{K_C}{K_c K_E+Rf}}{1+\dfrac{RJ_eq+Lf}{K_c K_E+Rf}p+\dfrac{
 \else
 \fi
 
+Le coefficient de frottement visqueux est donné par $f = \SI{0,2e-2}{Nms.rad^{-1}}$, l'inductance par $L=\SI{9}{mH}$, la résistance de l'induit par $R=\SI{3}{Ohm}$, la constante de couple par $K_c = \SI{1,3}{NmA^{-1}}$ et $K_E = \SI{1,3}{V.(rad.s^{-1})^{-1}}$.
+
 \question{Montrer que la fonction de transfert $H_M (p)$ peut se mettre sous la forme $H_M (p)=\dfrac{K_C}{K_C K_e+RJ_{eq} p+LJ_{eq} p^2 }$. Justifier la réponse. Pour cette question, la valeur numérique de $J_{eq}$ considérée sera $J_{eq}=\num{7d-3}\si{kg.m^2}$ indépendamment du résultat numérique calculé précédemment.}
 \ifprof
 \begin{corrige}
@@ -267,7 +269,7 @@ Les grandeurs caractéristiques des blocs de l'asservissement de l'axe chariot s
 \hline
 Générateur & $K_G$ & À déterminer \\
 \hline
-Capteur de position	& $K_\text{capt}$ & $\num{5d-3}\si{V.rad^(-1)}$ \\
+Capteur de position	& $K_\text{capt}$ & $\num{5d-3}\si{V.rad^{-1}}$ \\
 \hline
 Correcteur amplificateur	 & $C(p)$ & Variable \\
 \hline
@@ -376,7 +378,7 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \ifprof
 \else
 
-Afin de répondre totalement au cahier des charges, l'utilisation d'un correcteur proportionnel intégral dérivé est retenue. En effet, la commande de l'axe intègre directement ce type de correcteur. Dans la suite du problème, le correcteur $C(p)$ sera de la forme : $C(p)=K_I \left(1+\dfrac{1}{(_I p}\right)\left(1+T_D p\right)$. Le réglage des coefficients a été fait par simulation numérique.
+Afin de répondre totalement au cahier des charges, l'utilisation d'un correcteur proportionnel intégral dérivé est retenue. En effet, la commande de l'axe intègre directement ce type de correcteur. Dans la suite du problème, le correcteur $C(p)$ sera de la forme : $C(p)=K_I \left(1+\dfrac{1}{(T_I p}\right)\left(1+T_D p\right)$. Le réglage des coefficients a été fait par simulation numérique.
 Afin de vérifier maintenant le critère de rapidité, on donne la réponse temporelle (figure page suivante) de l'axe à un échelon de position de $\SI{1}{m}$.
 
 \fi
