@@ -1,10 +1,10 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{ \ifprof \normalsize{Application 1 -- Corrigé } \else  Application 1 \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{ \ifprof {Application 1 -- Corrigé } \else  Application 1 \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-%\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-%\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de dynamique plans à 1 mobilité}
 
 \def\xxcompetences{%
 \textsl{%
@@ -24,11 +24,10 @@
 }%figues de la page de garde
 
 
-\iflivret
+
+
 \input{\repRel/Style/pagegarde_TD}
-\else
-\input{../../style/new_pagegarde}
-\fi
+
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}

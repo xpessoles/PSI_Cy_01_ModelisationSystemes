@@ -1,5 +1,5 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{ \ifprof \normalsize{TD 1 -- Corrigé } \else  TD 1 \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{ \ifprof {TD 1 -- Corrigé } \else  TD 1 \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
@@ -25,11 +25,9 @@
 }%figues de la page de garde
 
 
-\iflivret
+
 \input{\repRel/Style/pagegarde_TD}
-\else
-\input{../../style/new_pagegarde}
-\fi
+
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}

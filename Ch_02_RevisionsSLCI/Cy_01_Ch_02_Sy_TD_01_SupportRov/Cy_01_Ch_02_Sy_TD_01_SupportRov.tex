@@ -169,7 +169,10 @@ $$\boxed{G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ 
 \else
 \fi
 
+\ifprof
+\else
 Le tracé du gain de $B(p)$ dans la figure suivante.
+
 
 
 \begin{center}
@@ -178,6 +181,7 @@ Le tracé du gain de $B(p)$ dans la figure suivante.
 %\label{Fig3}
 \end{center}
 
+\fi
 
 
 \question{En faisant apparaître le domaine d’utilisation, montrer que le système ne répond pas à l’exigence d’atténuation d’une houle de \SI{5}{m}.}%Répondre entièrement à cette question sur le document réponse. }
@@ -599,7 +603,8 @@ $\dfrac{\text d\Delta p_G(t)}{\text dt}=\dfrac{rP_{G0}C_{qR}}{V_{G0}}\left(\Delt
 %\end{corrige}
 %\else
 %\fi
-
+\ifprof
+\else
 À l'équilibre, le principe fondamental de la statique se traduit par $-Mg + A(P_{E0}-P_{\text{atm}})=0.$.
 
 %\question{L’équilibre de la membrane permet d’obtenir l’égalité $P_{E0} = P_{G0} = 180$ bar. En déduire la valeur de $A$.}
@@ -667,7 +672,7 @@ $ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) )
 %
 
 L’hypothèse du fluide incompressible se traduit par $\dfrac{\text d\Delta p_E(t)}{\text dt}= 0$.
-
+\fi
 
 \question{Réécrire l’équation (1) en tenant compte de cette hypothèse. Après avoir appliqué les transformées de Laplace aux équations (1) et (2) et en considérant les conditions initiales nulles aux équations précédentes, déterminer l’équation, notée (3), sous la forme :}
 %\begin{eqnarray}
