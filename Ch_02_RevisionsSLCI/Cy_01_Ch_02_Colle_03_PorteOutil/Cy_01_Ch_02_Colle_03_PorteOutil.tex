@@ -222,6 +222,8 @@ Le gain dB est donc  $20\log A - 20 \log \omega^2$.  Pour $\omega=\SI{500}{rad.s
 \else
 \fi
 
+\ifprof
+\else
 Le modèle approché ($N_{2 \text{app}}(p)$) est retenu pour la suite de l’étude. Le schéma bloc modélisant la régulation de
 la position $z_1(t)$ est donné en figure \autoref{fig_13}, en considérant un correcteur proportionnel de gain $K_p$.
 
@@ -231,6 +233,7 @@ la position $z_1(t)$ est donné en figure \autoref{fig_13}, en considérant un c
 \includegraphics[width=.8\linewidth]{fig_13}
 \caption{Modèle de synthèse de la régulation en position $z_1(t)$ du porte-outil \label{fig_13}}
 \end{figure}
+\fi
 
 
 \question{Justifier qu’une correction proportionnelle ne permet pas de respecter l’ensemble des critères du diagramme
@@ -272,6 +275,8 @@ D'après les équations données et en utilisant le théorème du retard, on a $
 
 Le schéma-blocs retenu est le suivant. 
 
+\ifprof
+\else
 \begin{figure}[H]
 \centering
 \includegraphics[width=.65\linewidth]{fig_16}
@@ -288,9 +293,10 @@ La \autoref{fig_17} représente le diagramme de Bode de la fonction de transfert
 \caption{Diagramme de Bode de la boucle ouverte du schéma-blocs\label{fig_17}}
 \end{figure}
 
-
 Les « zéros de transmission » d’une fonction de transfert $H(p)$ correspondent aux pulsations $\omega$ pour lesquelles
 $H\left(j \omega\right)$ est nul.
+
+\fi
 
 \question{Préciser l’expression de la fonction de transfert en boucle ouverte de la figure 16 puis vérifier la
 cohérence du diagramme de Bode de la\autoref{fig_17}  en analysant les « zéros de transmission ».}
