@@ -59,16 +59,11 @@ sur le porte-outil.
 
 La cahier des charges est donné sur la figure suivante.
 
-
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{fig_08}
 \caption{Diagramme des exigences de la chaîne d'asservissement \label{fig_08}}
 \end{figure}
-
-
-
 
 Les positions du porte-outil et du point $C$  par rapport à leur position de référence sont respectivement paramétrées
 par $z_1(t)\vect{z_0}$ et $z_2(t)\vect{z_0}$, avec $z_1(t)\vect{z_0}$ et $z_2(t)\vect{z_0}$ des grandeurs algébriques ( \autoref{fig_10}). Les conditions initiales
@@ -121,15 +116,18 @@ $$
 \end{corrige}
 \else
 \fi
+
+\ifprof
+
+\else
 Le modèle de la  \autoref{fig_11} est réduit au modèle équivalent de la figure \autoref{fig_12}.
-
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=.7\linewidth]{fig_12}
 \caption{Modèle équivalent \label{fig_12}}
 \end{figure}
 
+\fi
 
 \question{Exprimer $N_1(p)$ et $N_2(p)$ en fonction de $H_1(p)$, $H_2(p)$, $H_3(p)$ et $H_4(p)$.}
 \ifprof
@@ -184,6 +182,9 @@ $\xi_2=\lambda\dfrac{\sqrt{m_1+ m_2}}{2\sqrt{Km_1m_2}}$.
 \end{corrige}
 \else
 \fi
+
+\ifprof
+\else
 Le diagramme de Bode associé à la fonction de transfert $N_2(p)$ est représenté ci-après.
 
 
@@ -192,6 +193,7 @@ Le diagramme de Bode associé à la fonction de transfert $N_2(p)$ est représen
 \includegraphics[width=\linewidth]{fig_dr}
 %\caption{Modèle équivalent}
 \end{figure}
+\fi
 
 
 \question{Compléter ce diagramme par les tracés asymptotiques en module et en phase, et conclure sur la
