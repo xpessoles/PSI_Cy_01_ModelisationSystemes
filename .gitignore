@@ -66,3 +66,15 @@ Ch_01_Generalites/Demos/Modeles/quarc_win64/
 
 
 *.original
+*.mat
+*.slxc
+*.obj
+*.txt
+*.h
+*.c
+*.rsp
+*.m
+*.bat
+*.dmr
+*.mk
+*.tmw
