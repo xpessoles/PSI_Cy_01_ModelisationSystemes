@@ -577,7 +577,7 @@ Une étude de mécanique des fluides a permis d’obtenir les relations (1) et (
 
 $
 \begin{array}{ccc}
-\dfrac{\text d\Delta p_E(t)}{\text dt} &=& \dfrac{K}{V_E} A\left( \dfrac{\text d y_h(t)}{\text dt}-\dfrac{\text d y_{\text{ROV}}(t)}{\text dt}\right) \\ 
+\dfrac{\text d\Delta p_E(t)}{\text dt} &=& \dfrac{K}{V_E} S\left( \dfrac{\text d y_h(t)}{\text dt}-\dfrac{\text d y_{\text{ROV}}(t)}{\text dt}\right) \\ 
 && +\dfrac{K}{V_E} C_{qR}\left(\Delta p_G(t)-\Delta p_E(t)\right) \; (1)
 \end{array}$
 
@@ -609,7 +609,7 @@ $\dfrac{\text d\Delta p_G(t)}{\text dt}=\dfrac{rP_{G0}C_{qR}}{V_{G0}}\left(\Delt
 %\fi
 \ifprof
 \else
-À l'équilibre, le principe fondamental de la statique se traduit par $-Mg + A(P_{E0}-P_{\text{atm}})=0.$.
+À l'équilibre, le principe fondamental de la statique se traduit par $-Mg + S(P_{E0}-P_{\text{atm}})=0$.
 
 %\question{L’équilibre de la membrane permet d’obtenir l’égalité $P_{E0} = P_{G0} = 180$ bar. En déduire la valeur de $A$.}
 %\ifprof
@@ -626,7 +626,7 @@ $\dfrac{\text d\Delta p_G(t)}{\text dt}=\dfrac{rP_{G0}C_{qR}}{V_{G0}}\left(\Delt
 
 Le théorème de la résultante dynamique appliqué à $\Sigma$ se traduit par 
 %$\alpha \dfrac{\text d^2y_{\text{ROV}}(t)}{\text d t^2}+\beta \left(\dfrac{\text dy_{\text{ROV}}(t)}{\text dt}-\dfrac{\text d y_h(t)}{\text dt}\right)&=&\gamma \Delta p_E(t).$
-$ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) )$.
+$ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) ) $ (3).
 % avec $\gamma =S$, $\alpha =M$ et $\beta = c$.\\
 
 
@@ -675,13 +675,13 @@ $ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) )
 %\fi
 %
 
-M
+
 L’hypothèse du fluide incompressible se traduit par $\dfrac{\text d\Delta p_E(t)}{\text dt}= 0$.
 \fi
 
 \question{Réécrire l’équation (1) en tenant compte de cette hypothèse. Après avoir appliqué les transformées de Laplace aux équations (1) et (2) et en considérant les conditions initiales nulles aux équations précédentes, déterminer l’équation, notée (3), sous la forme :}
 %\begin{eqnarray}
-$\Delta P_E(p) = K_1(1+\tau_1 p)(Y_h(p)-Y_{\text{ROV}}(p)).$
+$\Delta P_E(p) = K_1(1+\tau_1 p)(Y_h(p)-Y_{\text{ROV}}(p))$ (4).
 %\end{eqnarray}
 \textit{Exprimer $K_1$ et $\tau_1$ en fonction de $A$, $V_{G0}$, $r$, $C_{qR}$ et $P_{G0}$.}
 \ifprof
