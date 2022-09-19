@@ -78,3 +78,4 @@ Ch_01_Generalites/Demos/Modeles/quarc_win64/
 *.dmr
 *.mk
 *.tmw
+*.lib
