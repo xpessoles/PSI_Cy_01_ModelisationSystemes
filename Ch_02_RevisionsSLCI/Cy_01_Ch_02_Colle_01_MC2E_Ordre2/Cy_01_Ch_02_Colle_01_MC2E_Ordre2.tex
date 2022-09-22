@@ -185,6 +185,7 @@ Dans un premier temps, on prendra $H_{\text{cor}}(p)=1$.
 \question{Déterminer les expressions des fonctions de transfert $H_1(p)$, $H_2(p)$ et $H_3(p)$.}
 \ifprof
 \begin{corrige}
+$H_1(p)=\dfrac{1}{Jp}$, $H_2(p)=\dfrac{1}{p}$ et $H_3(p)=K_{C\theta}$.
 \end{corrige}
 \else
 \fi
@@ -194,6 +195,12 @@ d’effort.}
 
 \ifprof
 \begin{corrige}
+Calculons $F(p) =\dfrac{C_e(p)}{C_m(p)} = \dfrac{H_1(p)H_2(p)H_3(p)}{1+H_1(p)H_2(p)H_3(p)}$
+$= \dfrac{K_{C\theta}\dfrac{1}{Jp}\dfrac{1}{p}}{1+K_{C\theta}\dfrac{1}{Jp}\dfrac{1}{p}}$.
+
+Par suite $\indice{H}{BF}(p)=\dfrac{F(p) \indice{H}{cor}(p)}{1+F(p) \indice{H}{cor}(p)}$ soit
+ $\indice{H}{BF}(p)=\dfrac{\dfrac{H_1(p)H_2(p)H_3(p)}{1+H_1(p)H_2(p)H_3(p)}}{1+\dfrac{H_1(p)H_2(p)H_3(p)}{1+H_1(p)H_2(p)H_3(p)}} = $
+
 \end{corrige}
 \else
 \fi
