@@ -211,6 +211,7 @@ $= \dfrac{1/2}{\dfrac{J}{2K_{C\theta}}p^2+1 }$.
 Conclure.}
 \ifprof
 \begin{corrige}
+Le coefficient d'amortissement étant nul, il s'agit d'un oscillateur harmonique d'amplitude $C_0/2$. Le système vibre ce qui est incompatible avec le mouvement d'un robot chirurgical.
 \end{corrige}
 \else
 \fi
@@ -238,6 +239,23 @@ $H_{\text{BO}}(p)=\dfrac{1}{\left(1+\tau p\right)^2}$.
 forme de fonction de transfert. En déduire l’expression analytique de la constante de temps $\tau$.}
 \ifprof
 \begin{corrige}
+D'une part, $F_1(p)=\dfrac{\dfrac{1}{Jp}}{1+\dfrac{B}{Jp}} = \dfrac{1}{Jp+B}$.
+Par suite $\text{FTBO}(p) = \dfrac{F_1(p) H_2(p) H_3(p)}{1+F_1(p) H_2(p) H_3(p)}$
+$= \dfrac{\dfrac{1}{Jp+B} \dfrac{K_{C\theta}}{p}}{1+\dfrac{1}{Jp+B} \dfrac{K_{C\theta}}{p}}$
+$= \dfrac{K_{C\theta}}{p\left(Jp+B\right)+K_{C\theta}}$
+$= \dfrac{K_{C\theta}}{Jp^2+Bp+K_{C\theta}}$
+$= \dfrac{1}{\dfrac{J}{K_{C\theta}}p^2+\dfrac{B}{K_{C\theta}}p+1}$.
+
+Par ailleurs, 
+$H_{\text{BO}}(p)=\dfrac{1}{\left(1+\tau p\right)^2}$
+$=\dfrac{1}{1+2\tau p + \tau^2 p^2}$.
+
+On a donc $\dfrac{B}{K_{C\theta}} = 2\tau$ $\Rightarrow \dfrac{B}{2K_{C\theta}} =\tau$.
+D'autre part, $ \tau^2 =\dfrac{J}{K_{C\theta}}$  $\Rightarrow \dfrac{B}{2K_{C\theta}}=\sqrt{\dfrac{J}{K_{C\theta}}}$. 
+
+
+Au final, ${B}=2\sqrt{JK_{C\theta}}$ et $\tau = \dfrac{B}{2K_{C\theta}} =\dfrac{2\sqrt{JK_{C\theta}}}{2K_{C\theta}}=\sqrt{\dfrac{J}{K_{C\theta}}}$.
+
 \end{corrige}
 \else
 \fi
@@ -258,6 +276,19 @@ Afin de répondre à ces exigences, on choisit un correcteur proportionnel-inté
 \question{Donner l’expression de l’erreur statique en réponse à un échelon d'amplitude $C_0$. Conclure vis-à-vis du cahier des charges.}
 \ifprof
 \begin{corrige}
+\begin{itemize}
+\item Méthode 1 : la FTBO est de classe 1. L'écart statique est donc nul. 
+\end{itemize}
+
+\begin{itemize}
+\item Méthode 2 (à savoir faire absolument, mais à éviter car trop long).
+\end{itemize}
+
+On a $\varepsilon(p) = \dfrac{C_c(p)}{1+\text{FTBO}(p)}=\dfrac{C_0}{p}\dfrac{1}{1+\dfrac{K_i (1+T_i p)}{T_i p (1+\tau p ^2)}}$
+$=C_0\dfrac{1}{p+\dfrac{K_i (1+T_i p)}{T_i (1+\tau p )^2}}$.
+
+Par suite, $\lim_{t\to + \infty} \varepsilon(t)=\lim_{p\to 0} p \varepsilon(p)=0$.
+
 \end{corrige}
 \else
 \fi
@@ -272,6 +303,16 @@ $\dfrac{K_{\text{BF}}}{1+\dfrac{2\xi_{\text{BF}}}{\omega_{0\text{BF}}}p+\dfrac{p
 \question{Proposer une expression simple pour la constante de temps $T_i$.}
 \ifprof
 \begin{corrige}
+Pour que la FTBF soit d'ordre 2, la FTBO doit être d'ordre 2. 
+
+En choisissant $T_i = \tau$ (compensation du pôle double du système), on a alors 
+$\text{FTBO}(p)=\dfrac{K_i (1+\tau p)}{\tau p (1+\tau p)^2}=\dfrac{K_i }{\tau p (1+\tau p)}$.
+
+On a alors 
+$\text{FTBF}(p) = \dfrac{\dfrac{K_i }{\tau p (1+\tau p)}}{1+\dfrac{K_i }{\tau p (1+\tau p)}}$
+
+$= \dfrac{K_i}{\tau p (1+\tau p)+K_i }$.
+
 \end{corrige}
 \else
 \fi
