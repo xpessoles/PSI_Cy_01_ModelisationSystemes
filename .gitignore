@@ -79,3 +79,14 @@ Ch_01_Generalites/Demos/Modeles/quarc_win64/
 *.mk
 *.tmw
 *.lib
+*.hex
+*.eep
+*.elf
+TP_02_MCC_Controle_Commande/Modeles/MCC_Capteur_PROF/ALL_ert_rtw/ALL_430a60f0_1.dep
+*.o
+*.dep
+*.trash
+*.mexw64
+*.tlc
+TP_02_MCC_Controle_Commande/Modeles/MCC_Capteur_PROF/ALL_ert_rtw/tmwinternal/tr
+TP_02_MCC_Controle_Commande/Modeles/MCC_Capteur_PROF/MCC_Capteur_ert_rtw/tmwinternal/tr

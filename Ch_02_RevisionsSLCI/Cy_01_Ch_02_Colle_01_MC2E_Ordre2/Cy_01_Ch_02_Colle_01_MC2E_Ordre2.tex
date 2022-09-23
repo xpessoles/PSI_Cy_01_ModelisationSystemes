@@ -42,10 +42,15 @@
 \begin{multicols}{2}
 \section{Micromanipulateur compact pour la chirurgie endoscopique ($\text{MC}^2\text{E}$)}
 \subsection{Présentation générale}
+
+\ifprof
+\else
 L’objet de cette étude est un robot appelé $\text{MC}^2\text{E}$ utilisé en chirurgie endoscopique. Ce type de
 robots médico-chirurgicaux est équipé de capteurs (caméra, capteur d’efforts…) permettant de maîtriser
 les interactions avec des environnements souvent déformables et difficilement modélisables comme le
 corps humain.
+\fi
+
 %
 %\begin{center}
 %\begin{minipage}[c]{.1\linewidth}
@@ -70,12 +75,16 @@ corps humain.
 %\end{itemize}
 %L’axe en translation du $\text{MC}^2\text{E}$ entre alors en fonctionnement : il est asservi en effort constant pour tirer (ou pousser) la vésicule au fur et à mesure que le chirurgien utilise son bistouri pour détacher la vésicule du foie. 
 
+\ifprof
+\else
+
 La figure suivante décrit les principales exigences auxquelles est soumis le $\text{MC}^2\text{E}$.
 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_05_BIS}
 %Figure 1 : Modèle de la commande en effort
 \end{center}
+\fi
 
 %L’objectif de ce sujet est d’analyser, de comprendre et de justifier les choix structurels faits par les
 %ingénieurs. Pour cela, on se basera sur la démarche de l’ingénieur :
@@ -154,6 +163,9 @@ La figure suivante décrit les principales exigences auxquelles est soumis le $\
 Modéliser l’asservissement en effort.
 \end{obj}
 
+\ifprof
+\else
+
 L’équation de mouvement est définie par l’équation différentielle suivante : 
 $J\dfrac{\text{d}^2\theta_m(t)}{\text{d}t^2}=C_m(t)-C_e(t)$  avec :
 \begin{itemize}
@@ -181,6 +193,7 @@ Avec :
 \item $H_{\text{cor}}(p)$, fonction de transfert du correcteur.
 \end{itemize}
 Dans un premier temps, on prendra $H_{\text{cor}}(p)=1$.
+\fi
 
 \question{Déterminer les expressions des fonctions de transfert $H_1(p)$, $H_2(p)$ et $H_3(p)$.}
 \ifprof
