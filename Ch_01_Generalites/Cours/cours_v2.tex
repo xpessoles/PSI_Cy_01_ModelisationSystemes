@@ -54,7 +54,7 @@ modèle et surtout dans le cas des systèmes complexes ;
 
 %\newpage
 
-\section{Modélisation des systèmes multiphysiques}
+\section{Modélisation des systèmes multiphysiques}[Systèmes multiphysiques]
 \subsection{Modélisation causale et acausale}
 
 %\begin{multicols}{2}
@@ -131,7 +131,7 @@ Par défaut, nous laisserons un choix automatique du solveur. Cependant, certain
 \begin{warn}
 Attention, il est à noter qu'il peut être difficile de réaliser de diagramme de Bode en utilisant un modèle acausal. Ceci peut être un handicap en phase de conception d'un système car il devient plus délicat de déterminer les résonances du système.
 \end{warn}
-\section{Modélisation des systèmes physiques}
+\section{Modélisation des systèmes physiques}[Modélisation mono-physique]
 On utilisera ici Matlab -- Simulink. Certains modèles sont aussi transposables avec Scilab -- Xcos. 
 
 \subsection{Modélisation des systèmes mécaniques}
@@ -178,7 +178,7 @@ En cas de besoin, des exemples complémentaires sont disponibles en utilisant Ma
 
 %\subsection{Modélisation des interfaces}
 
-\section{Modélisation des non-linéarités}
+\section{Modélisation des non-linéarités}[Non-linéarités]
 
 Même si on cherche à modéliser les blocs d'un système par des équations linéaires (à coefficients constants), il est très fréquent de rencontrer des systèmes (notamment mécaniques) qui n'obéissent pas des lois linéaires (par exemple, le comportement du Maxpid est non linéaire : suivant la plage de fonctionnement -- entre 0 et 5\textdegree ou entre 85 et 90\textdegree -- un tour de moteur ne correspond pas au même mouvement angulaire du bras). 
 
@@ -323,7 +323,7 @@ Paramètres : switch on point, switch off point, output when on, output when off
 \end{minipage}
 
 
-\section{Modélisation des systèmes numériques}
+\section{Modélisation des systèmes numériques}[Numérique]
 On verra dans un chapitre ultérieur que les systèmes que nous manipulons sont souvent numériques. En effet, que ce soit sur le Maxpid, le Control'X, le D2C, la cheville NAO \textit{etc.} les grandeurs analogiques mesurées sont converties en grandeurs numériques grâce à un CAN (convertisseur analogique numérique). La fréquence d'échantillonnage ou la quantification du signal peuvent avoir un impact non négligeable sur les performances du système.
 
 %De ce fait, un paramètre déterminant est la fréquence d'échantillonnage du système. Nous verrons son rôle dans un chapitre ultérieur.
