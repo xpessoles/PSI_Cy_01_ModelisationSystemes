@@ -86,29 +86,28 @@ même port ont pour somme 0.
 %\end{multicols}
 
 
-\begin{center}
-\begin{tabular}{ccc}
-\hline
-Domaine physique & Variables << across >> &  Variables << through >> \\ \hline\hline
-Électrique & Tension (\si{V})& Courant (\si{A})\\ \hline
-Hydraulique & Pression (\si{Pa})& Débit (\si{m^3.s^{-1}})\\ \hline
-Mécanique de translation & Vitesse linéaire (\si{m.s^{-1}})& Force (\si{N})\\ \hline 
-Mécanique de rotation & Vitesse angulaire(\si{rad.s^{-1}}) & Moment (\si{Nm})\\ \hline
+\begin{table*}[h!]
+\caption{Modélisation acausale dans Matlab -- Simulink -- Simscape : variables << across >> et << through >>.}
+\begin{tabular}{lll}
+\midrule
+Domaine physique & Variables << across >> &  Variables << through >> \\ \hline
+Électrique & Tension (\si{V})& Courant (\si{A})\\ 
+Hydraulique & Pression (\si{Pa})& Débit (\si{m^3.s^{-1}})\\ 
+Mécanique de translation & Vitesse linéaire (\si{m.s^{-1}})& Force (\si{N})\\ 
+Mécanique de rotation & Vitesse angulaire(\si{rad.s^{-1}}) & Moment (\si{Nm})\\ 
 %Pneumatique & Pression (V)& Débit massique (V)et flux d'entropie \\ \hline 
-Thermique & Température (K)& Flux thermique et flux d'entropie \\ \hline
-\\
+Thermique & Température (K)& Flux thermique et flux d'entropie \\ 
+\bottomrule
 \end{tabular}
-
-\textit{Modélisation acausale dans Matlab -- Simulink -- Simscape : variables << across >> et << through >>.}
-\end{center}
+\end{table*}
 
 \subsection{Les différents modèles et outils}
 
-La figure ci-dessous présente un modèle causal et un modèle acausal du système de laboratoire << Control'X >>en utilisant le logiciel Matlab-Simulink.
+La figure ci-dessous présente un modèle causal et un modèle acausal du système de laboratoire <<~Control'X~>> en utilisant le logiciel Matlab-Simulink.
 
-\begin{center}
+\begin{figure*}[!h]
 \includegraphics[width=\linewidth]{Modeles}
-\end{center}
+\end{figure*}
 
 Visuellement on constate que sur le modèle causal, les composants du système apparaissent. Ainsi, sans connaître les lois de comportements des composants, il est possible de réaliser le modèle multiphysique d'un système.
 
@@ -116,17 +115,17 @@ En modélisation acausale, on utilise une représentation par schéma-blocs. Il 
 
 \subsection{Résolution -- Avantage et Inconvénients}
 
-\noindent
-\begin{minipage}[c]{.6\linewidth}
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{solveur}
+\caption{Solveurs Matlab}
+\end{marginfigure}
+
 Que ce soient des modèles causaux ou acausaux, Matlab a recours à des solveurs pour simuler le comportement des systèmes. En effet, des équations différentielles, linéaires ou non, sont << cachées >> derrière les blocs.  
 
 Par défaut, nous laisserons un choix automatique du solveur. Cependant, certains modèles imposeront (via un message d'erreur) le changement de ce solveur. Par ailleurs le pas de simulation devra être changé dans certain cas, dans le but d'améliorer la précision des résultats.
-\end{minipage} \hfill
-\begin{minipage}[c]{.35\linewidth}
-\begin{center}
-\includegraphics[width=\linewidth]{solveur}
-\end{center}
-\end{minipage}
+
+
+
 
 \begin{warn}
 Attention, il est à noter qu'il peut être difficile de réaliser de diagramme de Bode en utilisant un modèle acausal. Ceci peut être un handicap en phase de conception d'un système car il devient plus délicat de déterminer les résonances du système.
@@ -136,27 +135,29 @@ On utilisera ici Matlab -- Simulink. Certains modèles sont aussi transposables 
 
 \subsection{Modélisation des systèmes mécaniques}
 \subsubsection{Introduction}
+
+\begin{marginfigure}[-1.5cm]
+\includegraphics[width=\linewidth]{Masse_Ressort}
+
+\caption{Modélisation causale et acausale d'un système avec deux systèmes << masse -- ressort -- amortisseur >> en série.}
+\end{marginfigure}
+
 Deux modes de modélisation des systèmes mécanique est disponible : une modélisation 1D (mouvement de translation suivant une seule direction, mouvement de rotation autour d'un axe fixe) ou une modélisation 3D. 
 La modélisation 1D est possible directement dans Matlab. Pour la modélisation 3D, il est plus aisé d'utiliser SolidWorks. 
 
-\begin{center}
-\includegraphics[width=.6\linewidth]{Masse_Ressort}
 
-\textit{Modélisation causale et acausale d'un système avec deux systèmes << masse -- ressort -- amortisseur >> en série.}
-\end{center}
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{Modele3D}
 
-\begin{center}
-\includegraphics[width=.9\linewidth]{Modele3D}
-
-\textit{Modélisation acausale 3D d'un bras robotisé.}
-\end{center}
+\caption{Modélisation acausale 3D d'un bras robotisé.}
+\end{figure}
 
 \subsubsection{Blocs communément utilisés en modélisation multiphysique.}
 Les éléments communément utilisés sont donnés dans la figure suivante. 
 
-\begin{center}
-\includegraphics[width=.9\linewidth]{Bilbio_SimMeca}
-\end{center}
+\begin{figure*}[!h]
+\includegraphics[width=.9\linewidth]{Bilbio_SimMeca_02}
+\end{figure*}
 
 La figure suivante illustre une transmission mécanique modélisée en utilisant Simulink. On notera le positionnement des capteurs pour mesurer des variables accross ou through, ainsi que le positionnement du bloc permettant de modéliser les frottements.
 
@@ -166,11 +167,11 @@ La figure suivante illustre une transmission mécanique modélisée en utilisant
 
 \subsection{Modélisation des systèmes électriques}
 
-\begin{center}
+\begin{figure}[!h]
 \includegraphics[width=\linewidth]{MoteurCC}
 
-\textit{Modélisation acausale de la commande d'un moteur à courant continu.}
-\end{center}
+\caption{Modélisation acausale de la commande d'un moteur à courant continu.}
+\end{figure}
 
 
 \subsection{Modélisation des systèmes thermiques, pneumatiques et hydrauliques}
@@ -191,42 +192,33 @@ En revanche dans les modèles acausaux, la passerelle entre SolidWorks et Matlab
 \subsection{Linéarisation}
 Lorsqu'un système est non linéaire, il peut être possible de le linéariser. Cela signifie que \textbf{localement} (sur un certain intervalle) on approxime le comportement du système par une droite. On conséquence, on conserve la validité de notre modélisation de type SLCI. Cependant, il faut faire attention à la zone de validité du modèle : si le comportement du système est fortement linéaire la linéarisation ne sera valable que dans une certaine zone.
 
-\begin{exemple}
-\textit{Loi entrée sortie du Maxpid}
 
+\begin{marginfigure}[2cm]
+\includegraphics[width=\linewidth]{Maxpid_linearisation_02}
+\end{marginfigure}
+
+\begin{exemple}[title=Exemple -- Loi entrée sortie du Maxpid]
+%\textit{Loi entrée sortie du Maxpid}
 Le comportement mécanique du Maxpid n'est pas linéaire. Si on désire modéliser ce comportement sur un système causal, il est impératif d'utiliser une loi linéaire. 
 
 Dans le premier cas, on modélise le comportement en utilisant une régression linéaire. 
-Ce modèle génère des erreurs, mais il est << utilisable >> sur toute la plage de fonctionnement. 
+Ce modèle génère des erreurs, mais il est <<~utilisable~>> sur toute la plage de fonctionnement. 
 
 Il est aussi possible, dans un second cas, de linéariser le système autour d'un point de fonctionnement. Ainsi, le modèle sera plus fidèle à la réalité autour de ce point de fonctionnement. Par contre, les écarts s'accroissent en s'éloignant du point de fonctionnement. 
-
-\begin{center}
-\includegraphics[width=.9\linewidth]{Maxpid_linearisation}
-\end{center}
-
 
 \end{exemple}
 
 \subsection{Saturation}
 
-\noindent \begin{minipage}[c]{.54\linewidth}
-\indent Même si vous l'avez peut-être peu remarqué, les saturations sont omniprésentes sur les systèmes réels. Les principales sources de saturation sont des saturations en tension ou des saturations en courant. 
-
-En régime saturé, au delà d'une certaine valeur d'entrée, le signal de sortie du bloc reste identique et égal à la valeur de saturation.
-
-\end{minipage}
-\hfill
-\begin{minipage}[c]{.18\linewidth}
-\begin{center}
-\includegraphics[width=3.5cm]{sat}
+\begin{marginfigure}
+\centering
+\includegraphics[width=.8\linewidth]{sat}
 
 Paramètres : $s_{\text{max}}$ et $s_{\text{min}}$
-\end{center}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{.22\linewidth}
-\begin{center}
+\end{marginfigure}
+
+\begin{marginfigure}
+\centering
 \begin{tikzpicture}
 \draw [-latex] (0,-1) -- (0,1) node [left]{\footnotesize $s(t)$};
 \draw [-latex] (-1,0) -- (1,0) node [above]{\footnotesize $e(t)$};
@@ -234,17 +226,26 @@ Paramètres : $s_{\text{max}}$ et $s_{\text{min}}$
 \draw [dashed,cyan] (0,.7) node [left,black]{\footnotesize $s_{\text{max}}$}-- (1,.7);
 \draw [dashed,cyan] (0,-.7) node [right,black]{\footnotesize $s_{\text{min}}$}-- (-1,-.7);
 \end{tikzpicture}
-\end{center}
-\end{minipage}
+\end{marginfigure}
 
-\vspace{.2cm}
+Même si vous l'avez peut-être peu remarqué, les saturations sont omniprésentes sur les systèmes réels. Les principales sources de saturation sont des saturations en tension ou des saturations en courant. 
+
+En régime saturé, au delà d'une certaine valeur d'entrée, le signal de sortie du bloc reste identique et égal à la valeur de saturation.
+
+
+
 
 Tout d'abord, dans les systèmes asservis et corrigés, le correcteur permet souvent une amplification de la consigne. Par exemple, un correcteur proportionnel de valeur 5 dans la boucle ouverte permet de multiplier par 5 la tension de commande. Celle-ci peut alors être supérieure à la tension que la source peut fournie.
 
 De même, suivant la charge agissant sur un système (charge électrique ou mécanique), le courant nécessaire à un déplacement peut devenir très important, notamment en phase transitoire. Un pic de courant peut avoir pour effet de détériorer des composants.
 
 
-\begin{exemple} ~\\
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{Modele_MCC}
+
+\includegraphics[width=\linewidth]{Modele_MCC_sat}
+\end{marginfigure}
+\begin{exemple}[title=Exemple] ~\\
 
 %\begin{minipage}[c]{.48\linewidth}
 Prenons par exemple le cas du moteur à continu du Maxpid dont la modélisation est (ou devrait être)  bien connue. Sollicitons le moteur par un échelon de tension et observons les signaux que nous ne regardons peut être pas toujours, par exemple le courant. 
@@ -254,61 +255,44 @@ La conséquence peut ici être un ralentissement du système. En effet, le coura
 %\end{minipage}
 %\hfill
 %\begin{minipage}[c]{.48\linewidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{Modele_MCC}
 
-\includegraphics[width=.9\linewidth]{Modele_MCC_sat}
-\end{center}
 %\end{minipage}
 
 \end{exemple}
 
 \subsection{Seuil}
 
-\noindent \begin{minipage}[c]{.54\linewidth}
-\indent Les seuils (ou bandes mortes -- dead band) permettent de modéliser un comportement non linéaire pour lequel la sortie reste nulle quand l'entrée varie dans un certain intervalle. 
-
-
-Dans le cas d'une modélisation causale, on peut utiliser le seuil pour modéliser le frottement sec. En effet, dans le cas d'un système piloté par un moteur à courant continu, une petite tension ne suffit pas à actionner le système. Il faut vaincre les frottements secs. Le seuil permet de modéliser ce comportement.
-
-\end{minipage}
-\hfill
-\begin{minipage}[c]{.18\linewidth}
-\begin{center}
+\begin{marginfigure}
+\centering
 \includegraphics[width=3.5cm]{seuil}
 Paramètres : valeur mini et valeur maxi
-\end{center}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{.22\linewidth}
-\begin{center}
+\end{marginfigure}
+
+\begin{marginfigure}
+\centering
 \begin{tikzpicture}
 \draw [-latex] (0,-1) -- (0,1) node [left]{\footnotesize $s(t)$};
 \draw [-latex] (-1,0) -- (1,0) node [below]{\footnotesize $e(t)$};
 \draw [cyan,very thick] (-.9,-.5) -- (-.5,0) -- (.5,0) -- (.9,.5);
 \end{tikzpicture}
-\end{center}
-\end{minipage}
+\end{marginfigure}
+
+
+Les seuils (ou bandes mortes -- dead band) permettent de modéliser un comportement non linéaire pour lequel la sortie reste nulle quand l'entrée varie dans un certain intervalle. 
+
+Dans le cas d'une modélisation causale, on peut utiliser le seuil pour modéliser le frottement sec. En effet, dans le cas d'un système piloté par un moteur à courant continu, une petite tension ne suffit pas à actionner le système. Il faut vaincre les frottements secs. Le seuil permet de modéliser ce comportement.
+
 
 \subsection{Hystérésis}
 
-
-\noindent \begin{minipage}[c]{.54\linewidth}
-\indent Les hystérésis (Relay) permettent de modéliser un comportement non linéaire pour lequel la sortie est différente quand l'entrée croît ou lorsqu'elle décroit. 
-
-
-
-\end{minipage}
-\hfill
-\begin{minipage}[c]{.18\linewidth}
-\begin{center}
+\begin{marginfigure}
+\centering
 \includegraphics[width=3.5cm]{hysteresis}
 Paramètres : switch on point, switch off point, output when on, output when off
-\end{center}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{.22\linewidth}
-\begin{center}
+\end{marginfigure}
+
+\begin{marginfigure}
+\centering
 \begin{tikzpicture}
 \draw [-latex] (0,-1) -- (0,1) node [left]{\footnotesize $s(t)$};
 \draw [-latex] (-1,0) -- (1,0) node [below]{\footnotesize $e(t)$};
@@ -319,8 +303,9 @@ Paramètres : switch on point, switch off point, output when on, output when off
 \draw [latex-] (.5,.8) --++(.5,.5) node [left] {\footnotesize output when on};
 \draw [latex-] (.5,-.8) --++(-.5,-.5) node [left] {\footnotesize output when off};
 \end{tikzpicture}
-\end{center}
-\end{minipage}
+\end{marginfigure}
+
+Les hystérésis (Relay) permettent de modéliser un comportement non linéaire pour lequel la sortie est différente quand l'entrée croît ou lorsqu'elle décroit. 
 
 
 \section{Modélisation des systèmes numériques}[Numérique]
@@ -329,14 +314,14 @@ On verra dans un chapitre ultérieur que les systèmes que nous manipulons sont 
 %De ce fait, un paramètre déterminant est la fréquence d'échantillonnage du système. Nous verrons son rôle dans un chapitre ultérieur.
 
 
-\begin{thebibliography}{2}
-   \bibitem[1]{ref1} Y. Crevits, {\it Éléments de modélisation multi-physique des systèmes industriels en vue de leur simulation numérique, Juin 2015.}
-   \bibitem[2]{ref2} Ph. Fichou, {\it La modélisation multiphysique, Technologie, Mars 2012.}
-   \bibitem[3]{ref3} Yvan Liebgott, {\it Modélisation et Simulation des Systemes Multi-Physiques avec MATLAB.}
-   \bibitem[4]{ref4} Frédéric Mazet, {\it Cours d'automatique de deuxième année, Lycée Dumont Durville, Toulon.}
-   \bibitem[5]{ref5} Patrick Beynet, {\it Sciences industrielles de l'ingénieur MP - PSI}
-, Éditions Ellipses.
-%      \bibitem[5]{ref5} Ivan Liebgott, {\it Modélisation et Simulation des systèmes Multi-Physiques avec MATLAB--Simulink.}
-
-\end{thebibliography}
+%\begin{thebibliography}{2}
+%   \bibitem[1]{ref1} Y. Crevits, {\it Éléments de modélisation multi-physique des systèmes industriels en vue de leur simulation numérique, Juin 2015.}
+%   \bibitem[2]{ref2} Ph. Fichou, {\it La modélisation multiphysique, Technologie, Mars 2012.}
+%   \bibitem[3]{ref3} Yvan Liebgott, {\it Modélisation et Simulation des Systemes Multi-Physiques avec MATLAB.}
+%   \bibitem[4]{ref4} Frédéric Mazet, {\it Cours d'automatique de deuxième année, Lycée Dumont Durville, Toulon.}
+%   \bibitem[5]{ref5} Patrick Beynet, {\it Sciences industrielles de l'ingénieur MP - PSI}
+%, Éditions Ellipses.
+%%      \bibitem[5]{ref5} Ivan Liebgott, {\it Modélisation et Simulation des systèmes Multi-Physiques avec MATLAB--Simulink.}
+%
+%\end{thebibliography}
 
