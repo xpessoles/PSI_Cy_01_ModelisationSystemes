@@ -19,7 +19,7 @@ Dans l'industrie, les modèles sont indispensables. Ils permettent d'avoir un mo
 
 L'objectif du modèle est de se substituer au produit réel. Les simulations réalisées sur le modèle ont pour objectif de remplacer des expérimentations sur le produits, considérées comme coûteuse en temps et en argent. 
 
-Il est possible de recenser les avantages et inconvénients liés à la simulation des modèles \cite{1}. 
+Il est possible de recenser les avantages et inconvénients liés à la simulation des modèles \sidecite{Crevits2015}. 
 %\begin{multicols}{2}
 \begin{itemize}[label=\ding{51}]
 \item Pouvoir prévoir le comportement du système réel alors qu'il n’existe pas encore lors de la phase de conception;
@@ -115,16 +115,14 @@ En modélisation acausale, on utilise une représentation par schéma-blocs. Il 
 
 \subsection{Résolution -- Avantage et Inconvénients}
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{solveur}
-\caption{Solveurs Matlab}
-\end{marginfigure}
-
 Que ce soient des modèles causaux ou acausaux, Matlab a recours à des solveurs pour simuler le comportement des systèmes. En effet, des équations différentielles, linéaires ou non, sont << cachées >> derrière les blocs.  
 
 Par défaut, nous laisserons un choix automatique du solveur. Cependant, certains modèles imposeront (via un message d'erreur) le changement de ce solveur. Par ailleurs le pas de simulation devra être changé dans certain cas, dans le but d'améliorer la précision des résultats.
 
-
+\begin{marginfigure}[-2cm]
+\includegraphics[width=\linewidth]{solveur}
+\caption{Solveurs Matlab}
+\end{marginfigure}
 
 
 \begin{warn}
@@ -264,7 +262,7 @@ La conséquence peut ici être un ralentissement du système. En effet, le coura
 
 \begin{marginfigure}
 \centering
-\includegraphics[width=3.5cm]{seuil}
+\includegraphics[width=\linewidth]{seuil}
 Paramètres : valeur mini et valeur maxi
 \end{marginfigure}
 
