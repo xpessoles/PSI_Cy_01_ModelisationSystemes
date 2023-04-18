@@ -185,7 +185,9 @@ Deux solutions s'offrent alors à nous : linéariser le fonctionnement ou modél
 Les modèles causaux sont par essence linéaire. Cependant, il est possible d'intégrer des non-linéarités modélisables relativement simplement (seuil, saturation, hystérésis). Il est en revanche plus délicat de modéliser les non linéarités géométriques des mécanismes. 
 En revanche dans les modèles acausaux, la passerelle entre SolidWorks et Matlab, permet par exemple de modéliser des systèmes mécaniques non linéaires.
 
-\textbf{Attention : l'analyse fréquentielle d'un système non linéaire n'a pas (peu ?) de sens, même s'il est possible d'effectuer un diagramme de Bode, notamment avec Matlab...}
+\begin{warn}
+Attention : l'analyse fréquentielle d'un système non linéaire n'a pas (peu ?) de sens, même s'il est possible d'effectuer un diagramme de Bode, notamment avec Matlab...
+\end{warn}
 
 \subsection{Linéarisation}
 Lorsqu'un système est non linéaire, il peut être possible de le linéariser. Cela signifie que \textbf{localement} (sur un certain intervalle) on approxime le comportement du système par une droite. On conséquence, on conserve la validité de notre modélisation de type SLCI. Cependant, il faut faire attention à la zone de validité du modèle : si le comportement du système est fortement linéaire la linéarisation ne sera valable que dans une certaine zone.
@@ -243,18 +245,12 @@ De même, suivant la charge agissant sur un système (charge électrique ou méc
 
 \includegraphics[width=\linewidth]{Modele_MCC_sat}
 \end{marginfigure}
-\begin{exemple}[title=Exemple] ~\\
+\begin{exemple}[title=Exemple] 
 
-%\begin{minipage}[c]{.48\linewidth}
 Prenons par exemple le cas du moteur à continu du Maxpid dont la modélisation est (ou devrait être)  bien connue. Sollicitons le moteur par un échelon de tension et observons les signaux que nous ne regardons peut être pas toujours, par exemple le courant. 
 Au démarrage du moteur, si on néglige la bobine et qu'on néglige l'existence d'une tension dans la boucle de retour, le courant initial est de l'ordre de $\dfrac{U}{R}\simeq \dfrac{48}{2}=\SI{24}{A}$. Pour certain système ce courant peut détériorer des composants. Afin de limiter le courant, des saturateurs permettant d'éviter de dépasser certaines intensités. 
 
 La conséquence peut ici être un ralentissement du système. En effet, le courant << plafonnant >>, l'accélération n'est pas aussi forte qu'on l'attendrait. En conséquence, le système est moins rapide. 
-%\end{minipage}
-%\hfill
-%\begin{minipage}[c]{.48\linewidth}
-
-%\end{minipage}
 
 \end{exemple}
 
