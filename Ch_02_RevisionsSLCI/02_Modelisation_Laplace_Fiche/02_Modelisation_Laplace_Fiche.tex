@@ -5,7 +5,7 @@
 \section{Modéliser les systèmes asservis -- Transformée de Laplace}[Transformée de Laplace]
 \subsection{Définitions}
 
-\begin{defi} \textbf{\textsf{Conditions de Heavisde -- Fonction causale -- Conditions initiales nulles}} 
+\begin{defi} [Conditions de Heavisde -- Fonction causale -- Conditions initiales nulles] 
 
 Une fonction temporelle $f(t)$ vérifie les conditions de Heaviside lorsque les dérivées successives nécessaires à la résolution de l'équation différentielle sont nulles pour $t={0^{+}}$ :
 $$
@@ -14,7 +14,7 @@ $$
 On parle de conditions initiales nulles.
 \end{defi}
 
-\begin{defi} \textbf{\textsf{Transformée de Laplace}}
+\begin{defi} [Transformée de Laplace]
 À toute fonction du temps $f(t)$, nulle pour $t\leq0$ (fonction causale), on fait correspondre une fonction $F(p)$ de la variable complexe $p$ telle que :
 $$
 \mathcal{L}\left[f(t)\right] = F(p)=\int\limits_{0^{+}}^\infty f(t)e^{-pt}\text{d}t.
@@ -33,7 +33,7 @@ $\mathcal{L}\left[\theta(t)\right] = \Theta(p)$ ...
 
 \marginnote{En dehors des conditions de Heaviside, la transformée de Laplace d'une dérivée première est donnée par $\mathcal{L}\left[ \dfrac{\dd f(t)}{\dd t}\right] =pF(p)-f(0^+)$.}
 
-\begin{resultat} \textbf{\textsf{Dérivation}}
+\begin{resultat} [Dérivation]
 %La transformée de Laplace d'une dérivée seconde est donnée par : 
 %$\mathcal{L}\left[ \dfrac{\d^2f(t)}{\d t^2}\right] =p^2F(p)-pf(0^+)-\dfrac{\d f(0^+)}{\d t}$
 
@@ -45,8 +45,6 @@ $\mathcal{L}\left[ \dfrac{\text{\textbf{d}}^nf(t)}{\text{\textbf{d}} t^n}\right]
 \end{resultat}
 
 
-\begin{defi} \textbf{\textsf{Transformées usuelles}}
-\end{defi}
 
 \begin{table*}[!h]
 \centering
@@ -92,22 +90,23 @@ $f(t)=t^ne^{-at}u(t)$ & $F(p)=\dfrac{n!}{\left( p+a\right)^{n+1}}$
 
 \subsection{Théorèmes}
 
-\begin{theorem} \textbf{\textsf{Théorème de la valeur initiale }}~\\
+\begin{multicols}{2}
+\begin{theoreme}[Valeur initiale]
 $$ \lim\limits_{t \to 0^+} f(t) = \lim\limits_{p\in\mathbb{R}, p \to \infty} pF(p)$$
-\end{theorem} 
+\end{theoreme} 
 
-\begin{theorem} \textbf{\textsf{Théorème de la valeur finale}} ~\\
+\begin{theoreme}[Valeur finale]
 $$\lim\limits_{t \to \infty} f(t) = \lim\limits_{p\in\mathbb{R}, p \to 0} pF(p)$$
-\end{theorem} 
+\end{theoreme} 
 
-\begin{theorem} \textbf{\textsf{Théorème du retard}} ~\\
+\begin{theoreme}[Retard]
 $$\mathcal{L}\left[ f\left(t-t_0\right) \right] = e^{-t_0 p}F(p)$$
-\end{theorem} 
+\end{theoreme} 
 
-\begin{theorem} \textbf{\textsf{Théorème de l'amortissement}} ~\\
+\begin{theoreme}[Amortissement]
 $$\mathcal{L} \left[ e^{-a t} f\left(t\right) \right] = F(p+a)$$
-\end{theorem} 
-
+\end{theoreme} 
+\end{multicols}
 
 
 
