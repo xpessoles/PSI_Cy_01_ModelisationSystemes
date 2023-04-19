@@ -75,7 +75,7 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 \end{tikzpicture}
 
 \end{marginfigure}
-\begin{resultat}\textbf{\textsf{\small -- Diagramme de Bode d'un gain pur}} 
+\begin{resultat}[Diagramme de Bode d'un gain pur]
 \begin{itemize}
 \item Fonction de transfert : $H(p)=K$.
 \item Diagramme de gain : droite horizontale d'ordonnée $20 \log K$.
@@ -105,7 +105,7 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 \end{tikzpicture}
 \end{marginfigure}
 
-\begin{resultat}\textbf{\textsf{\small -- Diagramme de Bode d'un intégrateur}}
+\begin{resultat}[Diagramme de Bode d'un intégrateur]
 \begin{itemize}
 \item Fonction de transfert : $H(p)=\dfrac{K}{p}$.
 \item Diagramme de gain asymptotique : droite de pente $-{20}\text{dB/decade}$ passant par le point $(1,20\log K)$.
@@ -138,7 +138,7 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 \end{tikzpicture}
 \end{marginfigure}
 
-\begin{resultat}\textbf{\textsf{\small -- Diagramme de Bode d'un dérivateur}}
+\begin{resultat}[Diagramme de Bode d'un dérivateur]
 \begin{itemize}
 \item Fonction de transfert : $H(p)={K}{p}$.
 \item Diagramme de gain asymptotique : droite de pente ${20}\text{dB/decade}$ passant par le point $(1,20\log K)$.
@@ -179,7 +179,7 @@ semilog label y/.style={semilog lines,right,font=\tiny}
 \end{tikzpicture}
 \end{marginfigure}
 
-\begin{resultat}\textbf{\textsf{\small -- Diagramme de Bode d'un système du premier ordre}} 
+\begin{resultat}[Diagramme de Bode d'un système du premier ordre]
 \begin{itemize}
 \item Fonction de transfert : $H(p)=\dfrac{K}{1+\tau p}$.
 \item Diagramme de gain asymptotique : 
@@ -221,7 +221,7 @@ semilog label y/.style={semilog lines,right,font=\tiny}
 \end{tikzpicture}
 \end{marginfigure}
 
-\begin{resultat}\textbf{\textsf{\small -- Diagramme de Bode d'un système du deuxième ordre}} 
+\begin{resultat}[Diagramme de Bode d'un système du deuxième ordre]
 \begin{itemize}
 \item Fonction de transfert : $H(p)=\dfrac{K}{1+\dfrac{2\xi}{\omega_0}+\dfrac{p^2}{\omega_0^2}}$.
 \end{itemize}
@@ -246,8 +246,7 @@ Dans le \textbf{cas où $\xi>1$}, le dénominateur admet deux racines (à partie
 \end{resultat}
 
 
-\begin{resultat}
-\textbf{Phénomène de résonance}
+\begin{resultat}[Phénomène de résonance]
 
 Le phénomène de résonance s'observe lorsque $\xi<\dfrac{\sqrt{2}}{2}$. La pulsation de résonance est inférieure à la pulsation propre du système :
 $\omega_r = \omega_0\sqrt{1-2\xi^2}$.
@@ -276,7 +275,7 @@ $A_{\text{max}} = \dfrac{K}{2\xi\sqrt{1-\xi^2}}.$
 \end{tikzpicture}
 \end{marginfigure}
 
-\begin{resultat}\textbf{\textsf{\small -- Diagramme de Bode d'un retard pur}}
+\begin{resultat}[Diagramme de Bode d'un retard pur]
 \begin{itemize}
 \item Fonction de transfert : $H(p)=e^{-Tp}$.
 \item Diagramme de gain asymptotique : gain nul.
@@ -287,19 +286,20 @@ $A_{\text{max}} = \dfrac{K}{2\xi\sqrt{1-\xi^2}}.$
 
 \subsection{Tracé du diagramme de Bode}
 
-\begin{methode} \textbf{Méthode 1 : sommation dans le diagramme de Bode}
+\begin{methode}[Méthode 1 : sommation dans le diagramme de Bode]
 \begin{enumerate}
 \item décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus);
 \item tracer chacune des fonctions de transfert;
 \item sommer les tracés dans le diagramme de gain et dans le diagramme des phases.
 \end{enumerate}
-\textbf{Méthode 2 : tableau de variations}
+\end{methode}
+
+\begin{methode}[Méthode 2 : tableau de variations]
 \begin{enumerate}
 \item décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus);
 \item réaliser un tableau de variation : pour chacune des fonctions élémentaires, donner les pulsations de coupure et les pentes;
 \item sommer les pentes;
 \item tracer le diagramme de Bode.
 \end{enumerate}
-
 \end{methode}
 

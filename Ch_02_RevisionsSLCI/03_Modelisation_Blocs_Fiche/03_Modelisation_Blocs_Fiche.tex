@@ -7,7 +7,7 @@
 %\item Une
 %\end{itemize}
 
-\begin{defi} \textbf{\textsf{Fonction de transfert -- Transmittance}} ~\\
+\begin{defi}[Fonction de transfert -- Transmittance]
 Soit un système linéaire continu linéaire invariant dont on note le signal d'entrée $e$ et le signal de sortie $s$, régit par une équation différentielle à coefficient constants. Dans le domaine de Laplace et sous les conditions de Heaviside, on définit la fonction de transfert du système par la fonction $H$ telle que : 
 $$
 H(p)
@@ -17,7 +17,7 @@ H(p)
 $$
  \end{defi}
 
-\begin{defi} \textbf{\textsf{Classe, ordre, pôles et zéros}} ~\\
+\begin{defi}[Classe -- ordre -- pôles -- zéros]
 $H(p)$ est une fonction rationnelle en $p$. En factorisant le numérateur et le
 dénominateur, $H(p)$ peut s'écrire sous cette forme :
 $$
@@ -56,7 +56,7 @@ système.
 \end{tikzpicture} 
 \end{marginfigure}
 
-\begin{defi} \textbf{\textsf{Modélisation d'un bloc}}~\\
+\begin{defi}[Modélisation d'un bloc]
 
 Soit un système d'entrée $E(p)$, de sortie $S(p)$, caractérisé par une fonction
 de transfert $H(p)$. Ce système est alors représenté par le schéma bloc ci-contre.
@@ -80,7 +80,7 @@ $$
 \end{tikzpicture} }
 \end{marginfigure}
 
-\begin{defi} \textbf{\textsf{Modélisation d'un comparateur}} ~\\
+\begin{defi}[Modélisation d'un comparateur]
 Soit l'équation $S(p)=E_1(p)-E_2(p)$. Cette équation se traduit par le schéma ci-contre.
 \end{defi}
 
@@ -92,7 +92,7 @@ Soit l'équation $S(p)=E_1(p)-E_2(p)$. Cette équation se traduit par le schéma
 Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une partie du schéma, les grandeurs d'entrée et de sortie sont identiques avant et après la transformation.
 \end{warn}
 
-\begin{resultat} \textbf{\textsf{Blocs en série}}~\\
+\begin{resultat}[Blocs en série]
 
 \vspace{-.6cm}
 \begin{center}
@@ -123,7 +123,7 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 \end{resultat}
 
 
-\begin{resultat} \textbf{\textsf{Blocs en parallèle}} ~\\
+\begin{resultat}[Blocs en parallèle]
 
 \vspace{-.6cm}
 
@@ -161,7 +161,7 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 \end{resultat}
 
 
-\begin{resultat} \textbf{\textsf{Réduction de boucle -- À MAITRISER PARFAITEMENT}} ~\\
+\begin{resultat}[Réduction de boucle -- À MAITRISER PARFAITEMENT]
 
 \vspace{-.6cm}
 
@@ -209,7 +209,7 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 \end{resultat}
 
 
-\begin{resultat} \textbf{\textsf{Comparateurs en série}}~\\
+\begin{resultat}[Comparateurs en série]
 
 \vspace{-.6cm}
 
@@ -255,7 +255,7 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 \end{resultat}
 
 
-\begin{resultat} \textbf{\textsf{Point de prélèvement}} ~\\
+\begin{resultat}[Point de prélèvement]
 
 \vspace{-.6cm}
 
@@ -324,7 +324,7 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 \end{tikzpicture}}
 \end{marginfigure}
 
-\begin{defi} \textbf{\textsf{Fonction de transfert en boucle fermée -- FTBF}} ~\\
+\begin{defi}[Fonction de transfert en boucle fermée -- FTBF]
 \textit{Formule de Black}
 
 $$H(p)=\dfrac{S(p)}{E(p)}=\dfrac{H_1(p)}{1+H_1(p)H_2(p)}$$
@@ -349,7 +349,7 @@ $$H(p)=\dfrac{S(p)}{E(p)}=\dfrac{H_1(p)}{1+H_1(p)H_2(p)}$$
 %\end{tikzpicture}
 %\end{marginfigure}
 
-\begin{defi} \textbf{\textsf{Fonction de transfert en boucle ouverte -- FTBO}}~\\
+\begin{defi}[Fonction de transfert en boucle ouverte -- FTBO]
 
 $$\text{FTBO}(p)=\dfrac{R(p)}{\varepsilon(p)}=H_1(p) H_2(p)$$
 
@@ -367,7 +367,7 @@ $$\text{FTBO}(p)=\dfrac{R(p)}{\varepsilon(p)}=H_1(p) H_2(p)$$
 %\end{defi}
 %
 
-\begin{defi} \textbf{\textsf{Théorème de superposition}}~\\
+\begin{defi}[Théorème de superposition]
 Soit un système d'entrées $E_1$ et $E_2$ et de sortie $S$. On note $H_1=\dfrac{S}{E_1}$ lorsque $E_2$ est nulle et $H_2=\dfrac{S}{E_2}$ lorsque $E_1$ est nulle. En superposant, on a alors : $S=H_1 E_1 + H_2 E_2$.
 \end{defi}
 
