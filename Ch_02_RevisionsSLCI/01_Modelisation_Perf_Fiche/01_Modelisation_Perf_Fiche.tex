@@ -6,7 +6,10 @@
 
 \subsection{Définitions}
 
-\begin{defi}\textbf{Informations analogiques et numériques}
+
+\begin{defi}[Informations analogiques et numériques] 
+
+%\textbf{}
 \begin{itemize}%[label=\ding{112},font=\color{bleuxp}] 
 \item Une information analogique peut prendre, de manière continue, toutes les valeurs
 possibles dans un intervalle donné. Un signal analogique peut être représenté
@@ -28,7 +31,8 @@ analogique. On parle de conversion analogique numérique (CAN).
 \includegraphics[width=\linewidth]{Systeme_Asservi}
 \end{marginfigure}
 
-\begin{defi}\textbf{Systèmes automatiques ou asservis}
+
+\begin{defi}[Systèmes automatiques ou asservis]
 
 Un système asservi est commandé par \textbf{une (ou des) entrée(s)} qu'il
 transforme en \textbf{grandeur(s) de sortie}.
@@ -45,7 +49,7 @@ permet de juger de la qualité de la tâche accomplie.
 
 
 
-\begin{defi}\textbf{Systèmes suiveurs et régulateurs} 
+\begin{defi}[Systèmes suiveurs et régulateurs]
 \begin{itemize}
 \item Pour un système suiveur la consigne $e(t)$ fluctue au cours du temps. Le système doit faire son possible pour qu'à chaque instant la cible soit suivie.
 \item Pour un système régulateur la consigne $e(t)$ est constante. Les perturbations font varier la position du système. Il doit donc de façon automatique revenir à la position commandée.
@@ -65,17 +69,18 @@ permet de juger de la qualité de la tâche accomplie.
 \end{marginfigure}
 
 \subsection{Performance des systèmes -- Critères graphiques}
-\begin{defi}\textbf{Précision en position -- Écart statique $\varepsilon_S$}
+
+\begin{defi}[Précision en position -- Écart statique $\varepsilon_S$]
 
 Le système est piloté par un échelon. On définit alors l'écart statique $\varepsilon_S$ comme l'écart entre la consigne fixe et la réponse $s(t)$ en régime permanent.
 \end{defi}
 
-\begin{defi}\textbf{Précision en vitesse $\varepsilon_V$}
+\begin{defi}[Précision en vitesse $\varepsilon_V$]
 
 Encore appelé écart de traînage ou écart de poursuite, il représente la différence entre une consigne variable de type rampe et la réponse en régime permanent. 
 \end{defi}
 
-\begin{defi}\textbf{Rapidité}
+\begin{defi}[Rapidité]
 
 La rapidité est caractérisée par le temps que met le système à réagir à une
 variation brusque de la grandeur d'entrée (temps de réponse). Cette notion est
@@ -88,7 +93,7 @@ fortement liée à la notion de précision dynamique.
 \end{marginfigure}
 
 
-\begin{methode}\textbf{Détermination du temps de réponse à $n\%$} (En pratique $n=5$).
+\begin{methode}[Détermination du temps de réponse 5\,\%]% à $n\%$ (En pratique $n=5$)]
 
 \begin{enumerate}
  \item Tracer sur le même graphe la consigne $e(t)$ et la réponse du système
@@ -108,7 +113,7 @@ n'en sort plus.
 \caption{Performances sur une réponse à un échelon.}
 \end{figure}
 
-\begin{defi}\textbf{Stabilité}
+\begin{defi}[Stabilité]
 
 La stabilité traduit la propriété de convergence temporelle asymptotique vers
 un état d'équilibre. 
