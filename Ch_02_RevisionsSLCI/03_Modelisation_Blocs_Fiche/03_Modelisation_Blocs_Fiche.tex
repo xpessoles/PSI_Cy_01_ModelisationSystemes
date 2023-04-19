@@ -67,6 +67,7 @@ $$
 \end{defi}
 
 \begin{marginfigure}
+\resizebox{\columnwidth}{!}{
 \begin{tikzpicture}
 \sbEntree{E}
 \sbComp{cp}{E}
@@ -76,7 +77,7 @@ $$
 \sbDecaleNoeudy[4]{S}{n}
 \sbDecaleNoeudx[-14]{n}{n2}
 \sbRelierxy[$E_2(p)$]{n2}{cp}
-\end{tikzpicture} 
+\end{tikzpicture} }
 \end{marginfigure}
 
 \begin{defi} \textbf{\textsf{Modélisation d'un comparateur}} ~\\
@@ -305,6 +306,7 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 
 
 \begin{marginfigure}
+\resizebox{\columnwidth}{!}{
 \begin{tikzpicture}
 \sbEntree{E}
 \sbComp{cp}{E}
@@ -319,9 +321,9 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsque on modifie une par
 \sbBloc{sys2}{$H_2(p) $}{n2}
 \sbRelierxy[$R(p)$]{sys2}{cp}
 \sbRelieryx{sys-S}{sys2}
-\end{tikzpicture}
-
+\end{tikzpicture}}
 \end{marginfigure}
+
 \begin{defi} \textbf{\textsf{Fonction de transfert en boucle fermée -- FTBF}} ~\\
 \textit{Formule de Black}
 
@@ -329,23 +331,23 @@ $$H(p)=\dfrac{S(p)}{E(p)}=\dfrac{H_1(p)}{1+H_1(p)H_2(p)}$$
 \end{defi}
 
 
-\begin{marginfigure}
-\begin{tikzpicture}
-\sbEntree{E}
-\sbComp{cp}{E}
-\sbRelier[$E(p)\quad $]{E}{cp}
-\sbBloc[4]{sys}{$H_1(p) $}{cp}
-\sbRelier[$\varepsilon(p)$]{cp}{sys}
-\sbSortie[4]{S}{sys} 
-\sbRelier[$\quad S(p)$]{sys}{S}
-
-\sbDecaleNoeudy[4]{cp}{n}
-\sbDecaleNoeudx[2]{n}{n2}
-\sbBloc{sys2}{$H_2(p) $}{n2}
-\sbRelierxy[$R(p)$]{sys2}{cp}
-\sbRelieryx{sys-S}{sys2}
-\end{tikzpicture}
-\end{marginfigure}
+%\begin{marginfigure}
+%\begin{tikzpicture}
+%\sbEntree{E}
+%\sbComp{cp}{E}
+%\sbRelier[$E(p)\quad $]{E}{cp}
+%\sbBloc[4]{sys}{$H_1(p) $}{cp}
+%\sbRelier[$\varepsilon(p)$]{cp}{sys}
+%\sbSortie[4]{S}{sys} 
+%\sbRelier[$\quad S(p)$]{sys}{S}
+%
+%\sbDecaleNoeudy[4]{cp}{n}
+%\sbDecaleNoeudx[2]{n}{n2}
+%\sbBloc{sys2}{$H_2(p) $}{n2}
+%\sbRelierxy[$R(p)$]{sys2}{cp}
+%\sbRelieryx{sys-S}{sys2}
+%\end{tikzpicture}
+%\end{marginfigure}
 
 \begin{defi} \textbf{\textsf{Fonction de transfert en boucle ouverte -- FTBO}}~\\
 

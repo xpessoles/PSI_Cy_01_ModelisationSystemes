@@ -1,17 +1,18 @@
-\section{Modélisation des systèmes du premier et du deuxième ordre}
+\section{Modélisation des systèmes du premier et du deuxième ordre}[Systèmes d'ordre 1 \& 2]
 
 
 \subsection{Systèmes d'ordre 1}
 
 
 \begin{marginfigure}
+\resizebox{\linewidth}{!}{
 \begin{tikzpicture}
 \sbEntree{E}
 \sbBloc[5]{B1}{$H(p)=\dfrac{K}{1+\tau p}$}{E}
 \sbSortie[5]{S}{B1}
 \sbRelier[$E(p)$]{E}{B1}
 \sbRelier[$S(p)$]{B1}{S}
-\end{tikzpicture}
+\end{tikzpicture}}
 \end{marginfigure}
 
 \begin{defi}{Système d'ordre 1}
@@ -41,7 +42,8 @@ On note :
 \includegraphics[width=\linewidth]{fig_01}
 \end{marginfigure}
 
-\begin{resultat} \textbf{\textsf{\small -- Réponse à un échelon d'un système du premier ordre}} ~\\
+\begin{resultat} \textbf{Réponse à un échelon d'un système du premier ordre}
+
 On appelle réponse à un échelon, l'expression de la sortie $s$ lorsque on soumet le système à un échelon d'amplitude $E_0$. Lorsque $E_0=1$ ($1/p$ dans le domaine de Laplace) on parle de \textbf{réponse indicielle}.
 Ainsi, dans le domaine de Laplace :
 $$
@@ -96,13 +98,14 @@ Les caractéristiques de la courbe sont les suivantes :
 
 
 \begin{marginfigure}
+\resizebox{\columnwidth}{!}{
 \begin{tikzpicture}
 \sbEntree{E}
 \sbBloc[5]{B1}{$\dfrac{K}{1+ \dfrac{2\xi}{\omega_0}p+\dfrac{p^2}{\omega_0^2}}$}{E}
 \sbSortie[5]{S}{B1}
 \sbRelier[$E(p)$]{E}{B1}
 \sbRelier[$S(p)$]{B1}{S}
-\end{tikzpicture}
+\end{tikzpicture}}
 \end{marginfigure}
 
 \begin{defi}{Systèmes d'ordre 2}

@@ -153,7 +153,15 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 \begin{marginfigure}
 \begin{tikzpicture}[xscale=7/6]
 \begin{scope}[yscale=3/50]
+\tikzset{
+semilog lines/.style={thin, gray}, 
+semilog lines 2/.style={semilog lines,gray!50},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny},
+semilog label y/.style={semilog lines,right,font=\tiny}
+}
 \semilog{-2}{2}{0}{30}
+
 \BodeAmp[cyan,thin,samples=100]{-2:2}{\POAmpAsymp{20}{0.2}}
 \BodeAmp[cyan,thick]{-2:2}{\POAmp{20}{0.2}}
 \draw (-1,28) node {\footnotesize $20\log K$, 0 dB/d\'ecade};
