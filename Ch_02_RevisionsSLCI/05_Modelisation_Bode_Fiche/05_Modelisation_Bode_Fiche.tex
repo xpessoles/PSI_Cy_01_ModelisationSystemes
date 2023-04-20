@@ -54,10 +54,17 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 \begin{marginfigure}
 \centering
 \begin{tikzpicture}[xscale=7/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,gray!50},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
 \begin{scope}[yscale=3/50]
 \semilog{-2}{2}{0}{20}
 %\BodeAmp[cyan,thin,samples=100]{-2:2}{\POAmpAsymp{20}{0.2}}
-\BodeAmp[cyan,thick]{-2:2}{\KAmp{2}}
+\BodeAmp[thick,cyan]{-2:2}{\KAmp{100}}
 
 \draw (0,8) node [above] {\footnotesize $20 \log K$};
 %\draw (1.7,20) node {\footnotesize $-$20 dB/d\'ecade};
@@ -87,6 +94,13 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 
 \begin{marginfigure}
 \begin{tikzpicture}[xscale=7/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxp},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny},
+semilog label y/.style={semilog lines,right,font=\tiny}
+}
 \begin{scope}[yscale=3/300]
 \OrdBode{30}
 \semilog{-2}{2}{-60}{60}
@@ -154,8 +168,8 @@ On note $H(p)=G_1(p)G_2(p)$. On a :
 \begin{tikzpicture}[xscale=7/6]
 \begin{scope}[yscale=3/50]
 \tikzset{
-semilog lines/.style={thin, gray}, 
-semilog lines 2/.style={semilog lines,gray!50},
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxp!50},
 semilog half lines/.style={semilog lines 2,dotted },
 semilog label x/.style={semilog lines,below,font=\tiny},
 semilog label y/.style={semilog lines,right,font=\tiny}
@@ -286,7 +300,7 @@ $A_{\text{max}} = \dfrac{K}{2\xi\sqrt{1-\xi^2}}.$
 
 \subsection{Tracé du diagramme de Bode}
 
-\begin{methode}[Méthode 1 : sommation dans le diagramme de Bode]
+\begin{methode}[1 : sommation dans le diagramme de Bode]
 \begin{enumerate}
 \item décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus);
 \item tracer chacune des fonctions de transfert;
@@ -294,7 +308,7 @@ $A_{\text{max}} = \dfrac{K}{2\xi\sqrt{1-\xi^2}}.$
 \end{enumerate}
 \end{methode}
 
-\begin{methode}[Méthode 2 : tableau de variations]
+\begin{methode}[2 : tableau de variations]
 \begin{enumerate}
 \item décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus);
 \item réaliser un tableau de variation : pour chacune des fonctions élémentaires, donner les pulsations de coupure et les pentes;
