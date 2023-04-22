@@ -20,8 +20,9 @@ On a par ailleurs :
 
 Une étude harmonique consiste en solliciter le système par des sinusoïdes de pulsations différentes et d'observer son comportement en régime permanent. Le diagramme de Bode est constitué d'un diagramme de gain (rapport des amplitudes des sinus en régime permanent) et d'un diagramme de phase (déphasage des sinus en régime permanent). 
 
-\begin{defi}
-Soit $H(p)$ une fonction de transfert. On pose $p=j\omega$ et on note :  \begin{itemize}
+\begin{defi}[Gain \& Phase]
+Soit $H(p)$ une fonction de transfert. On pose $p=j\omega$ et on note :  
+\begin{itemize}
 \item $H_{\text{dB}}\left( \omega\right) =20\log |H(j\omega)|$ le gain décibel de la fonction de transfert;
 \item $\varphi\left( \omega\right) = \text{Arg}\left(H(j\omega) \right)$.
 \end{itemize}
@@ -63,45 +64,18 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 }
 \begin{scope}[yscale=3/50]
 \semilog{-2}{2}{0}{20}
-%\BodeAmp[cyan,thin,samples=100]{-2:2}{\POAmpAsymp{20}{0.2}}
-\BodeAmp[thick,cyan]{-2:2}{\KAmp{2}}
+\BodeAmp[ultra thick,orangexp]{-2:2}{\KAmp{2}}
 
 \draw (0,8) node [above] {\footnotesize $20 \log K$};
-%\draw (1.7,20) node {\footnotesize $-$20 dB/d\'ecade};
-%\draw [dashed,black] (.7,0) -- (.7,25);
-%\draw (.7,0)  node {\Huge $\cdot$} node [above right]{\footnotesize $\dfrac{1}{\tau}$};
 \end{scope}
-\begin{scope}[yshift=-1.5cm,yscale=1/50]
+\begin{scope}[yshift=-1.2cm,yscale=1/50]
 \UniteDegre
 \OrdBode{30}
 \semilog{-2}{2}{-30}{30}
-\draw [thick,cyan] (-2,0) -- (2,0) node [above,midway,black]{\footnotesize 0\degre};
-%\BodeArg[cyan,samples=100,thin]{-2:2}{\POArgAsymp{20}{0.2}}
-%%\BodeArg[cyan,thick]{-2:2}{\POArg{20}{0.2}}
+\draw [ultra thick,orangexp] (-2,0) -- (2,0) node [above,midway,black]{\footnotesize 0\degre};
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
-
-\begin{tikzpicture}[xscale=12/6]
-\tikzset{
-semilog lines/.style={thin, bleuxp}, 
-semilog lines 2/.style={semilog lines,bleuxpc},
-semilog half lines/.style={semilog lines 2,dotted },
-semilog label x/.style={semilog lines,below,font=\tiny,black},
-semilog label y/.style={semilog lines,right,font=\tiny,black}
-}
-\begin{scope}[yscale=3/50]
-\semilog{-2}{2}{0}{20}
-\BodeAmp[thick,cyan]{-2:2}{\KAmp{10}}
-\draw (0,8) node [above] {\footnotesize $20 \log K$};
-\end{scope}
-\begin{scope}[yshift=-1cm,yscale=1/50]
-\UniteDegre
-\OrdBode{30}
-\semilog{-2}{2}{-30}{30}
-\draw [thick,cyan] (-2,0) -- (2,0) node [above,midway,black]{\footnotesize 0\degre};
-\end{scope}
-\end{tikzpicture}
 
 
 
@@ -119,25 +93,25 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \begin{tikzpicture}[xscale=7/6]
 \tikzset{
 semilog lines/.style={thin, bleuxp}, 
-semilog lines 2/.style={semilog lines,bleuxp},
+semilog lines 2/.style={semilog lines,bleuxpc},
 semilog half lines/.style={semilog lines 2,dotted },
-semilog label x/.style={semilog lines,below,font=\tiny},
-semilog label y/.style={semilog lines,right,font=\tiny}
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
 }
 \begin{scope}[yscale=3/300]
-\OrdBode{30}
-\semilog{-2}{2}{-60}{60}
-\BodeAmp[cyan,thick]{-2:2}{\IntAmp{10}}
+\OrdBode{40}
+\semilog{-2}{2}{-20}{60}
+\BodeAmp[orangexp,ultra thick]{-2:2}{\IntAmp{10}}
 %\draw (-1,28) node {\footnotesize $20\log K$, 0 dB/d\'ecade};
 \draw (0,20) node [above right] {\footnotesize $(1,20\log K)$};
 \draw (0,20) node {\huge $\cdot$};
 %\draw (.7,0)  node {\Huge $\cdot$} node [above right]{\footnotesize $\dfrac{1}{\tau}$};
 \end{scope}
-\begin{scope}[yshift=-1cm,yscale=1/70]
+\begin{scope}[yshift=-1.2cm,yscale=1/70]
 \UniteDegre
-\OrdBode{30}
+\OrdBode{45}
 \semilog{-2}{2}{-90}{0}
-\BodeArg[cyan,thick]{-2:2}{\IntArg{10}}
+\BodeArg[orangexp,ultra thick]{-2:2}{\IntArg{10}}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
@@ -156,11 +130,18 @@ semilog label y/.style={semilog lines,right,font=\tiny}
 
 \begin{marginfigure}
 \begin{tikzpicture}[xscale=7/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
 \begin{scope}[yscale=3/300]
 \OrdBode{30}
 \semilog{-2}{2}{-30}{90}
 
-\BodeAmp[cyan,thick]{-2:2}{\KAmp{10}-\IntAmp{1}}
+\BodeAmp[orangexp,ultra thick]{-2:2}{\KAmp{10}-\IntAmp{1}}
 %\draw (-1,28) node {\footnotesize $20\log K$, 0 dB/d\'ecade};
 \draw (0,20) node [above left] {\footnotesize $(1,20\log K)$};
 \draw (0,20) node {\huge $\cdot$};
@@ -170,7 +151,7 @@ semilog label y/.style={semilog lines,right,font=\tiny}
 \UniteDegre
 \OrdBode{30}
 \semilog{-2}{2}{0}{90}
-\BodeArg[cyan,thick]{-2:2}{-\IntArg{10}}
+\BodeArg[orangexp,ultra thick]{-2:2}{-\IntArg{10}}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
@@ -189,29 +170,29 @@ semilog label y/.style={semilog lines,right,font=\tiny}
 
 \begin{marginfigure}
 \begin{tikzpicture}[xscale=7/6]
-\begin{scope}[yscale=3/50]
 \tikzset{
 semilog lines/.style={thin, bleuxp}, 
-semilog lines 2/.style={semilog lines,bleuxp!50},
+semilog lines 2/.style={semilog lines,bleuxpc},
 semilog half lines/.style={semilog lines 2,dotted },
-semilog label x/.style={semilog lines,below,font=\tiny},
-semilog label y/.style={semilog lines,right,font=\tiny}
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
 }
+\begin{scope}[yscale=3/50]
 \semilog{-2}{2}{0}{30}
 
-\BodeAmp[cyan,thin,samples=100]{-2:2}{\POAmpAsymp{20}{0.2}}
-\BodeAmp[cyan,thick]{-2:2}{\POAmp{20}{0.2}}
+\BodeAmp[orangexp,thin,samples=100]{-2:2}{\POAmpAsymp{20}{0.2}}
+\BodeAmp[orangexp,ultra thick]{-2:2}{\POAmp{20}{0.2}}
 \draw (-1,28) node {\footnotesize $20\log K$, 0 dB/d\'ecade};
 \draw (1.7,20) node {\footnotesize $-$20 dB/d\'ecade};
-\draw [dashed,ultra thick,black] (.7,0) -- (.7,25);
+\draw [dashed,thick,bleuxp] (.7,0) -- (.7,25);
 \draw (.7,0)  node {\Huge $\cdot$} node [above right]{\footnotesize $\dfrac{1}{\tau}$};
 \end{scope}
 \begin{scope}[yshift=-0.5cm,yscale=1/50]
 \UniteDegre
 \OrdBode{30}
 \semilog{-2}{2}{-90}{0}
-\BodeArg[cyan,samples=100,thin]{-2:2}{\POArgAsymp{20}{0.2}}
-\BodeArg[cyan,thick]{-2:2}{\POArg{20}{0.2}}
+\BodeArg[orangexp,samples=100,thin]{-2:2}{\POArgAsymp{20}{0.2}}
+\BodeArg[orangexp,ultra thick]{-2:2}{\POArg{20}{0.2}}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
@@ -238,22 +219,29 @@ semilog label y/.style={semilog lines,right,font=\tiny}
 
 \begin{marginfigure}
 \begin{tikzpicture}[xscale=7/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
 \begin{scope}[yscale=3/150]
 \OrdBode{20}
 \semilog{-2}{2}{-60}{40}
-\BodeAmp[cyan,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
-\BodeAmp[cyan,thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
+\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
+\BodeAmp[orangexp,thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
 \draw (-1.5,28) node {\footnotesize $20\log K$};
 \draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
-\draw [dashed,ultra thick,black] (-.08,-60) -- (-.08,25);
+\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
 \draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
 \end{scope}
-\begin{scope}[yshift=-1.5cm,yscale=1/90]
+\begin{scope}[yshift=-1.7cm,yscale=1/90]
 \UniteDegre
 \OrdBode{30}
 \semilog{-2}{2}{-180}{0}
-\BodeArg[cyan,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
-\BodeArg[cyan,thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+\BodeArg[orangexp,thick]{-2:2}{\SOArg{10}{0.2}{.9}}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
@@ -297,13 +285,20 @@ $A_{\text{max}} = \dfrac{K}{2\xi\sqrt{1-\xi^2}}.$
 
 \begin{marginfigure}
 \begin{tikzpicture}[xscale=7/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
 \begin{scope}[yscale=4/50]
 \UnitedB
 \OrdBode{5}
 \semilog{0}{3}{-10}{10}
 \BodeAmp{0:3}{\RetAmp{.08}}
 \end{scope}
-\begin{scope}[yshift=-1.8cm,yscale=4/180]
+\begin{scope}[yshift=-1.5cm,yscale=4/180]
 \UniteDegre
 \OrdBode{30}
 \semilog{0}{3}{-90}{0}
