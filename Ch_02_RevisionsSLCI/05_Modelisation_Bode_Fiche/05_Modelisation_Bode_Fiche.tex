@@ -6,17 +6,19 @@ On peut définir un signal sinusoïdal sous la forme $
 f(t)=A \sin(\omega \cdot t + \varphi)
 $ et on note :
 
+\marginnote{
+\begin{itemize}
+\item $T=\dfrac{2\pi}{\omega}$ : la période de la sinusoïde en $\text{s}$;
+\item $f=\dfrac{1}{T}$ : fréquence de la sinusoïde en $\text{Hz}$.
+\end{itemize}}
+
+
 \begin{itemize}
 \item $A$ : l'amplitude de la sinusoïde;
 \item $\omega$ : la pulsation en $\text{rad/s}$;
 \item $\varphi$ : la phase à l'origine en $\text{rad}$.
 \end{itemize}
 
-On a par ailleurs :
-\begin{itemize}
-\item $T=\dfrac{2\pi}{\omega}$ : la période de la sinusoïde en $\text{s}$;
-\item $f=\dfrac{1}{T}$ : fréquence de la sinusoïde en $\text{Hz}$.
-\end{itemize}
 
 Une étude harmonique consiste en solliciter le système par des sinusoïdes de pulsations différentes et d'observer son comportement en régime permanent. Le diagramme de Bode est constitué d'un diagramme de gain (rapport des amplitudes des sinus en régime permanent) et d'un diagramme de phase (déphasage des sinus en régime permanent). 
 
@@ -28,13 +30,13 @@ Soit $H(p)$ une fonction de transfert. On pose $p=j\omega$ et on note :
 \end{itemize}
 \end{defi}
 
-\begin{prop}
+\begin{resultat}
 On note $H(p)=G_1(p)G_2(p)$. On a :
 \begin{itemize}
 \item $H_{\text{dB}}\left( \omega\right) =G1_{\text{dB}}\left( \omega\right)+G2_{\text{dB}}\left( \omega\right)$;
 \item $\varphi\left( \omega\right)  =\text{Arg}\left(G1_{\text{dB}}\left( \omega\right)\right)+\text{Arg}\left(G2_{\text{dB}}\left( \omega\right)\right)$.
 \end{itemize}
-\end{prop}
+\end{resultat}
 %\begin{tikzpicture}[xscale=7/4]
 %\begin{scope}[yscale=3/40]
 %\semilog{-2}{2}{-20}{20}
@@ -230,7 +232,7 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \OrdBode{20}
 \semilog{-2}{2}{-60}{40}
 \BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
-\BodeAmp[orangexp,thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
+\BodeAmp[orangexp,ultra thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
 \draw (-1.5,28) node {\footnotesize $20\log K$};
 \draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
 \draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
@@ -238,10 +240,10 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \end{scope}
 \begin{scope}[yshift=-1.7cm,yscale=1/90]
 \UniteDegre
-\OrdBode{30}
+\OrdBode{45}
 \semilog{-2}{2}{-180}{0}
 \BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
-\BodeArg[orangexp,thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
@@ -296,13 +298,14 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \UnitedB
 \OrdBode{5}
 \semilog{0}{3}{-10}{10}
-\BodeAmp{0:3}{\RetAmp{.08}}
+\BodeAmp[orangexp,ultra thick]{0:3}{\RetAmp{.08}}
 \end{scope}
 \begin{scope}[yshift=-1.5cm,yscale=4/180]
 \UniteDegre
 \OrdBode{30}
 \semilog{0}{3}{-90}{0}
 %\BodeArg[samples=100]{0:3}{\RetArg{0.08}}%\RetArg{0.08}}
+\BodeArg[orangexp,ultra thick]{0:3}{\RetArg{0.08}}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
@@ -311,27 +314,27 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \begin{itemize}
 \item Fonction de transfert : $H(p)=e^{-Tp}$.
 \item Diagramme de gain asymptotique : gain nul.
-\item Diagramme de phase asymptotique : $\text{arg}\left( H(p) \right)=-\tau\omega$ \textit{... à tracer}.
+\item Diagramme de phase asymptotique : $\text{arg}\left( H(p) \right)=-\tau\omega$.
 \end{itemize}
 \end{resultat}
 
 
 \subsection{Tracé du diagramme de Bode}
 
-\begin{methode}[1 : sommation dans le diagramme de Bode]
+\begin{methode}[1 : Sommation dans le diagramme de Bode]
 \begin{enumerate}
-\item décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus);
-\item tracer chacune des fonctions de transfert;
-\item sommer les tracés dans le diagramme de gain et dans le diagramme des phases.
+\item Décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus).
+\item Tracer chacune des fonctions de transfert.
+\item Sommer les tracés dans le diagramme de gain et dans le diagramme des phases.
 \end{enumerate}
 \end{methode}
 
-\begin{methode}[2 : tableau de variations]
+\begin{methode}[2 : Tableau de variations]
 \begin{enumerate}
-\item décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus);
-\item réaliser un tableau de variation : pour chacune des fonctions élémentaires, donner les pulsations de coupure et les pentes;
-\item sommer les pentes;
-\item tracer le diagramme de Bode.
+\item Décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus).
+\item Réaliser un tableau de variation : pour chacune des fonctions élémentaires, donner les pulsations de coupure et les pentes.
+\item Sommer les pentes.
+\item Tracer le diagramme de Bode.
 \end{enumerate}
 \end{methode}
 

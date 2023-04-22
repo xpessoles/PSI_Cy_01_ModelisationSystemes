@@ -2,6 +2,19 @@
 \setchapterpreamble[u]{\margintoc}
 
 \chapter{Rappels sur la modélisation des systèmes asservis}
+
+\marginnote[5cm]{
+\UPSTIcompetence[2]{B2-04}
+\UPSTIcompetence[2]{B2-05}
+\UPSTIcompetence[2]{B2-06}
+\UPSTIcompetence[2]{B2-07}
+\UPSTIcompetence[2]{C1-01}
+\UPSTIcompetence[2]{C2-01}
+\UPSTIcompetence[2]{C2-02}
+\UPSTIcompetence[2]{C2-03}
+}
+
+
 \section{Définitions préliminaires et détermination des performances}[Premières définitions]
 
 \subsection{Définitions}
@@ -47,7 +60,17 @@ La sortie $s(t)$ est une grandeur \textbf{observable} (par des capteurs) qui
 permet de juger de la qualité de la tâche accomplie.
 \end{defi} 
 
+\vspace{.1cm}
 
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{suiveur}
+\caption{Système suiveur.}
+\end{marginfigure}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{regulateur}
+\caption{Système régulateur.}
+\end{marginfigure}
 
 \begin{defi}[Systèmes suiveurs et régulateurs]
 \begin{itemize}
@@ -56,27 +79,17 @@ permet de juger de la qualité de la tâche accomplie.
 \end{itemize}
 \end{defi}
 
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{suiveur}
-\caption{Système suiveur.}
-\end{marginfigure}
-
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{regulateur}
-\caption{Système régulateur.}
-\end{marginfigure}
+\vspace{.1cm}
 
 \subsection{Performance des systèmes -- Critères graphiques}
 
-\begin{defi}[Précision en position -- Écart statique $\varepsilon_S$]
+\vspace{.1cm}
 
+\begin{defi}[Précision en position -- Écart statique $\varepsilon_S$]
 Le système est piloté par un échelon. On définit alors l'écart statique $\varepsilon_S$ comme l'écart entre la consigne fixe et la réponse $s(t)$ en régime permanent.
 \end{defi}
 
 \begin{defi}[Précision en vitesse $\varepsilon_V$]
-
 Encore appelé écart de traînage ou écart de poursuite, il représente la différence entre une consigne variable de type rampe et la réponse en régime permanent. 
 \end{defi}
 
