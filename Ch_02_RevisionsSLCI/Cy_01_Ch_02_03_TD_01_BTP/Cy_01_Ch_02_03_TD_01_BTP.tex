@@ -1,11 +1,11 @@
-%\setchapterimage{fig_00.jpg}
+\setchapterimage{fig_00}
 \chapter*{TD \arabic{cptTD} \\ 
 Banc d'essai BTP -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptApplication} \else  \fi
+\ifprof \stepcounter{cptTD} \else  \fi
 \setcounter{question}{0}
 
 \marginnote{Concours CCINP-- TSI 2015}
-\marginnote{\UPSTIcompetence[2]{B2-02}}
+\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_01}
 \end{marginfigure}
@@ -47,26 +47,31 @@ Pour chaque association hélicoptère - turboréacteur, un banc d'essai permet d
 \ifprof
 \else
 
-\marginnote{On note :
+On note :
 \begin{itemize}
 	\item $u(t)$ : la tension appliquée aux bornes de l'induit ;
 	\item $i(t)$ : le courant absorbé par l'induit ;
 	\item $e(t)$ : la force contre-électromotrice ;
-	\item $R$ : la résistance de l'induit ;
-	\item $L$ : l'inductance de l'induit ;
 	\item $\omega_m (t)$ : la vitesse de rotation de l'arbre moteur ;
 	\item $c_m (t)$ : le couple moteur ;
 	\item $c_r (t)$ : le couple résistant sur l'arbre moteur dû à la génération d'un couple résistant en sortie de BTP ;
-	\item $f$ : le coefficient de frottement, qui génère un couple résistant proportionnel à $\omega_m (t)$ ;
-	\item $I_{eq}$ : l'inertie équivalente du banc d'essai ramené à l'arbre moteur ;
 	\item $K_c$ : la constante de couple définie telle que
  $c_m (t)=K_c i(t)$	(équation 1);
 	\item $K_e$: la constante de force contre-électromotrice définie telle que $e(t)=K_e \omega_m (t)$	(équation 2).
-	\end{itemize}}
+	\end{itemize}
+
 
 Le banc d'essai est équipé d'un dispositif permettant de générer un couple résistant sur le rotor de sortie de la BTP. Cela permet de simuler les actions aérodynamiques sur les pales. Il faut donc évaluer l'impact de ce couple sur la vitesse du moteur. 
 La modélisation adoptée pour le moteur à courant continu est celle de la figure \ref{btp_fig_05}.
  
+\marginnote{
+\begin{itemize}
+	\item $R$ : la résistance de l'induit ;
+	\item $L$ : l'inductance de l'induit ;
+	\item $f$ : le coefficient de frottement, qui génère un couple résistant proportionnel à $\omega_m (t)$ ;
+	\item $\indice{I}{eq}$ : l'inertie équivalente du banc d'essai ramené à l'arbre moteur ;
+\end{itemize}}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=.8\linewidth]{fig_05}
@@ -323,10 +328,9 @@ Dans ce cas, l’application d’un couple perturbateur n’a donc pas d’influ
 
 \ifprof
 \else
-\footnotesize
-\begin{tabular}{|p{.95\linewidth}|}
-\hline 
-\begin{enumerate}
+\marginnote[-8cm]{
+\begin{solution}
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item $K_{\text{Adapt}}=K_{\text{Capt}}$.
 \item $K_1=\dfrac{K_{\text{Adapt}} K_P}{K+K_P K_{\text{Capt}}}$	et	$\tau_1=\dfrac{R I_{\text{eq}}}{K^2+K K_P K_{\text{Capt}}}$.
 \item .
@@ -335,9 +339,7 @@ Dans ce cas, l’application d’un couple perturbateur n’a donc pas d’influ
 \item $\varepsilon_S=\left(K_{\text{Adapt}}-K_{\text{Capt}} K_1 \right)\Omega_{c0}+ K_{\text{Capt}} K_2C_{r0}$.
 \item On montre que l'écart statique est annulé.
 \item $\varepsilon = 0$.
-\end{enumerate} \\
-\hline
-\end{tabular}
-\normalsize
+\end{enumerate}
+\end{solution}}
 \fi
 
