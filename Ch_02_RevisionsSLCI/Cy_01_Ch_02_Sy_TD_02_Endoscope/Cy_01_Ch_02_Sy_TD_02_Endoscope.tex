@@ -43,7 +43,12 @@ La figure suivante présente le schéma-blocs de l'axe d’élévation (selon $\
 La console permet de capter le déplacement de la main, de le coder, de le corriger éventuellement afin d’élaborer la consigne de position angulaire du rotor moteur. 
 La position angulaire est ensuite transformée en position linéaire de l’instrument par un mécanisme de transformation de mouvement à crémaillère.
 
-La figure suivante présente de façon simplifiée, la chaîne cinématique de l’axe d’élévation :
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_02}
+\end{marginfigure}
+
+La figure ci-contre présente de façon simplifiée, la chaîne cinématique de l’axe d’élévation :
 \begin{itemize}
 \item l’actionneur est un moto-réducteur (1) à courant continu Gammatic n° RH-8D-6006;
 le premier étage de transmission du mouvement se fait par une courroie crantée (2) qui s’enroule sur des poulies de même diamètre pour entraîner l’arbre intermédiaire (3);
@@ -53,10 +58,6 @@ le premier étage de transmission du mouvement se fait par une courroie crantée
 
 Pour équilibrer le poids de la partie supérieure (coulisseau compris) de masse $M = \SI{5,5}{kg}$, les ingénieurs ont placé un contre-poids (7) de masse $2M = \SI{11}{kg}$ tiré par un câble qui s’enroule sur un tambour (3") de diamètre $\Phi_2 = \dfrac{\Phi}{2} = \SI{19,2}{mm}$ solidaire de  l’arbre intermédiaire (3).
 
-
-\begin{center}
-\includegraphics[width=\linewidth]{fig_02}
-\end{center}
 
 
 
@@ -82,7 +83,7 @@ On rappelle les équations temporelles :
 $u(t) = R i(t) + L \dfrac{\dd i(t)}{\dd t} + e(t)$, $e(t) = k_e  \omega_{\text{réd}}(t)$, 
 $C_{\text{réd}} (t)= k_c  i(t)$, $C_{\text{réd}} (t) - C_r - f_v \omega_{\text{réd}}(t)= J_{\text{équ}} \dfrac{\dd \omega_{\text{réd}}(t)}{\dd t}$. 
 
-Avec :
+\marginnote{Avec :
 \begin{itemize}
 \item $u(t)$ tension appliquée aux bornes de l’induit 
 \item $i(t)$ intensité du courant traversant l’induit
@@ -96,7 +97,7 @@ Avec :
 \item $C_r = \SI{0,2}{N.m}$ couple résistant induit par les frottements secs, ramené à la sortie du réducteur 
 \item $f_v = \SI{0,04}{Nm.s.rad^{-1}}$ coefficient de frottement visqueux équivalent à toutes les pièces en mouvement, ramené à la sortie du réducteur 
 \item $J_{\text{équ}} = \SI{7e-3}{kg.m^2}$ moment d’inertie équivalent à toutes les pièces en mouvement, ramené à la sortie du réducteur. 
-\end{itemize}
+\end{itemize}}
 
 Les transformées de Laplace des fonctions $u(t)$, $i(t)$, $e(t)$, $\omega_{\text{réd}}(t)$,  $C_{\text{réd}}(t)$ sont respectivement $U(p)$, $I(p)$, $E(p)$, $\Omega_{\text{réd}}(p)$ et $C_{\text{réd}}(p)$. On considère toutes les conditions initiales nulles.
 
@@ -214,13 +215,16 @@ et $T=\SI{0,015}{s}$).
 
 \question{Déterminer les valeurs de $G_s$ et $T$, à partir de la courbe de tension image de $\omega_{\text{réd}}(t)$  (expliquer les démarches sous la figure et comparer avec les résultats obtenus précédemment). }
 \ifprof
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{cor_02}
+\end{marginfigure}
+
 \begin{corrige}
 La tension de consigne étant de \SI{24}{V} et la vitesse de sortie est telle que  $24\cdot G_S \cdot K_{\text{tachy}}= \SI{1,75}{V}$ soit $G_S = \dfrac{1,75}{24\times 0,166} = \SI{0,439}{rad.s^{-1}.V^{-1}} $. En utilisant la méthode de 63\,\% de la valeur finale, on a $\tau = \SI{0,02}{s}$.
 On constate que les résultats sont relativement proches de ceux formulés par l'hypothèse <<~$L$ négligeable~>>.
 \end{corrige}
-\begin{center}
-\includegraphics[width=.9\linewidth]{cor_02}
-\end{center}
+
 \else
 \fi
 
@@ -258,17 +262,17 @@ On a donc $H_O(p)=\dfrac{1}{50p}\dfrac{360}{2\pi} \dfrac{kG_S}{1+Tp}$.
 \question{Tracer les diagrammes de Bode du système en boucle ouverte pour $k = 1$.
 Le système est-il stable en boucle fermée pour cette valeur de $k$ ? Justifier.
 } 
+\ifprof
+\else
 \begin{remarque}
 Au vu de l'exigence 6, on admet que le système est stable en boucle fermé si, sur le tracé de Bode de la boucle ouverte, lorsque le gain est nul, la phase est supérieure à $-180+45=-135\degres$. 
 \end{remarque}
+\fi
 
 \ifprof
-
-
-
-\begin{center}
+\begin{marginfigure}
 \includegraphics[width=\linewidth]{Q8.png}
-\end{center}
+\end{marginfigure}
 \begin{corrige}
 Au vu du tracé, la phase est supérieure à $-135\degres$ lorsque le gain est nul. Le système est donc stable.
 \end{corrige}
@@ -480,7 +484,8 @@ On trace le diagramme de Bode. La bande passante à  \SI{-3}{dB} est de \SI{4}{H
 \else
 \fi
 
-
+\ifprof
+\else
 
 Les questions suivantes vont permettre de déterminer l’expression analytique de $H_3(p)$, de façon à analyser l’influence du paramètre de raideur, pour respecter le critère de bande passante du cahier des charges.
 
@@ -489,6 +494,7 @@ Soit $a_0$ l’allongement du ressort dans la position d’équilibre qui prend 
 Nota : $a_0$ est négatif car on considère qu’il y a allongement du ressort.
 
 L'équation du mouvement du ressort autour de la position d'équilibre est donné par : $m_1\dfrac{\dd^2 z(t)}{\dd t^2} + f_0 \dfrac{\dd z (t)}{\dd t}+k_0 z = 0$.
+\fi
 
 \question{Après avoir mis l’équation différentielle du mouvement sous forme canonique : $A\ddot{z}(t)+B\dot{z}(t)+z(t)=0$, exprimer le coefficient d’amortissement $\xi_3$ et la pulsation propre $\omega_{03}$ du mouvement en fonction de $k_0$, $f_0$, $m_1$ .}
 \ifprof
