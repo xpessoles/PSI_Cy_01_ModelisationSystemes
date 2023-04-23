@@ -1,17 +1,49 @@
-\setchapterimage{fig_00.jpg}
-\chapter*{TD \arabic{cptTD} \\ 
-Bateau support de ROV -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
-\setcounter{question}{0}
+%%%% Paramétrage du TD %%%%
 
-\marginnote{Concours Centrale Supelec -- MP 2019.}
-%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_00.png}
-\end{marginfigure}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
+}}
+
+\def\xxfigures{
+\includegraphics[width=.4\linewidth]{fig_00}
+%\textit{}
+}%figues de la page de garde
+\def\xxtitreexo{\noindent Bateau support de ROV}
+\def\xxsourceexo{\hspace{.2cm} Concours Centrale Supelec -- MP 2019}
+\def\xxactivite{{Synthèse 01} \ifprof  -- Corrigé \else \fi}
+
+%\iflivret
+\input{\repRel/Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 \section*{Introduction}
 \ifprof
 \else
@@ -69,7 +101,7 @@ On s'intéresse à une grue permettant la dépose sur fond marin d'un robot dont
 
 \ifprof
 \else
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.85\linewidth]{Fig3}
 \caption{ROV suspendu à la grue portique}
@@ -95,23 +127,26 @@ présente un extrait du cahier des charges correspondant.
 
 %\begin{table}[htp]
 \footnotesize
-\begin{table*}[!h]
-\begin{tabular}{p{9cm}p{4cm}p{4cm}}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{2cm}|p{2cm}|}
 \hline
 \textbf{Exigence} &\textbf{Critère}& \textbf{Niveau}\\
 \hline
-Id 1.1: 
-Compensation des mouvements du ROV pour une houle d’amplitude de 5 m et de pulsations comprises
-entre $\SI{0,5}{rad.s^{-1}}$ à $\SI{1,7}{rad. s^{-1}}$ 
-&Amplitude verticale du ROVmaximale&< 1 m pour 5 m d’amplitude de houle\\
-Id 1.2 : 
+\hline
+Id 1.1&&\\
+Compensation des mouvements du&Amplitude verticale du ROV&< 1 m pour 5 m d’amplitude de\\
+ROV pour une houle d’amplitude&maximale&houle\\
+de 5 m et de pulsations comprises&&\\
+entre $0,5 \ \text{rad}\cdot \text s^{-1}$ à $1,7 \ \text{rad}\cdot \text s^{-1}$&&\\
+\hline
+Id 1.2&&\\
 Mise en tension du câble &Temps de réponse, $t_{r5\%}$ & $< 3$ s \\
 \hline
 \end{tabular}
 
-\caption{Extrait du cahier des charges}
+\textit{Extrait du cahier des charges}
 \label{tab1}
-\end{table*}
+\end{center}
 
 \normalsize
 
@@ -492,12 +527,12 @@ Pour compenser les effets de la houle, une solution hydropneumatique est alors e
 compensateur de houle passif noté PHC (\autoref{Fig10}).\\
 
 
-\begin{marginfigure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Fig10}
+\includegraphics[width=0.65\linewidth]{Fig10}
 \caption{ Schéma d’implantation du PHV (non à l’échelle)}
 \label{Fig10}
-\end{marginfigure}
+\end{figure}
 
 
 
@@ -540,16 +575,13 @@ Les petites variations de pression $\Delta p_E(t)$ et $\Delta p_G(t)$ autour du 
 définies par $\Delta p_E(t) = p_E(t) - P_{E0}$ et $\Delta p_G(t) = p_G(t) -P_{G0}$.
 Une étude de mécanique des fluides a permis d’obtenir les relations (1) et (2).
 
-$$
-\dfrac{\dd \Delta p_E(t)}{\dd t} 
-= \dfrac{K}{V_E} S
-\left( \dfrac{\dd  y_h(t)}{\dd t} -\dfrac{\dd  \indice{y}{ROV}(t)}{\dd t}\right)  
-+\dfrac{K}{V_E} C_{qR}\left(\Delta p_G(t)-\Delta p_E(t)\right) \; (1)
-$$
+$
+\begin{array}{ccc}
+\dfrac{\text d\Delta p_E(t)}{\text dt} &=& \dfrac{K}{V_E} S\left( \dfrac{\text d y_h(t)}{\text dt}-\dfrac{\text d y_{\text{ROV}}(t)}{\text dt}\right) \\ 
+&& +\dfrac{K}{V_E} C_{qR}\left(\Delta p_G(t)-\Delta p_E(t)\right) \; (1)
+\end{array}$
 
-$$
-\dfrac{\dd \Delta p_G(t)}{\dd t}=\dfrac{rP_{G0}C_{qR}}{V_{G0}}\left(\Delta p_E(t)-\Delta p_G(t)\right)  \; (2)
-$$
+$\dfrac{\text d\Delta p_G(t)}{\text dt}=\dfrac{rP_{G0}C_{qR}}{V_{G0}}\left(\Delta p_E(t)-\Delta p_G(t)\right)  \; (2)$.
 
 
 \fi
@@ -593,7 +625,7 @@ $$
 %
 
 Le théorème de la résultante dynamique appliqué à $\Sigma$ se traduit par 
-%$\alpha \dfrac{\dd ^2y_{\text{ROV}}(t)}{\dd  t^2}+\beta \left(\dfrac{\dd y_{\text{ROV}}(t)}{\dd t}-\dfrac{\dd  y_h(t)}{\dd t}\right)&=&\gamma \Delta p_E(t).$
+%$\alpha \dfrac{\text d^2y_{\text{ROV}}(t)}{\text d t^2}+\beta \left(\dfrac{\text dy_{\text{ROV}}(t)}{\text dt}-\dfrac{\text d y_h(t)}{\text dt}\right)&=&\gamma \Delta p_E(t).$
 $ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) ) $ (3).
 % avec $\gamma =S$, $\alpha =M$ et $\beta = c$.\\
 
@@ -602,7 +634,7 @@ $ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) )
 %\question{Déterminer l’équation, notée (3), issue du théorème de la résultante dynamique appliqué à $\Sigma$ en projection sur $\overrightarrow{y_0}$ sous la forme :}
 %
 %\begin{eqnarray}
-%\alpha \dfrac{\dd ^2y_{\text{ROV}}(t)}{\dd  t^2}+\beta \left(\dfrac{\dd y_{\text{ROV}}(t)}{\dd t}-\dfrac{\dd  y_h(t)}{\dd t}\right)&=&\gamma \Delta p_E(t).
+%\alpha \dfrac{\text d^2y_{\text{ROV}}(t)}{\text d t^2}+\beta \left(\dfrac{\text dy_{\text{ROV}}(t)}{\text dt}-\dfrac{\text d y_h(t)}{\text dt}\right)&=&\gamma \Delta p_E(t).
 %\end{eqnarray}
 %
 %\textit{Exprimer $\alpha$, $\beta$ et $\gamma$ en fonction de $A$, $M$ et $c$.}\\
@@ -644,7 +676,7 @@ $ S\Delta p_E(t)=M\ddot y_{\text{ROV}}(t)+c(\dot y_{\text{ROV}}(t)-\dot y_h(t) )
 %
 
 
-L’hypothèse du fluide incompressible se traduit par $\dfrac{\dd \Delta p_E(t)}{\dd t}= 0$.
+L’hypothèse du fluide incompressible se traduit par $\dfrac{\text d\Delta p_E(t)}{\text dt}= 0$.
 \fi
 
 \question{Réécrire l’équation (1) en tenant compte de cette hypothèse. Après avoir appliqué les transformées de Laplace aux équations (1) et (2) et en considérant les conditions initiales nulles aux équations précédentes, déterminer l’équation, notée (3), sous la forme :}
@@ -856,10 +888,8 @@ On a la relation $G(p)=B(p)G(p)$.
 
 \ifprof
 \else
-Des réglages pour différentes valeurs de pulsation de la houle $\omega_c$ et de gain maximal acceptable du compensateur ont été effectués. 
-
-\marginnote{La \autoref{Fig12} donne les diagrammes du gain de la fonction $G(p)$ de l’ensemble \{bateau support +
-ROV + PHC\} pour quatre réglages. Les volumes du gaz $V_{G0}$ correspondant à chaque réglage sont donnés dans le tableau ci-après.}
+Des réglages pour différentes valeurs de pulsation de la houle $\omega_c$ et de gain maximal acceptable du compensateur ont été effectués. La \autoref{Fig12} donne les diagrammes du gain de la fonction $G(p)$ de l’ensemble \{bateau support +
+ROV + PHC\} pour quatre réglages. Les volumes du gaz $V_{G0}$ correspondant à chaque réglage sont donnés dans le tableau ci-après.
 
 
 \begin{figure}[H]
@@ -871,9 +901,8 @@ ROV + PHC\} pour quatre réglages. Les volumes du gaz $V_{G0}$ correspondant à 
 
 
 
-\begin{table}[!h]
-\centering
-\begin{tabular}{ccccc}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
 Réglage &PHC 1& PHC 2 &PHC 3 &PHC 4\\
 \hline
@@ -881,9 +910,9 @@ Réglage &PHC 1& PHC 2 &PHC 3 &PHC 4\\
 $V_{G0}$ (m$^3$) &96& 1& 52& 2\\
 \hline
 \end{tabular}
-\caption{Volumes $V_{G0}$ pour différents réglages du PHC}
+\textit{Volumes $V_{G0}$ pour différents réglages du PHC}
 \label{tab2}
-\end{table}
+\end{center}%
 
 
 
@@ -962,10 +991,10 @@ Le réglage de PHC 4 est celui qui respecte le mieux l’exigence Id1.1.
 %
 %\textbf{Équations hydrauliques}
 %\begin{itemize}
-%\item la relation entre le débit moteur $(Q_m)$, la pression moteur ($P_m$) et le débit de la pompe ($Q_p$) est donnée par la relation $Q_m=Q_p+\dfrac{\dd V}{\dd t}-\dfrac{V}{\beta}\dfrac{\dd P_m}{\dd t}$ ;
-%\item les circuits hydrauliques (corps de vérin, moteur et élément du circuit hydraulique) sont très rigides, on néglige donc la variation de volume des enceintes devant celle du fluide, $\dfrac{\dd V}{\dd t}=0$ ;
+%\item la relation entre le débit moteur $(Q_m)$, la pression moteur ($P_m$) et le débit de la pompe ($Q_p$) est donnée par la relation $Q_m=Q_p+\dfrac{\text dV}{\text dt}-\dfrac{V}{\beta}\dfrac{\text dP_m}{\text dt}$ ;
+%\item les circuits hydrauliques (corps de vérin, moteur et élément du circuit hydraulique) sont très rigides, on néglige donc la variation de volume des enceintes devant celle du fluide, $\dfrac{\text dV}{\text dt}=0$ ;
 %\item le couple moteur est obtenu par la relation $C_m = cP_m$ ;
-%\item le débit traversant le moteur est obtenu par la relation $Q_m = c\dfrac{\dd \theta_m}{\dd t}$.
+%\item le débit traversant le moteur est obtenu par la relation $Q_m = c\dfrac{\text d\theta_m}{\text dt}$.
 %\end{itemize}
 %
 %Dans cette étude, le repère lié au bateau est considéré galiléen. Les effets des accélérations verticales seront pris
@@ -1028,7 +1057,7 @@ Le réglage de PHC 4 est celui qui respecte le mieux l’exigence Id1.1.
 %%\begin{corrige}
 %%%\textbf{Q20} 
 %%On isole l'ensemble $E$ et on applique le TEC :
-%%$$\dfrac{\dd T_{E/\mathcal R_0}}{\dd t}=\sum \mathcal P_{\text{ext}\to E}+\sum \mathcal P_{\text{int}}.$$
+%%$$\dfrac{\text dT_{E/\mathcal R_0}}{\text dt}=\sum \mathcal P_{\text{ext}\to E}+\sum \mathcal P_{\text{int}}.$$
 %%
 %%On dresse le bilan des puissances des efforts extérieurs agissant sur $E$ dans son mouvement par rapport au repère galiléen $\mathcal R_0$ :
 %%\begin{itemize}
@@ -1208,9 +1237,9 @@ Le réglage de PHC 4 est celui qui respecte le mieux l’exigence Id1.1.
 \else
 \ifcolle
 \else
-\marginnote{
-\begin{solution}
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+\begin{enumerate}
 \item  $G_{\text{dB}}(\omega)=20\log \left \vert \dfrac{Y_S(j\omega)}{Y_{\text{vague}}(j\omega)}\right \vert$ et 
 $G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ \forall \ \ \omega\in[0,5;1,7]  \ \text{rad/s}$.
 \item ...
@@ -1219,9 +1248,12 @@ $G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ \forall 
 \item .
 \item .
 \item PHC4.
-\end{enumerate}
-\end{solution}}
-
+\end{enumerate}\\
+\hline
+\end{tabular}
 \fi % FI COLLE
 \fi
-
+\ifprof
+\else
+\end{multicols}
+\fi

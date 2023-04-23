@@ -1,14 +1,47 @@
-%\setchapterimage{fig_00}
-\chapter*{Application \arabic{cptApplication} \\ 
-Réponses fréquentielles -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
-\setcounter{question}{0}
+%%%% Paramétrage du TD %%%%
 
-\marginnote{D'après Sébastien Grange.}
-%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
-%\begin{marginfigure}
-%\includegraphics[width=\linewidth]{fig_01}
-%\end{marginfigure}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
+}}
+
+\def\xxfigures{
+%\includegraphics[width=3cm]{fig_01}\\
+%\textit{}
+}%figues de la page de garde
+
+\def\xxtitreexo{Exercices d'applicaiton -- Réponses fréquentielles}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{S. Grange}}
+\def\xxactivite{{Application 01} \ifprof  -- Corrigé \else \fi}
+
+%\iflivret
+\input{\repRel/Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \section*{Diagramme de Bode}
@@ -173,7 +206,7 @@ Un capteur d'accélération de sensibilité S est utilisé dans la chaîne de re
 
 
 \begin{center}
-\includegraphics[width=6cm]{Schema_1_entree_2F_R}
+\includegraphics{Schema_1_entree_2F_R}
 \end{center}
 
 On a  $A = \SI{100}{g.m.s^{-2}.V^{-1}}$, $\tau=\SI{0,2}{s}$ et $S = 10\cdot 10^{-3}/g V/(m/s^2)$ où $g$ est l'accélération de pesanteur. $E(p)$ est la transformée de Laplace de $e(t)$ la tension de consigne de cet asservissement et $\Gamma_b(p)$ la transformée de l'accélération $\gamma b(t)$.
