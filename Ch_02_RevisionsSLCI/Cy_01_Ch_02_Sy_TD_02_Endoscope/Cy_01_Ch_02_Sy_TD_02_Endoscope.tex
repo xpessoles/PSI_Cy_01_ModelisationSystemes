@@ -1,4 +1,4 @@
-%\setchapterimage{fig_00.jpg}
+\setchapterimage{fig_00.jpg}
 \chapter*{TD \arabic{cptTD} \\ 
 Robot pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
 \ifprof \stepcounter{cptTD} \else  \fi
@@ -83,7 +83,7 @@ On rappelle les équations temporelles :
 $u(t) = R i(t) + L \dfrac{\dd i(t)}{\dd t} + e(t)$, $e(t) = k_e  \omega_{\text{réd}}(t)$, 
 $C_{\text{réd}} (t)= k_c  i(t)$, $C_{\text{réd}} (t) - C_r - f_v \omega_{\text{réd}}(t)= J_{\text{équ}} \dfrac{\dd \omega_{\text{réd}}(t)}{\dd t}$. 
 
-\marginnote{Avec :
+\marginnote[-3cm]{Avec :
 \begin{itemize}
 \item $u(t)$ tension appliquée aux bornes de l’induit 
 \item $i(t)$ intensité du courant traversant l’induit
@@ -178,9 +178,12 @@ En observant cette courbe, l'absence de tangente horizontale à l'origine permet
 
 
 \question{Justifier analytiquement la réponse précédente à partir de l’expression de $M_1(p)$ lorsque l’on envisage une étude fréquentielle : on précisera la valeur du pôle dominant, l’autre (faisant intervenir la valeur de $L$) étant rejeté.}
+\ifprof
+\else
 \begin{remarque}
 Un pole est dit dominant par rapport à un autre quand sa partie réelle est grande devant l'autre.
 \end{remarque}
+\fi
 
 \ifprof
 \begin{corrige}
@@ -270,9 +273,9 @@ Au vu de l'exigence 6, on admet que le système est stable en boucle fermé si, 
 \fi
 
 \ifprof
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{Q8.png}
-\end{marginfigure}
+\begin{center}
+\includegraphics[width=.7\linewidth]{Q8.png}
+\end{center}
 \begin{corrige}
 Au vu du tracé, la phase est supérieure à $-135\degres$ lorsque le gain est nul. Le système est donc stable.
 \end{corrige}
@@ -540,12 +543,11 @@ Le chirurgien impose avec sa main une rampe de déplacement  de \SI{100}{mm.s^{-
 de l’écart dynamique maximal; de l’écart de traînage (ou de vitesse) $\varepsilon_v$ en régime établi, du retard de traînage. Le cahier des charges est-il satisfait pour ce dernier critère ?
 }
 \ifprof
-
-\begin{center}
+\begin{marginfigure}
+\centering
 \includegraphics[width=\linewidth]{Q19_cor}
-\end{center}
-
-\begin{corrige}~\\
+\end{marginfigure}
+\begin{corrige}
 \begin{itemize}
 \item Écart dynamique maximal : $\SI{5}{mm}$.
 \item Écart de traînage (ou de vitesse) $\varepsilon_v$ en régime établi : $\SI{4}{mm}$.
@@ -556,6 +558,8 @@ de l’écart dynamique maximal; de l’écart de traînage (ou de vitesse) $\va
 \fi
 
 
+\ifprof
+\else
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_12}
 \caption{Courbe de gain \label{fig:12}}
@@ -563,8 +567,7 @@ de l’écart dynamique maximal; de l’écart de traînage (ou de vitesse) $\va
 
 On donne figure \ref{fig:12}, la courbe d’amplitude (gain) de $H(p)$ pour $p = j\omega$ dans le plan de Bode. 
 La main du chirurgien est prise d’un tremblement sensiblement sinusoïdal dont la période est de \SI{0,25}{s} et l’amplitude \SI{1}{mm}. 
-
-
+\fi
 
 
 \question{Déterminer à partir de cette courbe, l’amplitude du mouvement pris par l’instrument. Quelle est la conséquence de ce mouvement sur la plaie chirurgicale ?}
