@@ -1,16 +1,48 @@
-%\setchapterimage{fig_00.jpg}
-\chapter*{TD \arabic{cptTD} \\ 
-Robot pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
-\setcounter{question}{0}
+%%%% Paramétrage du TD %%%%
 
-\marginnote{Banque PT -- SIA -- 2005.}
-%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_00}
-\end{marginfigure}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
 
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
+}}
+
+\def\xxfigures{
+\includegraphics[width=.9\linewidth]{fig_00}
+%\textit{}
+}%figues de la page de garde
+\def\xxtitreexo{Robot pour la chirurgie endoscopique}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{\textsl{Banque PT -- SIA -- 2005}}}
+\def\xxactivite{{Synthèse 02} \ifprof  -- Corrigé \else \fi}
+
+%\iflivret
+\input{\repRel/Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 \section*{Présentation}
 \ifprof
 \else
@@ -18,22 +50,20 @@ On s’intéresse au robot de chirurgie endoscopique <<~Endoxirob~>>. Il est né
 L’étude est effectuée uniquement pour l’axe « d’élévation » selon $\vect{z_1}$. 
 
 
-\begin{table*}[!h]
-\centering
-\begin{tabular}{cp{10cm}p{3cm}}
+\begin{center}
+\begin{tabular}{|c|p{4.4cm}|p{1.7cm}|}
 \hline 
 Req. & Exigence & Niveaux \\ \hline
-1 & Vitesse de translation nominale & $>\SI{0,1}{m.s^{-1}}$ \\ 
-2 & Temps $t_1$ pour atteindre la vitesse nominale & $\SI{100}{ms}$ maximum \\ 
-3 & Précision -- Écart statique & $<\SI{0,2}{mm}$ \\ 
-4 & Précision --  Retard de traînage pour une rampe de $ \SI{0,1}{m.s^{-1}}$  & $<\SI{0,1}{s}$ \\ 
-5 & Stabilité -- Dépassement & Aucun \\ 
-6 & Stabilité -- Marge de phase & $45\degres$ \\ 
+1 & Vitesse de translation nominale & $>\SI{0,1}{m.s^{-1}}$ \\ \hline
+2 & Temps $t_1$ pour atteindre la vitesse nominale & $\SI{100}{ms}$ maximum \\ \hline
+3 & Précision -- Écart statique & $<\SI{0,2}{mm}$ \\ \hline
+4 & Précision --  Retard de traînage pour une rampe de $ \SI{0,1}{m.s^{-1}}$  & $<\SI{0,1}{s}$ \\ \hline
+5 & Stabilité -- Dépassement & Aucun \\ \hline
+6 & Stabilité -- Marge de phase & $45\degres$ \\ \hline
 7 & Rapidité -- Bande passante à \SI{-3}{dB} pour la partie mécanique & $\SI{4}{Hz}$ \\
 \hline
-\caption{Liste partielle des exigences.}
 \end{tabular}
-\end{table*}
+\end{center}
 La figure suivante présente le schéma-blocs de l'axe d’élévation (selon $\vect{Z_1}$) du dispositif de commande de l’instrument chirurgical. 
 
 \begin{center}
@@ -159,9 +189,9 @@ Quel que soit le résultat obtenu à la question précédente, on utilisera l’
 Sur le système de levage non asservi c’est à dire avec le capteur de position angulaire déconnecté, on a pratiqué, un essai en charge, en donnant au moteur un échelon de tension $u(t) = \SI{24}{V}$. 
 Avec une génératrice tachymétrique dont le gain est de $\SI{0,166}{V.s.rad^{-1}}$ , on a tracé la courbe de tension image de $\omega_{\text{réd}}(t)$.  
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_04}
-\end{marginfigure}
+\end{center}
 
 
 Remarque : la partie supérieure du robot est supposée rigide pendant cet essai.
@@ -177,9 +207,9 @@ En observant cette courbe, l'absence de tangente horizontale à l'origine permet
 
 
 \question{Justifier analytiquement la réponse précédente à partir de l’expression de $M_1(p)$ lorsque l’on envisage une étude fréquentielle : on précisera la valeur du pôle dominant, l’autre (faisant intervenir la valeur de $L$) étant rejeté.}
-\begin{remarque}
+\begin{rem}
 Un pole est dit dominant par rapport à un autre quand sa partie réelle est grande devant l'autre.
-\end{remarque}
+\end{rem}
 
 \ifprof
 \begin{corrige}
@@ -258,9 +288,9 @@ On a donc $H_O(p)=\dfrac{1}{50p}\dfrac{360}{2\pi} \dfrac{kG_S}{1+Tp}$.
 \question{Tracer les diagrammes de Bode du système en boucle ouverte pour $k = 1$.
 Le système est-il stable en boucle fermée pour cette valeur de $k$ ? Justifier.
 } 
-\begin{remarque}
+\begin{rem}
 Au vu de l'exigence 6, on admet que le système est stable en boucle fermé si, sur le tracé de Bode de la boucle ouverte, lorsque le gain est nul, la phase est supérieure à $-180+45=-135\degres$. 
-\end{remarque}
+\end{rem}
 
 \ifprof
 
@@ -374,10 +404,9 @@ Cette erreur est inférieure à \SI{0,2}{mm} (exigence 3).  On peut conserver la
 \subsubsection*{Modélisation par schéma-blocs}
 \ifprof
 \else
-\begin{table*}[!h]
-\centering
+\begin{center}
 \includegraphics[width=\linewidth]{fig_07}
-\end{table*}
+\end{center}
 \fi
 
 \subsubsection*{Analyse du déplacement en translation de la crémaillère}
@@ -427,29 +456,25 @@ On souhaite maintenant que $P_1=\dfrac{1}{10}$ et $c_1 = \SI{148 81}{incr.m^{-1}
 \subsubsection*{Analyse du déplacement de l’instrument chirurgical par rapport à la crémaillère}
 \ifprof
 \else
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_09}
-\end{marginfigure}
-
 La partie supérieure du robot est constituée par assemblage de tubes minces en fibres de carbone. 
 On modélise cette partie par deux solides : $S_0$ représentant la crémaillère et les solides qui y sont liés ;  et $S_1$ représentant l’instrument chirurgical. 
 Ces solides sont considérés en liaison glissière parfaite et reliés par un ressort de raideur $k_0$ et un amortisseur de coefficient $f_0$, montés en parallèle comme le montre le schéma.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_08}
-\end{marginfigure}
+\begin{center}
+\includegraphics[width=.7\linewidth]{fig_09}
+\end{center}
 
 Pour identifier la fonction de transfert $H_3(p)=\dfrac{D_{\text{instrum}}(p)}{D_{\text{crem}}(p)}$ de cette partie, on a imposé à la crémaillère un échelon de déplacement $d_{\text{crém}}(t) = \SI{20e-3}{m}$ à partir de la position d’équilibre. On a tracé la courbe de déplacement $d_{\text{instrum}}(t)$ de l’instrument.
 
-
-\begin{figure}[!h]
-\includegraphics[width=\linewidth]{fig_10}
-\end{figure}
+\begin{center}
+\includegraphics[width=\linewidth]{fig_08}
+\end{center}
 
 On donne sur la figure suivante les abaques des dépassements relatifs et des temps de réponse réduits d’un système du second ordre.
 
-
+\begin{center}
+\includegraphics[width=\linewidth]{fig_10}
+\end{center}
 
 \fi
 
@@ -517,18 +542,15 @@ On a $ \omega_{-\SI{3}{dB}}> \omega_{03}$ or $\omega_{03}^2=\dfrac{k_0}{m_1}$ $\
 \subsubsection*{Analyse du déplacement de l’instrument par rapport au déplacement de la main}
 \ifprof
 \else
-
-
-
 On conserve la valeur $c_1$ du bloc $C_1$. La fonction de transfert du système est : $H(p)=\dfrac{D_{\text{instrum}}(p)}{D_{\text{main}}(p)}=\dfrac{1}{\left(1+0,014p+0,00017p^2 \right)\left( 1+0,015p+0,0014p^2\right)}$ .
-Le chirurgien impose avec sa main une rampe de déplacement  de \SI{100}{mm.s^{-1}}. On a tracé sur la figure \ref{fig:q19} les courbes de déplacement de la main et de l’instrument.
+Le chirurgien impose avec sa main une rampe de déplacement  de \SI{100}{mm.s^{-1}}. On a tracé sur la figure suivante les les courbes de déplacement de la main et de l’instrument.
 
-\begin{marginfigure}
+
+\begin{center}
 \includegraphics[width=\linewidth]{Q19}
-\caption{Courbes de déplacement de la main }
-\label{fig:q19}
-\end{marginfigure}
+\end{center}
 \fi
+
 
 \question{Mettre en évidence et donner les valeurs numériques :
 de l’écart dynamique maximal; de l’écart de traînage (ou de vitesse) $\varepsilon_v$ en régime établi, du retard de traînage. Le cahier des charges est-il satisfait pour ce dernier critère ?
@@ -550,16 +572,13 @@ de l’écart dynamique maximal; de l’écart de traînage (ou de vitesse) $\va
 \fi
 
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_12}
-\caption{Courbe de gain \label{fig:12}}
-\end{marginfigure}
-
-On donne figure \ref{fig:12}, la courbe d’amplitude (gain) de $H(p)$ pour $p = j\omega$ dans le plan de Bode. 
+On donne, la courbe d’amplitude (gain) de $H(p)$ pour $p = j\omega$ dans le plan de Bode. 
 La main du chirurgien est prise d’un tremblement sensiblement sinusoïdal dont la période est de \SI{0,25}{s} et l’amplitude \SI{1}{mm}. 
 
 
-
+\begin{center}
+\includegraphics[width=\linewidth]{fig_12}
+\end{center}
 
 \question{Déterminer à partir de cette courbe, l’amplitude du mouvement pris par l’instrument. Quelle est la conséquence de ce mouvement sur la plaie chirurgicale ?}
 \ifprof
@@ -591,15 +610,36 @@ Le filtre $T_2 = \SI{0,1}{s}$ permet d'atténuer le gain à une pulsation de $\S
 \end{corrige}
 \else
 \fi
-
-
-
+%
+%\question{}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%\question{}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%\question{}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 \ifprof
 \else
+\end{multicols}
+\fi
 
-\marginnote{
-\begin{solution}
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt] 
+
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+ \begin{enumerate} 
  \item $U(p) = R I(p) + LpI(p)+ E(p)$; $E(p) = k_e  \Omega_{\text{réd}}(p)$; $C_{\text{réd}} (p)= k_c  I(p)$;
  $C_{\text{réd}} (p) - C_r(p) - f_v \Omega_{\text{réd}}(p)= J_{\text{équ}}  p \Omega_{\text{réd}}(p)$. 
  \item $ M(p)=\dfrac{\dfrac{k_c}{k_e k_c+Rf_v}}{  \dfrac{ J_{\text{équ}}   L}{k_e k_c+Rf_v}p^2 +\dfrac{ RJ_{\text{équ}}    +  L f_v}{k_e k_c+Rf_v}p +1 }$.
@@ -626,6 +666,20 @@ Le filtre $T_2 = \SI{0,1}{s}$ permet d'atténuer le gain à une pulsation de $\S
 \end{itemize}
 \item .
 \item $T_2 = \SI{0,1}{s}$.
-\end{enumerate}
-\end{solution}}
-\fi
+\end{enumerate}\\
+\hline
+\end{tabular}
+%\end{document}
+%
+%\question{}
+%
+%
+%\begin{center}
+%\includegraphics[width=\linewidth]{}
+%\end{center}
+%
+%\begin{center}
+%\includegraphics[width=\linewidth]{}
+%\textit{}
+%\end{center}
+%
