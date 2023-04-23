@@ -1,4 +1,4 @@
-%\setchapterimage{fig_00}
+\setchapterimage{fig_00}
 \chapter*{TD \arabic{cptTD} \\ 
 Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
 \ifprof \stepcounter{cptTD} \else  \fi
@@ -8,7 +8,7 @@ Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \
 %\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
 \begin{marginfigure}
 \centering
-\includegraphics[width=.6\linewidth]{fig_01}
+\includegraphics[width=.5\linewidth]{fig_01}
 \end{marginfigure}
 
 
@@ -28,14 +28,13 @@ d’une grande fluidité.
 On donne dans la figure ci-dessous, la modélisation cinématique retenue dans le but de simuler le comportement de l'exosquelette.
 
 
-\begin{center}
-\includegraphics[height = 5cm]{fig_03}
-\includegraphics[height = 5cm]{fig_02}%\textit{}
-\end{center}
+\begin{figure*}[h!]
+\includegraphics[height = 4cm]{fig_03}
+\includegraphics[height = 4cm]{fig_02}
+\hfill%\textit{}
+\includegraphics[height = 4cm]{Exigences}
+\end{figure*}
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{Exigences}
-\end{marginfigure}
 \fi
 
 \subsection*{Gestion du mouvement vertical}
@@ -67,7 +66,7 @@ Le premier modèle défini figure suivante est adopté pour chaque axe.
 %\textit{}
 \end{center}
 
-\marginnote{
+\marginnote[-2cm]{
 \textbf{Notations : }
 \begin{itemize}
 \item $\theta_{mC}(p)$ consigne de position de l’axe moteur (variable temporelle : $\theta_{mC}(t)$ en rad);
@@ -243,9 +242,10 @@ $.
 \end{corrige}
 
 \else
-\fi
 
 Le second modèle avec anticipation de la figure précédente n’a pas d’incidence sur la valeur de l’erreur de position.
+\fi
+
 
 \question{Exprimer l’erreur de traînage et déterminer la valeur de $K_3$ permettant l’annuler cette erreur.}
 
@@ -266,10 +266,8 @@ Au final, pour annuler l'erreur de traînage, on doit avoir $K_3=1$.
 précédemment. Conclure quant au respect du cahier des charges.}\\
 
 \ifprof
-
-On a : 
-
 \begin{corrige}
+On a : 
 $\varepsilon_a = \lim\limits_{t\to \infty} \varepsilon(t)= \lim\limits_{p\to 0} p\varepsilon(p) $ 
 $= \lim\limits_{p\to 0} p \dfrac{p\left( 1+Tp-K_3\right) }{p \left( 1+Tp\right)+K_1} \dfrac {1}{p^3}$
 $= \lim\limits_{p\to 0} \dfrac{\left( 1+Tp-K_3\right) }{p \left( 1+Tp\right)+K_1} \dfrac {1}{p}$. En prenant $K_3=1$ et $K_1=100$, on obtient :
@@ -287,7 +285,7 @@ L'erreur est donc de $33\times 10^{-5}$. Le cahier des charges est donc validé.
 \else
 \ifprof
 \else
-\marginnote[-8cm]{
+\marginnote{
 \begin{solution}
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item Asservissement en position.
@@ -295,7 +293,7 @@ L'erreur est donc de $33\times 10^{-5}$. Le cahier des charges est donc validé.
 \item $\varepsilon(p)=\dfrac{ \theta_{mC}(p)}{1+H_{\Omega}(p) \dfrac{K_1}{p}}$
 \item $\varepsilon(p)= 0, \varepsilon_v = \dfrac{1}{K_1}$   et $K_1 >100$.
 \item $\varepsilon_a = \infty$.
-\item $\varepsilon(p) = \theta_{mC}(p)\left(p\left( 1+Tp-K_3\right) \right)/\left(p \left( 1+Tp\right)+K_1\right) $.
+\item $\varepsilon(p) = \theta_{mC}(p)\dfrac{p\left( 1+Tp-K_3\right) }{p \left( 1+Tp\right)+K_1} $.
 \item $\varepsilon_v =\dfrac{1-K_3}{K_1}$, $K_3=1$.
 \item $\varepsilon_a = \dfrac{33\times 10^{-3}}{100} $. Le cahier des charges est donc validé. 
 \end{enumerate}
@@ -306,7 +304,7 @@ L'erreur est donc de $33\times 10^{-5}$. Le cahier des charges est donc validé.
 
 \ifprof
 \begin{center}
-\includegraphics[width=.8\linewidth]{cor_02}
+\includegraphics[width=\linewidth]{cor_02}
 %\textit{}
 \end{center}
 
