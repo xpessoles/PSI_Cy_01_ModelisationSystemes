@@ -1,41 +1,79 @@
-%\setchapterimage{fig_00}
-\chapter*{TD \arabic{cptTD} \\ 
-Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
-\setcounter{question}{0}
+%%%% Paramétrage du TD %%%%
 
-\marginnote{Concours Centrale Supelec TSI 2017.}
-%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=.6\linewidth]{fig_01}
-\end{marginfigure}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
 
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
+}}
 
+\def\xxfigures{
+\includegraphics[width=1.5cm]{fig_01}\\
+%\textit{}
+}%figues de la page de garde
 
+\def\xxtitreexo{Assistance pour le maniement de charges dans l’industrie}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec TSI 2017}}
+\def\xxactivite{{TD 03} \ifprof  -- Corrigé \else \fi}
 
+%\iflivret
+\input{\repRel/Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
 
+\setlength{\columnseprule}{.1pt}
 
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 \section*{Mise en situation}
 \ifprof
 \else
 
-
+\noindent
+\begin{tabular}{m{.6\linewidth}m{.3\linewidth}}
 L’exosquelette est un appareil qui apporte à un être humain des capacités qu’il ne possède pas ou qu’il a perdues à cause d’un accident. Ce type d’appareil peut permettre à une personne de soulever des charges lourdes et diminuer considérablement les efforts à fournir sans la moindre fatigue. Après avoir revêtu un exosquelette adapté à sa morphologie et à sa taille, l’utilisateur peut faire ses mouvements en bénéficiant
 d’une grande fluidité.
+& 
+\includegraphics[width=\linewidth]{fig_02}
 
+\end{tabular}
+
+
+
+\begin{center}
+%\textit{}
+\end{center}
 
 On donne dans la figure ci-dessous, la modélisation cinématique retenue dans le but de simuler le comportement de l'exosquelette.
 
 
 \begin{center}
-\includegraphics[height = 5cm]{fig_03}
-\includegraphics[height = 5cm]{fig_02}%\textit{}
+\includegraphics[width=\linewidth]{fig_03}
+%\textit{}
 \end{center}
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{Exigences}
-\end{marginfigure}
+%\textit{}
+\end{center}
 \fi
 
 \subsection*{Gestion du mouvement vertical}
@@ -47,16 +85,15 @@ Déterminer les réglages de la commande asservie des moteurs genou droit et gau
 
 \ifprof
 \else
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_06}
-\end{marginfigure}
-
 La demande de mouvement de l’utilisateur de l’exosquelette se traduit par une consigne de vitesse de type
 trapézoïdal pour le mouvement vertical. À l’aide du modèle articulaire inverse cette
 demande se traduit finalement en consigne de position des axes moteur genou gauche et droit. Cette consigne de position du moteur représentée à la figure suivante montre des parties qui peuvent être approchées par des constantes,
 des rampes et des paraboles.
 
+\begin{center}
+\includegraphics[width=\linewidth]{fig_06}
+%\textit{}
+\end{center}
 
 %Selon le cahier des charges, pour assurer une bonne synchronisation des axes, l’exigence de précision statique suite à une entrée de type échelon, de type rampe ou de type accélération doit être inférieure à 1\%.
 Le premier modèle défini figure suivante est adopté pour chaque axe.
@@ -67,7 +104,6 @@ Le premier modèle défini figure suivante est adopté pour chaque axe.
 %\textit{}
 \end{center}
 
-\marginnote{
 \textbf{Notations : }
 \begin{itemize}
 \item $\theta_{mC}(p)$ consigne de position de l’axe moteur (variable temporelle : $\theta_{mC}(t)$ en rad);
@@ -82,7 +118,7 @@ Le premier modèle défini figure suivante est adopté pour chaque axe.
 \item $M_C(p)$ modélise la boucle d’asservissement en couple de la machine électrique, considérée parfaite au vu de sa dynamique par rapport aux autres boucles : $M_C(p)=1$; 
 \item $J$ moment d’inertie de l’ensemble en mouvement, rapporté au niveau de l’axe moteur;
 \item $f$ coefficient de frottements visqueux équivalent pour l’ensemble en mouvement.
-\end{itemize}}
+\end{itemize}
 
 
 Le correcteur est de la forme : $C_{\Omega}(p)=K_2 \left( \dfrac{Jp +f}{Jp}\right)$. 
@@ -287,9 +323,11 @@ L'erreur est donc de $33\times 10^{-5}$. Le cahier des charges est donc validé.
 \else
 \ifprof
 \else
-\marginnote[-8cm]{
-\begin{solution}
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+\footnotesize
+\begin{tabular}{|p{\linewidth}|}
+\hline
+Eléments de corrigé :
+\begin{enumerate}
 \item Asservissement en position.
 \item $H_{\Omega}(p)= \dfrac{K_2}{Jp+K_2}$.%{1}/\left(\dfrac{Jp}{C_{\Omega} K_2}+1 \right) $.
 \item $\varepsilon(p)=\dfrac{ \theta_{mC}(p)}{1+H_{\Omega}(p) \dfrac{K_1}{p}}$
@@ -298,12 +336,16 @@ L'erreur est donc de $33\times 10^{-5}$. Le cahier des charges est donc validé.
 \item $\varepsilon(p) = \theta_{mC}(p)\left(p\left( 1+Tp-K_3\right) \right)/\left(p \left( 1+Tp\right)+K_1\right) $.
 \item $\varepsilon_v =\dfrac{1-K_3}{K_1}$, $K_3=1$.
 \item $\varepsilon_a = \dfrac{33\times 10^{-3}}{100} $. Le cahier des charges est donc validé. 
-\end{enumerate}
-\end{solution}}
+\end{enumerate} \\
+\hline
+\end{tabular}
+\normalsize
 \fi
 \fi
-
-
+\ifprof
+\else
+\end{multicols}
+\fi
 \ifprof
 \begin{center}
 \includegraphics[width=.8\linewidth]{cor_02}
