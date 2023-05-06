@@ -1,7 +1,9 @@
 \setchapterimage{fig_00.png}
 \chapter*{Application \arabic{cptApplication} \\ La Seine Musicale -- \ifprof Corrigé \else Sujet \fi}
 \setcounter{question}{0}
-\ifprof \stepcounter{cptApplication} \else  \fi
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
 
 \marginnote{Concours Centrale -- MP 2020}
 \marginnote{\UPSTIcompetence[2]{B2-02}}

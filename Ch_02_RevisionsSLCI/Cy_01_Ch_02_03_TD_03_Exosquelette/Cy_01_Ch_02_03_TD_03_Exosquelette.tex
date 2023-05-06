@@ -1,7 +1,9 @@
 \setchapterimage{fig_00}
 \chapter*{TD \arabic{cptTD} \\ 
 Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi
+\fi
 \setcounter{question}{0}
 
 \marginnote{Concours Centrale Supelec TSI 2017.}

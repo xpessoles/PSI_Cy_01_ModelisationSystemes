@@ -1,7 +1,9 @@
 \setchapterimage{fig_01}
 \chapter*{TD \arabic{cptTD} \\ 
 Système de freinage d’un TGV DUPLEX -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi
+\fi
 \setcounter{question}{0}
 
 \marginnote{Concours Centrale Supelec PSI 2006 \ifprof -- Ressources UPSTI\else\fi}

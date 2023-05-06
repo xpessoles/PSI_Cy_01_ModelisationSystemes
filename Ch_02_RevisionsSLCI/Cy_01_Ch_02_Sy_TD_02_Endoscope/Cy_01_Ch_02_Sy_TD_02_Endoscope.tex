@@ -1,7 +1,9 @@
 \setchapterimage{fig_00.jpg}
 \chapter*{TD \arabic{cptTD} \\ 
 Robot pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi
+\fi
 \setcounter{question}{0}
 
 \marginnote{Banque PT -- SIA -- 2005.}

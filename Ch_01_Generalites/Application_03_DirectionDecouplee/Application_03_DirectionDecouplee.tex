@@ -1,7 +1,9 @@
 \setchapterimage{fig_00.jpg}
 \chapter*{Application \arabic{cptApplication} \\ 
 Direction automatique découplée -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptApplication} \else  \fi
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
 \setcounter{question}{0}
 
 \marginnote{Banque PT -- SI A 2017}

@@ -1,7 +1,9 @@
 \setchapterimage{fig_00.jpg}
 \chapter*{TD \arabic{cptTD} \\ 
 Bateau support de ROV -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi
+\fi
 \setcounter{question}{0}
 
 \marginnote{Concours Centrale Supelec -- MP 2019.}
