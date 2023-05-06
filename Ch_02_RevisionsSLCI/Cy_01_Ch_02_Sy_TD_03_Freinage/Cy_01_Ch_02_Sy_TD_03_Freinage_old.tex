@@ -1,17 +1,49 @@
-\setchapterimage{fig_01}
-\chapter*{TD \arabic{cptTD} \\ 
-Système de freinage d’un TGV DUPLEX -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
-\setcounter{question}{0}
+%%%% Paramétrage du TD %%%%
 
-\marginnote{Concours Centrale Supelec PSI 2006 \ifprof -- Ressources UPSTI\else\fi}
-%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
 
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
+}}
 
+\def\xxfigures{
+\includegraphics[width=.6\textwidth]{fig_01}
+%\textit{}
+}%figues de la page de garde
+\def\xxtitreexo{Système de freinage d’un TGV DUPLEX}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec PSI 2006} \ifprof-- Ressources UPSTI\else\fi}
+
+\def\xxactivite{{Synthèse 03} \ifprof  -- Corrigé \else \fi}
+
+%\iflivret
+\input{\repRel/Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 
 \section*{Mise en situation}
 
@@ -22,8 +54,6 @@ pneumatique installé sur les TGV Duplex. Par soucis de sécurité, il est indis
 \begin{obj}
 L’objectif est d'étudier la loi de commande du dispositif d’anti-enrayage et plus précisément le calcul du correcteur de la boucle de régulation.
 \end{obj}
-
-
 
 
 %La réalisation de la régulation de glissement entre la roue et le rail ne peut être effectuée directement, en particulier la seule mesure généralement disponible est celle de la vitesse, aussi la vitesse est obtenue par estimation. 
@@ -45,16 +75,12 @@ L’objectif est d'étudier la loi de commande du dispositif d’anti-enrayage e
 %par une fonction de transfert linéaire correspondant à un comportement « moyen ».
 %\end{itemize}
 
-On suppose, pour la suite, que l’architecture de la boucle de régulation est représentée sur la figure \ref{fig_02} où $\nu_c$ est la consigne de glissement.
+On suppose, pour la suite, que l’architecture de la boucle de régulation est représentée sur la figure suivante où $\nu_c$ est la consigne de glissement.
 
-
-
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_02}
-\caption{Structure de la chaîne de régulation de glissement}
-\label{fig_02}
-\end{marginfigure}
-
+\textit{Structure de la chaîne de régulation de glissement}
+\end{center}
 
 On note : 
 \begin{itemize}
@@ -65,7 +91,6 @@ On note :
  cette chaîne comporte un filtre destiné à limiter l’impact des bruits de mesure;
 \item $\nu_m$ : glissement estimé.% à partir de $V_T$ et de $V_R$.
 \end{itemize}
-
 On adoptera pour la suite : $H_1(p)=\dfrac{2000}{1+0,1p+0,01p^2}$ et $M(p)=\dfrac{1}{1+0,05p}$.
 
 Pour une vitesse de train $V_T=\SI{200}{km.h^{-1}}$, le cahier des charges est résumé par les données du tableau suivant et les données numériques utilisées sont données ci-dessous.
@@ -73,29 +98,31 @@ Enfin, les problèmes liés à l’évolution de la vitesse du train par rapport
 
 On a $M=\SI{8200}{kg}$, $V_T=\SI{200}{km.h^{-1}}$, $I/r^2=\SI{400}{kg}$, $g=\SI{10}{m.s^{-2}}$.
 
-%\footnotesize
-\begin{figure*}[!h]
-\begin{tabular}{p{.5\linewidth}p{.4\linewidth}}
+\footnotesize
+\begin{center}
+\begin{tabular}{|p{.6\linewidth}|p{.3\linewidth}|}
 \hline
-\multicolumn{2}{l}{\textbf{Marges de stabilité, performances en boucle ouverte}} \\ \hline
-Pulsation de coupure à \SI{0}{dB} & $\omega_c \simeq \SI{1}{rad.s^{-1}}$ \\ % \hline
-Marge de phase & $\Delta \varphi \geq 60\degres$ au point de fonctionnement nominal $B$ \\ % \hline
+\multicolumn{2}{|l|}{\textbf{Marges de stabilité, performances en boucle ouverte}} \\ \hline
+Pulsation de coupure à \SI{0}{dB} & $\omega_c \simeq \SI{1}{rad.s^{-1}}$ \\ \hline
+Marge de phase & $\Delta \varphi \geq 60\degres$ au point de fonctionnement nominal $B$ \\ \hline
 Stabilité quel que soit le point de fonctionnement sur la caractéristique $\mu = f(\nu)$ & \\ \hline
-\multicolumn{2}{l}{\textbf{Réponse à un échelon de consigne de glissement}} \\ \hline
-Écart en régime permanent & Nul \\ % \hline
-Temps du 1\ier maximum & $t_m\leq \SI{3,5}{s}$ \\ % \hline
+\multicolumn{2}{|l|}{\textbf{Réponse à un échelon de consigne de glissement}} \\ \hline
+Écart en régime permanent & Nul \\ \hline
+Temps du 1\ier maximum & $t_m\leq \SI{3,5}{s}$ \\ \hline
 Dépassement & $D\simeq  18\, \%$  \\ \hline
-\multicolumn{2}{l}{\textbf{Réponse à une variation en échelon de l'adhérence}} \\ \hline
-Écart en régime permanent & Nul \\ %\hline
+\multicolumn{2}{|l|}{\textbf{Réponse à une variation en échelon de l'adhérence}} \\ \hline
+Écart en régime permanent & Nul \\ \hline
 Temps de réponse & $t_r \leq \SI{9}{s}$ \\
 \hline
 \end{tabular}
-\caption{Cahier des charges de la boucle de régulation de glissement pour $V_T = \SI{200}{km.h^{-1}}$}
-\end{figure*}
+\end{center}
 
-%\normalsize
+\normalsize
 
-
+\begin{center}
+%\includegraphics[width=\linewidth]{fig_02a}
+\textit{Cahier des charges de la boucle de régulation de glissement pour $V_T = \SI{200}{km.h^{-1}}$}
+\end{center}
 \fi
 
 
@@ -115,19 +142,20 @@ On donne la fonction de transfert entre le glissement relatif et la force de fre
 %\else
 %\fi
 
-\ifprof
-\else
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{BodeQ1}
-%\textit{Cahier des charges de la boucle de régulation de glissement pour $V_T = \SI{200}{km.h^{-1}}$}
-\end{marginfigure}
-\fi
 
 \question{En prenant $C(p)=1$, compléter par le tracé asymptotique le diagramme
 de Bode de la fonction de transfert en boucle ouverte fourni.}% en annexe 3
 %en justifiant le tracé sur la copie (document réponse à joindre obligatoirement
 %avec la copie). Pour la suite, vous pourrez adopter sans aucune justification le
 %diagramme de Bode de l’annexe 3.}
+
+\ifprof
+\else
+\begin{center}
+\includegraphics[width=\linewidth]{BodeQ1}
+%\textit{Cahier des charges de la boucle de régulation de glissement pour $V_T = \SI{200}{km.h^{-1}}$}
+\end{center}
+\fi
 
 \ifprof
 \begin{corrige}
@@ -177,9 +205,9 @@ $ = \arg \left[
 \right] $
 $ = \arg \left[  \left(1+\dfrac{1}{T_i p} \right) \right] -98,5$
 
-\begin{remarque}
+\begin{rem}
 Ci-dessus, ce sont les \textbf{arguments} que l'on évalue lorsque $\omega=\omega_c$. L'argument du produit est égal à la somme des arguments.
-\end{remarque}
+\end{rem}
 $ \arg \left[\text{FTBO}\left( j \omega\right)\right] = \arg \left[  \dfrac{T_i p+1}{T_i p}  \right]-98,5 $.
 %$ = \arctan (T_i \omega) -98,5-90$.
 
@@ -328,10 +356,10 @@ compléter les diagrammes fournis par leur tracé asymptotique.}
 
 \ifprof
 \else
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{Q06.png}
 %\textit{Cahier des charges de la boucle de régulation de glissement pour $V_T = \SI{200}{km.h^{-1}}$}
-\end{marginfigure}
+\end{center}
 \fi
 
 
@@ -404,10 +432,10 @@ relatif $\nu_c(t)=\nu_{c0}u(t)$ où $u(t)$ désigne l’échelon unité.}
 \else
 La variation d’adhérence peut être modélisée en première approximation comme une force perturbatrice externe additive . On admet que cette modélisation conduit au schéma bloc représenté sur la figure ci-dessous.
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_03}
 %\textit{}
-\end{marginfigure}
+\end{center}
 
 On se propose dans cette partie d’évaluer les performances de la chaîne de régulation de freinage vis-à-vis de cette perturbation.
 
@@ -444,9 +472,9 @@ On peut en conclure que $||F_2(j \omega)|| = \min \left[ ||H_2(j \omega) || ; \d
 directement sur cette figure le diagramme asymptotique de la fonction $||H_2(j \omega) ||$.}
 \ifprof
 \else
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{Q12}
-\end{marginfigure}
+\end{center}
 \fi
 
 \ifprof
@@ -537,12 +565,7 @@ duquel le glissement reste en dessous de 5\,\% de la valeur initiale $\nu_1(0)$ 
 \else
 \fi
 
-\ifprof
-\else
-\marginnote{
-\ifcolle
-\else
-\begin{solution}
+\footnotesize
 \begin{enumerate}
 \item ...
 \item $\arg \left[  \dfrac{T_i p+1}{T_i p}  \right] \geq - \SI{21,5}{\degres}$.
@@ -555,9 +578,11 @@ duquel le glissement reste en dessous de 5\,\% de la valeur initiale $\nu_1(0)$ 
 \item ***
 \item ***
 \end{enumerate}
-\end{solution}}
-\fi
-\fi
+\normalsize
 
 
+\ifprof
+\else
+\end{multicols}
+\fi
 

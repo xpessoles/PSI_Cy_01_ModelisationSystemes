@@ -73,7 +73,7 @@ Les caractéristiques de la courbe sont les suivantes :
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{rampe}
 \end{marginfigure}
-\begin{resultat}\textbf{\textsf{\small -- Réponse à une rampe d'un système du premier ordre}}~\\
+\begin{resultat}[Réponse à une rampe d'un système du premier ordre]
 
 On appelle réponse à une rampe, l'expression de la sortie $s$ lorsque on soumet le système à une fonction linéaire de pente $k$: 
 $$
@@ -130,37 +130,32 @@ On note :
 Suivant la valeur du coefficient d'amortissement, l'allure de la réponse temporelle est différente.
 \end{defi}
 
-\begin{resultat}
-\begin{center}
-\begin{tabular}{p{.4\linewidth}p{.58\linewidth}}
-\begin{center}
-\textbf{$\xi \geq 1$ : système non oscillant et amorti}
 
-\textbf{(apériodique)}
 
-\includegraphics{Ordre2_amorti}
-\end{center} 
-& 
-\begin{center}
-\textbf{$\xi <1$ : système oscillant et amorti }
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{Ordre2_amorti}
+\end{marginfigure}
 
-\textbf{(pseudo périodique)}
-
-\includegraphics{Ordre2_pseudo}
-\end{center} 
+\begin{resultat}[$\xi \geq 1$ : système non oscillant et amorti \textbf{(apériodique)}]
 \begin{itemize} 
 \item La fonction de transfert a deux pôles réels.
 \item La tangente à l'origine est nulle.
 \end{itemize}
-& 
+\end{resultat}
+
+
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{Ordre2_pseudo}
+\end{marginfigure}
+
+\begin{resultat}[$\xi <1$ : système oscillant et amorti (pseudo périodique)]
 \begin{itemize} 
 \item La fonction de transfert a deux pôles complexes.
 \item La tangente à l'origine est nulle.
 \item La pseudo-période est de la forme $T_p=\dfrac{2\pi }{\omega_0 \sqrt{1-\xi^2}}$.
 \item La valeur du premier dépassement vaut :  $D_1=KE_0e^{\dfrac{-\pi \xi }{\sqrt{1-\xi^2}}}$.
 \end{itemize}
-\end{tabular}
-\end{center}
 \end{resultat}
 
 \begin{resultat}
@@ -172,4 +167,48 @@ Le temps de réponse à 5\% est donné par $t_{r 5\%} \cdot \omega_0 \simeq 3$.
 
 \end{itemize}
 \end{resultat}
-
+%
+%
+%\begin{resultat}
+%\begin{center}
+%\begin{tabular}{p{.4\linewidth}p{.58\linewidth}}
+%\begin{center}
+%\textbf{$\xi \geq 1$ : système non oscillant et amorti}
+%
+%\textbf{(apériodique)}
+%
+%\includegraphics{Ordre2_amorti}
+%\end{center} 
+%& 
+%\begin{center}
+%\textbf{$\xi <1$ : système oscillant et amorti }
+%
+%\textbf{(pseudo périodique)}
+%
+%\includegraphics{Ordre2_pseudo}
+%\end{center} 
+%\begin{itemize} 
+%\item La fonction de transfert a deux pôles réels.
+%\item La tangente à l'origine est nulle.
+%\end{itemize}
+%& 
+%\begin{itemize} 
+%\item La fonction de transfert a deux pôles complexes.
+%\item La tangente à l'origine est nulle.
+%\item La pseudo-période est de la forme $T_p=\dfrac{2\pi }{\omega_0 \sqrt{1-\xi^2}}$.
+%\item La valeur du premier dépassement vaut :  $D_1=KE_0e^{\dfrac{-\pi \xi }{\sqrt{1-\xi^2}}}$.
+%\end{itemize}
+%\end{tabular}
+%\end{center}
+%\end{resultat}
+%
+%\begin{resultat}
+%\begin{itemize}
+%\item Pour $\xi=0$ le système n'est pas amorti (oscillateur harmonique) la réponse à un échelon est une sinusoïde d'amplitude $KE_0$ ($2KE_0$ crête à crête).  
+%\item Pour $\xi\simeq 0,69$  on obtient le système du second ordre le plus rapide \textbf{avec dépassement}. 
+%Le temps de réponse à 5\% est donné par $t_{r 5\%} \cdot \omega_0 \simeq 3$.
+%\item Pour $\xi =1$ on obtient le système du second ordre le plus rapide \textbf{sans dépassement}.
+%
+%\end{itemize}
+%\end{resultat}
+%
