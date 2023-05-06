@@ -1,19 +1,50 @@
-\setchapterimage{fig_00}
-\chapter*{TD \arabic{cptTD} \\ 
-Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
-\ifprof \stepcounter{cptTD} \else  \fi
-\setcounter{question}{0}
+%%%% Paramétrage du TD %%%%
 
-\marginnote{Concours Centrale Supelec PSI 2016 }
-%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item .
+%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
+\end{itemize}
+}}
+
+\def\xxfigures{
+\includegraphics[width=.3\textwidth]{fig_01}
+%\textit{}
+}%figues de la page de garde
+\def\xxtitreexo{Assistance pour le maniement de charges dans l’industrie}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec PSI 2016}}
+
+\def\xxactivite{{Synthèse 04} \ifprof  -- Corrigé \else \fi}
+
+%\iflivret
+\input{\repRel/Style/pagegarde_TD}
+%\else
+%\input{../../style/new_pagegarde}
+%\fi
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 \section*{Mise en situation}
 \begin{obj}
 En vue d’asservir la position de la colonne vertébrale à une position de référence, une structure de
@@ -24,14 +55,13 @@ régulateur de cette architecture de commande.
 \end{obj}
 
 
-Pour la synthèse des régulateurs de la boucle externe, on adopte le modèle du procédé représenté par le schéma-blocs de la figure \ref{fig_02}. 
+Pour la synthèse des régulateurs de la boucle externe, on adopte le modèle du procédé représenté par le schéma-blocs de la figure suivante. 
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_02}
-\caption{Modèle du procédé pour la conception de la loi de commande
+\textit{Modèle du procédé pour la conception de la loi de commande
 de la chaine d’asservissement}
-\label{fig_02}
-\end{marginfigure}
+\end{center}
 
 On suppose :
 \begin{itemize}
@@ -65,15 +95,14 @@ de position d’un axe non déformé permet de vérifier l’ensemble du cahier 
 
 Une solution simple est d’envisager, dans un premier temps, une structure de commande réalisée directement à
 partir de l’estimation $L^{de}(t)$ de la position réelle de l’axe considéré. Cette structure, dont le correcteur est noté
-$C_1(p)$ et la consigne $L^{*}(p)$, est représentée par le schéma de la figure \ref{fig_03}.
+$C_1(p)$ et la consigne $L^{*}(p)$, est représentée par le schéma de la figure suivante.
 
 
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_03}
-\caption{Structure de commande à une boucle}
-\label{fig_03}
-\end{marginfigure}
+\textit{Structure de commande à une boucle}
+\end{center}
 
 En raison de la présence de bruits de mesure (signaux non représentés sur les schémas fournis), il n’est pas
 souhaitable d’introduire d’action dérivée dans le régulateur de cette boucle. Seuls des correcteurs de type
@@ -110,14 +139,13 @@ proportionnel intégral seront envisagés.
 \subsection*{Structure de commande adaptée à un système avec retard}
 Pour remédier au problème mis en évidence à la question précédente, il est envisagé d’utiliser une structure de commande
 adaptée aux systèmes comportant des retards. La figure suivante montre deux structures de commande correspondant
-d’une part au schéma réel \ref{fig_04}(a) représentant la réalisation de la commande ($X(p)$ est la transformée de Laplace
-d’une grandeur $x(t)$ interne au régulateur), d’autre part un schéma fictif \ref{fig_04}(b).
+d’une part au schéma réel (a) représentant la réalisation de la commande ($X(p)$ est la transformée de Laplace
+d’une grandeur $x(t)$ interne au régulateur), d’autre part un schéma fictif (b).
 
-\begin{marginfigure}[-2cm]%[!h]
+\begin{center}
 \includegraphics[width=\linewidth]{fig_04}
-\caption{Structure de commande adaptée aux systèmes à retard.}
-\label{fig_04}
-\end{marginfigure}
+\textit{Figure 3 -- Structure de commande adaptée aux systèmes à retard}
+\end{center}
 
 \question{En utilisant le schéma fictif (b) et le diagramme de Bode de la figure B du document réponse, déterminer le
 correcteur de type proportionnel intégral $C(p)= K\left( 1+\dfrac{1}{T_ip}\right)$ permettant d’assurer les performances exprimées
@@ -176,15 +204,14 @@ Pour la conception de la loi de commande :
 \end{itemize}
 
 
-\begin{marginfigure}[-1cm]
+\begin{center}
 \includegraphics[width=\linewidth]{fig_05}
-\caption{Modèle de commande avec une boucle interne intégrée}
-\label{fig_05}
-\end{marginfigure}
+\textit{Modèle de commande avec une boucle interne intégrée}
+\end{center}
 
 
 \question{En utilisant la même démarche que celle de la question précédente, déterminer la valeur de la grandeur $L^{m}(t)$ en régime permanent, soit 
-$\lim\limits_{t\to\infty} L^{m*}(t)$, en réponse à une perturbation $d(t)$ en échelon $d(t)=D_0 h(t)$. Au regard des différents éléments constitutifs de la boucle de régulation, justifier qualitativement que la réalisation du régulateur $R_e(p)$ selon le schéma de la figure \label{fig_05}(a) reste stable du point vue interne.}
+$\lim\limits_{t\to\infty} L^{m*}(t)$, en réponse à une perturbation $d(t)$ en échelon $d(t)=D_0 h(t)$. Au regard des différents éléments constitutifs de la boucle de régulation, justifier qualitativement que la réalisation du régulateur $R_e(p)$ selon le schéma de la figure 3(a) reste stable du point vue interne.}
 
 \ifprof
 \begin{corrige}
@@ -193,16 +220,7 @@ $\lim\limits_{t\to\infty} L^{m*}(t)$, en réponse à une perturbation $d(t)$ en 
 \fi
 
 \subsection*{Retour sur le cahier des charges}
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_06a}
-\includegraphics[width=\linewidth]{fig_06b}
-\caption{Evolutions temporelles de la position $L^d(t)$}
-\label{fig_06_2}
-\end{marginfigure}
-
-
-La figure \ref{fig_06_2} montre les évolutions temporelles de la position $L^d(t)$ en réponse
+La figure suivante montre les évolutions temporelles de la position $L^d(t)$ en réponse
 à une consigne en échelon $L^*(t)=L_0 h(t-0,02)$ avec $L_0 = \SI{10}{mm}$ et à une perturbation en échelon $D^*(t) = D_0 h(t-0,02)$ avec $D_0=\SI{10}{\mu m}$. 
 
 \question{Commenter ces courbes et, en justifiant le résultat obtenu, valider les exigences vérifiées. Conclure alors sur la pertinence de l’approche utilisée et sur la structure de correction retenue.}
@@ -215,10 +233,19 @@ La figure \ref{fig_06_2} montre les évolutions temporelles de la position $L^d(
 %\begin{center}
 %\includegraphics[width=.65\linewidth]{cor_01}
 %%\textit{}
-
+%\end{center}
+\ifprof
+\else
+\end{multicols}
+\fi
 
 \begin{center}
-\includegraphics[height=\linewidth]{fig_07}
+\includegraphics[width=.8\linewidth]{fig_06}
+%\textit{}
+\end{center}
+
+\begin{center}
+\rotatebox{90}{\includegraphics[height=.8\linewidth]{fig_07}}
 %\textit{}
 \end{center}
 
