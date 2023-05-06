@@ -91,7 +91,16 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 
 \subsection{Intégrateur}
 
-\begin{marginfigure}
+
+\begin{resultat}[Diagramme de Bode d'un intégrateur]
+\begin{itemize}
+\item Fonction de transfert : $H(p)=\dfrac{K}{p}$.
+\item Diagramme de gain asymptotique : droite de pente $-{20}\text{dB/decade}$ passant par le point $(1,20\log K)$.
+\item Diagramme de phase asymptotique : droite horizontale d'ordonnée $-90$ \degre.
+\end{itemize}
+\end{resultat}
+
+\begin{marginfigure}[-4cm]
 \begin{tikzpicture}[xscale=7/6]
 \tikzset{
 semilog lines/.style={thin, bleuxp}, 
@@ -117,14 +126,6 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \end{scope}
 \end{tikzpicture}
 \end{marginfigure}
-
-\begin{resultat}[Diagramme de Bode d'un intégrateur]
-\begin{itemize}
-\item Fonction de transfert : $H(p)=\dfrac{K}{p}$.
-\item Diagramme de gain asymptotique : droite de pente $-{20}\text{dB/decade}$ passant par le point $(1,20\log K)$.
-\item Diagramme de phase asymptotique : droite horizontale d'ordonnée $-90$ \degre.
-\end{itemize}
-\end{resultat}
 
 
 
