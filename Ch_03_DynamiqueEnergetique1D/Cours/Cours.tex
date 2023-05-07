@@ -52,7 +52,7 @@ Un \textbf{référentiel galiléen} se définit à partir d'une repère spatial
 On peut également le définir comme un référentiel << dans lequel le principe fondamental de la dynamique s'applique >>.
 \end{defi}
 
-\begin{remarque}
+\begin{remarque}[s]
 Dans la pratique, on fera toujours la \textbf{supposition qu'un repère est galiléen}. Cela dépendra effectivement des mouvements mis en jeu et des \textbf{échelles temporelles et spatiales} considérées. 
 Par exemple :
 \begin{itemize}
@@ -77,6 +77,12 @@ En mécanique classique (ou Newtonienne), les deux repères d'\textbf{espace et 
 
 \subsection{Principe Fondamental de la Dynamique}
 
+\marginnote[2cm]{
+$\torseurstat{T}{\overline{E}}{E} = \torseurl{\vectf{\overline{E}}{E}}{\vectm{P}{\overline{E}}{E}}{P}$.}
+
+\marginnote[4cm]{$\torseurcin{D}{E}{R_0} = \torseurl{\vectrd{E}{R_0}}{\vectmd{P}{E}{R_0}}{P}$ avec
+$\vectrd{E}{R_0} = m_E\vectg{G}{E}{R_0}$.}
+
 \begin{defi}[Énoncé du Principe Fondamental de la Dynamique]
 Dans le cas général, soit un ensemble matériel $E$ en mouvement par rapport à un référentiel galiléen ($R_0$), alors la somme des actions mécaniques extérieures (\textbf{torseur des actions mécaniques extérieures} s'appliquant sur $E$) est égale au \textbf{torseur dynamique} du mouvement de $E$ par rapport à $R_0$ :
 $$
@@ -87,10 +93,10 @@ De plus le \textbf{Principe Fondamental de la Dynamique} postule que pour tout m
 
 \end{defi}
 
-\begin{remarque}
+\begin{remarque}[s]
 \begin{itemize}
-\item Les démarches pour le calcul du torseur dynamique seront vues ultérieurement.
-\item La démarche de calcul du torseur des actions mécaniques extérieures appliquées sur E est la  même que celle vu lors de l'utilisation du PFS (ce sont les mêmes torseurs). 
+\item Les méthodes permettant de déterminer le torseur dynamique dans un cas quelquonque seront vues ultérieurement.
+\item La démarche de calcul du torseur des actions mécaniques extérieures appliquées sur $E$ est la même que celle vu lors de l'utilisation du PFS (ce sont les mêmes torseurs). 
 \end{itemize}
 \end{remarque}
 
@@ -110,9 +116,9 @@ Du principe fondamental de la dynamique découle plusieurs théorèmes générau
 $$\vectf{\bar E}{E}=\overrightarrow{R_d}(E/R_0)=m\vectg{G}{E}{R_0}.$$
 \end{theoreme}
 
-\begin{remarque}
+\marginnote{\begin{remarque}
 On peut alors définir un Newton comme l'effort à mettre en \oe{}uvre pour mettre en mouvement $\SI{1}{kg}$ avec une accélération de $\SI{1}{m.s^{-2}}$ en son centre de gravité $G$.
-\end{remarque}
+\end{remarque}}
 %\subsubsection{Théorème du moment dynamique}
 \begin{theoreme}[Théorème du moment dynamique]
 
@@ -121,7 +127,7 @@ $$\vectm{A}{\bar E}{E}=\vectmd{A}{E}{R_0}.$$
 \end{theoreme}
 
 %\subsubsection{Théorème des actions mutuelles}
-\begin{theoreme}\textbf{\textsf{\small -- Théorème des actions mutuelles}}
+\begin{theoreme}[Théorème des actions mutuelles]
 
 Soient $(E_1)$ et $(E_2)$ deux sous-ensembles matériels de $(E)$,
 en mouvement par rapport à un référentiel galiléen, et exerçant une action mécanique l'un sur l'autre. Alors :
@@ -138,7 +144,7 @@ en mouvement par rapport à un référentiel galiléen, et exerçant une action 
 Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de translation dans un référentiel galiléen ($R_g$) alors : 
 
 \begin{itemize}
-\item d'après le \textbf{théorème de la résultante dynamique : } la résultante des efforts extérieurs est égale au produit de la masse par l'accélération de G par rapport à $R_g$ :
+\item d'après le \textbf{théorème de la résultante dynamique : } la résultante des efforts extérieurs est égale au produit de la masse par l'accélération de $G$ par rapport à $R_g$ :
 $
 %m\;\overrightarrow{\Gamma}(G/R_g)=\vectf{\bar E}{E};%\resultante[\bar E]{E}
 m\;\vectg{G}{E}{R_g}=\vectf{\bar E}{E}$;%\resultante[\bar E]{E}
@@ -165,7 +171,7 @@ $ avec :
 
 \subsection{Méthodologie}
 
-\begin{methode}
+\begin{methode}[Résolution du PFD]
 La méthodologie de résolution d'un problème de dynamique est très similaire à celle utilisée lors de la détermination des performances statiques des systèmes.
 
 \begin{enumerate}
@@ -397,6 +403,9 @@ Idée de base : minimiser le nombre d'équations à écrire.
 %
 \section{Loi de mouvement en trapèze}
 
+
+
+
 Une des lois usuellement suivie par un actionneur pour aller d'un point à un autre est une loi de mouvement de vitesse en trapèze.  Ce mouvement peut être décomposé en 3 phases : 
 \begin{itemize}
 \item phase 1 mouvement uniformément décéléré. L'accélération est donc constante, la vitesse croit de façon linéaire et la position de façon parabolique;
@@ -404,6 +413,9 @@ Une des lois usuellement suivie par un actionneur pour aller d'un point à un au
 \item phase 3 : mouvement uniformément décéléré. L'accélération est constante est négative, la vitesse décroît linéairement et la position évolue de façon parabolique. 
 \end{itemize}
 
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{trapeze}
+\end{marginfigure}
 
 Dans le cas général, il sera souvent inutile d'écrire les équations horaires de chacune des phases. En effet, les questions liées à ces lois de mouvements sont généralement :
 \begin{itemize}
@@ -413,10 +425,6 @@ Dans le cas général, il sera souvent inutile d'écrire les équations horaires
 \item de déterminer la distance parcourue. 
 \end{itemize}
 
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{trapeze}
-\end{marginfigure}
 
 
 \begin{resultat}
@@ -429,8 +437,8 @@ Dans les 3 derniers points, il est souvent suffisant de remarquer en utilisant l
 \end{resultat}
 
 
-\begin{center}
-\begin{tabular}{|p{2.2cm}|c|c|c|}
+\begin{table*}[!h]
+\begin{tabular}{|p{2.4cm}|c|c|c|}
 \hline
  & Phase 1 & Phase 2 & Phase 3 \\
 \hline \hline
@@ -448,7 +456,7 @@ $\ddot{x}(t)=0$ &
 $\ddot{x}(t)=-\ddot{x}_m$ \\
 \hline
 \end{tabular}
-\end{center}
+\end{table*}
 %
 %\begin{thebibliography}{2}
 %   \bibitem[1]{ref1} Émilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
