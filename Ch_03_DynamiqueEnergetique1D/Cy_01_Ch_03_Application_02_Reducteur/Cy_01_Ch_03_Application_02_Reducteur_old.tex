@@ -1,41 +1,75 @@
-%\setchapterimage{fig_00}
-\chapter*{Application \arabic{cptApplication} \\ 
-Réducteur -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{ \ifprof {Application 2 -- Corrigé } \else  Application 2 \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Réducteur -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+%\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item \textit{C1-05} : Proposer une démarche permettant la détermination d’une action mécanique inconnue ou d'une loi de mouvement.
+\item \textit{C2-08} : Déterminer les actions mécaniques en dynamique dans le cas où le mouvement est imposé.
+\item \textit{C2-09} : Déterminer la loi de mouvement dans le cas où les efforts extérieurs sont connus.
+\end{itemize}
+}}
+\def\xxtitreexo{Application -- Détermination de l'inertie équivalente de réducteurs}
+\def\xxsourceexo{\hspace{.2cm}}%\footnotesize{Concours Commun Mines Ponts 2016}}
+
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxfigures{
+%\includegraphics[width=.6\linewidth]{fig_00}
+}%figues de la page de garde
+
+
+\iflivret
+\input{\repRel/Style/pagegarde_TD}
+\else
+\input{../../style/new_pagegarde}
 \fi
-\setcounter{question}{0}
+\setlength{\columnseprule}{.1pt}
 
-\marginnote{D'après C. Gamelon \& P. Dubois.}
-\marginnote{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C1-08}
-\UPSTIcompetence[2]{C1-09}}
+\pagestyle{fancy}
+\thispagestyle{plain}
 
-\begin{marginfigure}
-\centering
-%\includegraphics[width=\linewidth]{fig_00}
-\end{marginfigure}
+\ifprof
+\vspace{5.5cm}
+\else
+\vspace{5.5cm}
+\fi
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 
 
 \section*{Exercice 1 -- Calcul de l'inertie équivalente d'un train simple}
 \setcounter{subparagraph}{0}
-
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{red_01}
-\end{marginfigure}
-
 On donne un train d'engrenages simple avec $Z_1$, $Z_{21}$, $Z_{23}$ et $Z_3$ le nombre de dents des roues dentées. On nomme $k_1$ le rapport du train de $S_1$ et $S_2$ avec $k_1=\dfrac{\omega(2/0)}{\omega(1/0)}$ et  
 $k_2$ le rapport de $S_2$ et $S_3$ avec $k_2=\dfrac{\omega(3/0)}{\omega(2/0)}$. 
 
 On applique en entrée, sur l'arbre 1, un couple moteur $C_m\vect{z_0}$ destiné à entraîner une charge, sur l'arbre 3, modélisée par un couple résistant  $C_r\vect{z_0}$
 
-
-
+\ifprof
+\begin{center}
+\includegraphics[width=.5\linewidth]{red_01}
+\end{center}
+\else
+\begin{center}
+\includegraphics[width=\linewidth]{red_01}
+\end{center}
+\fi
 On rappelle que pour les engrenages à denture droite $d=mz$ avec $d$ le diamètre primitif, $m$ le module, $z$ le nombre de dents du pignon. $\omega(1/0)$, $\omega(2/0)$ et $\omega(3/0)$ sont les vitesses de rotation de $S_1$, $S_2$ et $S_3$ autour des axes $\left(O_1,\vect{x_g}\right)$, $\left(O_2,\vect{x_g}\right)$ et $\left(O_3,\vect{x_g}\right)$. Le repère galiléen $\mathcal{R}_g$ est lié au solide $S_0$. Les liaisons pivots sont supposées parfaites. Les moments d'inertie sont définies aux centres de masse $G_1=O_1$, $G_2=O_2$ et $G_3=O_3$ associées aux solides $S_1$, $S_2$ et $S_3$ suivant l'axe $\vect{z_0}$ sont de notés $J_1$, $J_2$ et $J_3$. 
 
 Le train d'engrenage est entrainé par un couple moteur $C_m$ agissant sur la liaison pivot entre 1 et 0. 
@@ -50,3 +84,8 @@ Une poulie de rayon $R$ est placée sur l'extrémité droite de l'arbre 3. Une c
 \question{Déterminer la relation entre le couple d'entrée et le couple de sortie du réducteur.}
 
 \question{Déterminer la relation entre le couple d'entrée, les grandeurs inertielles et l'accélération de l'arbre 1.}
+
+\ifprof
+\else
+\end{multicols}
+\fi

@@ -1,40 +1,74 @@
-%\setchapterimage{fig_00}
-\chapter*{Application \arabic{cptApplication} \\ 
-Pompe à plateau -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{ \ifprof {Application 1 -- Corrigé } \else  Application 1 \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Pompe à plateau -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+%\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de dynamique plans à 1 mobilité}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item \textit{C1-05} : Proposer une démarche permettant la détermination d’une action mécanique inconnue ou d'une loi de mouvement.
+\item \textit{C2-08} : Déterminer les actions mécaniques en dynamique dans le cas où le mouvement est imposé.
+\item \textit{C2-09} : Déterminer la loi de mouvement dans le cas où les efforts extérieurs sont connus.
+\end{itemize}
+}}
+
+\def\xxtitreexo{Application -- Pompe à plateau}%Motorisation du moteur Haibike}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{C. Gamelon \& P. Dubois}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxfigures{
+\includegraphics[width=.6\linewidth]{fig_00}
+}%figues de la page de garde
+
+
+
+
+\input{\repRel/Style/pagegarde_TD}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.5cm}
+\else
+\vspace{4.9cm}
 \fi
-\setcounter{question}{0}
 
-\marginnote{D'après C. Gamelon \& P. Dubois.}
-\marginnote{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C1-08}
-\UPSTIcompetence[2]{C1-09}
-}
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{numques}{0}
 
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_00}
-\end{marginfigure}
 
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+
+
+\ifprof
+\else
 
 Considérons le mécanisme de pompe représenté sur la figure ci-dessous.
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
+\begin{center}
+\includegraphics[width=.8\linewidth]{fig_01}
+\end{center}
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_02}
-\end{marginfigure}
 
+\begin{center}
+\includegraphics[width=.8\linewidth]{fig_02}
+\end{center}
 
 L'arbre excentrique \textbf{(1)}, animé d'un mouvement de rotation autour de l'axe $\axe{O}{x_0}$  horizontal, agit sur le piston \textbf{(2)} en liaison pivot glissant d'axe $\axe{O}{z_0}$ avec le bâti \textbf{(0)}. Pendant la phase de descente du piston \textbf{(2)}, le contact ponctuel en $I$ avec l’excentrique est maintenu par un ressort \textbf{(r)}.
 
@@ -76,6 +110,12 @@ Un moteur exerce un couple connu de moment $\vect{C_m}=C_m\vect{x_0}$ sur l'arbr
 \question{En considérant un frottement sec au niveau de la liaison ponctuelle entre \textbf{(1)} et \textbf{(2)}, déterminer l'équation différentielle du mouvement.}
 
 
+\ifprof
+\else
+\end{multicols}
+\fi
+
+\fi 
 \ifprof
 %\newpage
 
