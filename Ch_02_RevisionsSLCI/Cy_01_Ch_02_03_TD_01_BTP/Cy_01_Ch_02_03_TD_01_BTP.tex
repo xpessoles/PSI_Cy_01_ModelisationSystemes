@@ -1,6 +1,9 @@
 \setchapterimage{fig_00}
 \chapter*{TD \arabic{cptTD} \\ 
 Banc d'essai BTP -- \ifprof Corrigé \else Sujet \fi}
+
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : Banc d'essai BTP -- \ifprof Corrigé \else Sujet \fi}
+
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi
 \fi
@@ -130,12 +133,14 @@ Hypothèses :
 \ifprof
 \else
 
+
+\marginnote{
 Hypothèses :
 \begin{itemize}
 \item on néglige l'inductance du moteur à courant continu ainsi que l'effet du coefficient de frottement ;
 \item on fait l'hypothèse que $K_c=K_e =K$;
 \item pour simplifier l'étude, la boucle de courant n'a pas été modélisée.
-\end{itemize}
+\end{itemize}}
 Le schéma-blocs de l'asservissement en vitesse du moteur à courant continu est donné sur la figure \ref{btp_fig_06}.
  
 

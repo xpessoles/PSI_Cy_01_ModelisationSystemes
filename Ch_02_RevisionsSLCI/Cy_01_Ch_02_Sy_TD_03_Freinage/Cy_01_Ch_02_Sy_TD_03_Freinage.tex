@@ -1,6 +1,9 @@
 \setchapterimage{fig_01}
 \chapter*{TD \arabic{cptTD} \\ 
 Système de freinage d’un TGV DUPLEX -- \ifprof Corrigé \else Sujet \fi}
+
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : Système de freinage d’un TGV DUPLEX -- \ifprof Corrigé \else Sujet \fi}
+
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi
 \fi
@@ -155,12 +158,12 @@ est : $C(p)=K_r\left(1+\dfrac{1}{T_i p} \right)$.
 la marge de phase imposée par le cahier des charges à la pulsation de coupure $\omega_c$
 souhaitée.}
 
-\footnotesize
-\begin{methode}
+
+\begin{methode}[Marge de phase]
 Si on note $\omega_c$ on définit la pulsation de coupure telle que $|\text{FTBO}\left(j \omega_c \right)| = \SI{0}{dB}$. On peut alors définir la marge de phase par $M\varphi=\arg \left[\text{FTBO}\left( j \omega_c\right)\right]-\left(-180\degres\right)$.
 \end{methode}
 
-\normalsize 
+
 
 \ifprof
 \begin{corrige}
