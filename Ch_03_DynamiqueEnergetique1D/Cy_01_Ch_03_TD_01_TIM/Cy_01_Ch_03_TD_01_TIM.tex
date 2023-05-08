@@ -117,6 +117,11 @@ L’accélération de la pesanteur $\vect{g}$ telle que $\vect{g}=-g\vect{z_0}$.
 \item un moteur d’entraînement du véhicule dont le corps est solidaire du châssis 1 exerce sur la roue 4 un couple moteur noté $C_m \vect{y}$. 
 \end{itemize}
 
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_03}
+\end{marginfigure}
+
 Les roues sont en contact ponctuel avec frottement avec le sol 0. Afin de tenir compte de la résistance au roulement du pneu sur le sol, les actions de contact peuvent être modélisées en dynamique par : 
 $\torseurstat{T}{0}{i}=\torseurl{-T_{0i}\vect{x}+N_{0i}\vect{z}}{-N_{0i}r\vect{y}}{A_i}$ avec $i=4$ ou 23.
 
@@ -124,9 +129,6 @@ L’ensemble du véhicule dont la carrosserie est soumis lors de son mouvement �
 $\torseurl{-\dfrac{1}{2}\rho S C_x \dot{x}^2 \vect{x}}{\vect{0}}{O_{23}}$ avec $\rho$ masse volumique du véhicule, $S$ surface alaire, $C_x$ coefficient de traînée du véhicule, $\dot{x}$ vitesse relative du véhicule par rapport à l'air ambiant. 
 
 
-\begin{center}
-\includegraphics[width=\linewidth]{fig_03}
-\end{center}
 \fi
 
 \question{Écrire les équations scalaires découlant des conditions de Roulement Sans Glissement (RSG) aux point $A_{23}$ et $A_4$.}
@@ -232,13 +234,14 @@ $$C_m=\underbrace{\left(M+3m\right)gr}_{\text{Résistance au roulement}} + \unde
 
 \ifprof
 \else
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_04}
+\end{marginfigure}
 On réalise un essai du véhicule sur terrain horizontal, le moteur du véhicule délivrant un couple $C_m$ constant.   
 Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^{-3}}\text{m}$, $R = \SI{0,25}{m}$, $C_m= \SI{3,245}{m.N}$, $g = \SI{10}{ms^{-2}}$. L’acquisition des paramètres vitesse véhicule et distance parcourue sont visualisés par les graphes ci-dessous. 
 
 
-\begin{center}
-\includegraphics[width=\linewidth]{fig_04}
-\end{center}
 \fi
 
 \question{Déterminer dans les conditions d’essais le produit $\dfrac{1}{2}\rho S C_x$ caractérisant les effets aérodynamiques sur le véhicule. On précisera les unités. }
@@ -265,6 +268,8 @@ $\dfrac{1}{2}\rho S C_x=\dfrac{C_m-\left(M+3m\right)gr}{R\dot{x}^2} =\dfrac{3,24
 \else
 \ifcolle
 \else
+\marginnote{
+\begin{solution}
 \begin{enumerate}
 \item $-T_{01} +mg\sin\alpha = 0$; $N_{01} -mg\cos\alpha = 0$; $C_r=RT_{01}$.
 \item $\tan \alpha_{\text{lim}} = \dfrac{r}{R}$.
@@ -279,6 +284,7 @@ $\dfrac{1}{2}\rho S C_x=\dfrac{C_m-\left(M+3m\right)gr}{R\dot{x}^2} =\dfrac{3,24
 \item $\dfrac{1}{2}\rho S C_x = \SI{0,025}{kg.m^{-1}}$.
 \item $\alpha=1\degres$.
 \end{enumerate}
+\end{solution}}
 \fi
 \fi
 
