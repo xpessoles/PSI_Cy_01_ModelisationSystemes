@@ -1,25 +1,56 @@
-%\setchapterimage{fig_00}
-\chapter*{TD \arabic{cptTD} \\ 
-Véhicule TIM -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{ \ifprof {TD 1 -- Corrigé } \else  TD 1 \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Véhicule TIM -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptTD} \else
-\ifprof  \stepcounter{cptTD} \else \fi
+%\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item \textit{C1-05} : Proposer une démarche permettant la détermination d’une action mécanique inconnue ou d'une loi de mouvement.
+\item \textit{C2-08} : Déterminer les actions mécaniques en dynamique dans le cas où le mouvement est imposé.
+\item \textit{C2-09} : Déterminer la loi de mouvement dans le cas où les efforts extérieurs sont connus.
+\end{itemize}
+}}
+
+\def\xxtitreexo{Véhicule TIM}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Florestan Mathurin}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxfigures{
+\includegraphics[width=.7\linewidth]{fig_01}
+
+}%figues de la page de garde
+
+
+
+\input{\repRel/Style/pagegarde_TD}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.5cm}
+\else
+\vspace{4.9cm}
 \fi
-\setcounter{question}{0}
 
-\marginnote{Florestan Mathurin.}
-\marginnote{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-08}
-\UPSTIcompetence[2]{C2-09}
-}
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
 
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
 
 \ifprof
 \else
@@ -30,18 +61,15 @@ L’éco-marathon SHELL est une compétition relative à la consommation énerg�
 
 \ifprof
 \else
-
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_02}
-\end{marginfigure}
-
 Le principe est présenté sur la figure 1. On place 2 roues lestées sur un dispositif inclinable. On considère ensuite que l’angle d’inclinaison minimum de la pente, où il y a début du mouvement des roues, est représentatif de la résistance au roulement.  
 L’ensemble des 2 roues lestées peut être assimilé au solide \textbf{1} représenté sur la figure 1, de masse $m$, de rayon $R$ et de centre de masse $G$. 
 
 L'accélération de la pesanteur $\vect{g}$ tel que $\vect{g}=-g\vect{z_0}$. 
 
 
+\begin{center}
+\includegraphics[width=.95\linewidth]{fig_02}
+\end{center}
 
 L’action de contact entre l’ensemble des roues \textbf{1} et le plan \textbf{0}, incliné d’un angle $\alpha$ par rapport à l’horizontale, est  modélisé comme un contact ponctuel avec frottement où  l’on tient compte de la résistance au roulement. 
 
@@ -281,5 +309,9 @@ $\dfrac{1}{2}\rho S C_x=\dfrac{C_m-\left(M+3m\right)gr}{R\dot{x}^2} =\dfrac{3,24
 \end{enumerate}
 \fi
 \fi
-
+\ifprof
+%\end{multicols}
+\else
+\end{multicols}
+\fi
 
