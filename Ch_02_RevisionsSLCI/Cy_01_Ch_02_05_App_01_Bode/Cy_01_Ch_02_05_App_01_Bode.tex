@@ -174,16 +174,18 @@ $20\log(K⁄0.1)\simeq 33$ et $K\simeq4.5$
 
 \section*{Réponse fréquentielle}
 
+\begin{marginfigure}
+\centering
+\includegraphics[width=6cm]{Schema_1_entree_2F_R}
+\end{marginfigure}
+
 Un capteur d'accélération de sensibilité S est utilisé dans la chaîne de retour d'un système asservi dont l'objectif est de contrôler l'accélération d'un plateau sur lequel est fixé ce capteur. Le moteur permettant la motorisation du plateau est connu par l'intermédiaire de sa fonction de transfert. 
 
 
-\begin{center}
-\includegraphics[width=6cm]{Schema_1_entree_2F_R}
-\end{center}
+\marginnote{On a  $A = \SI{100}{g.m.s^{-2}.V^{-1}}$, $\tau=\SI{0,2}{s}$ et $S = 10\cdot 10^{-3}/g V/(m/s^2)$ où $g$ est l'accélération de pesanteur. $E(p)$ est la transformée de Laplace de $e(t)$ la tension de consigne de cet asservissement et $\Gamma_b(p)$ la transformée de l'accélération $\gamma_b(t)$.}
 
-On a  $A = \SI{100}{g.m.s^{-2}.V^{-1}}$, $\tau=\SI{0,2}{s}$ et $S = 10\cdot 10^{-3}/g V/(m/s^2)$ où $g$ est l'accélération de pesanteur. $E(p)$ est la transformée de Laplace de $e(t)$ la tension de consigne de cet asservissement et $\Gamma_b(p)$ la transformée de l'accélération $\gamma b(t)$.
 
-\subsection*{B(p) = 1}
+\subsubsection*{Première étude : $B(p) = 1$}
 On applique à l'entrée un échelon d'amplitude $E_0$ égale à \SI{0,2}{V}.
 
 \question{Calculer la valeur de l'accélération en régime permanent. On voudrait une accélération égale à \SI{20}{g}. Quelle doit être la tension de consigne ?}
@@ -204,7 +206,7 @@ On applique à l'entrée un échelon d'amplitude $E_0$ égale à \SI{0,2}{V}.
 %Γ_b=(A/(1+AS))/√(1+(τω/(1+AS))^2 )∙0.2=7.07g
 %φ=arctan⁡〖(τω/(1+AS))=45°〗
 
-\subsection*{Deuxième étude : $B(p) = \dfrac{1}{p}$.}
+\subsubsection*{Deuxième étude : $B(p) = \dfrac{1}{p}$.}
 
 \question{Déterminer la fonction de transfert en boucle fermée de ce système. Identifier les différents paramètres de cette fonction. Calculer l'accélération en régime permanent suite à un échelon de consigne d'amplitude \SI{0,2}{V}.}
 %.
