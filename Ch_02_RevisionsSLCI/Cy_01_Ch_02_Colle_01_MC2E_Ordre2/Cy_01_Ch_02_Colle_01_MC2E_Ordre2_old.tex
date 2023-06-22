@@ -1,27 +1,47 @@
-\setchapterimage{fig_00}
-\chapter*{Colle \arabic{cptColle} \\ 
-Micromanipulateur compact pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
 
-\addcontentsline{toc}{section}{Colle \arabic{cptTD} : Micromanipulateur compact pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
 
-\iflivret \stepcounter{cptColle} \else
-\ifprof  \stepcounter{cptColle} \else \fi
-\fi
-\setcounter{question}{0}
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item B2-04 : Établir un modèle de connaissance par des fonctions de transfert.
+\end{itemize}
+}}
 
-\marginnote{Mines Ponts 2016.}
-\marginnote{\UPSTIcompetence[2]{B2-04}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=.9\linewidth]{fig_001}
-\end{marginfigure}
+\def\xxfigures{
+\includegraphics[width=.9\linewidth]{fig_02}
+%\textit{}
+}%figues de la page de garde
+\def\xxtitreexo{\noindent Micromanipulateur compact pour la chirurgie endoscopique }
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Mines Ponts 2016}}
 
 
+\def\xxactivite{{Colle 01} \ifprof  -- Corrigé \else \fi}
 
 
+\input{\repRel/Style/pagegarde_TD}
 
-%\section*{Micromanipulateur compact pour la chirurgie endoscopique ($\text{MC}^2\text{E}$)}
-\subsection*{Présentation générale}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{multicols}{2}
+\section{Micromanipulateur compact pour la chirurgie endoscopique ($\text{MC}^2\text{E}$)}
+\subsection{Présentation générale}
 
 \ifprof
 \else
@@ -58,12 +78,12 @@ corps humain.
 \ifprof
 \else
 
-La figure \ref{fig_05_TER} décrit les exigences auxquelles est soumis l'asservissement du $\text{MC}^2\text{E}$.
+La figure suivante décrit les principales exigences auxquelles est soumis le $\text{MC}^2\text{E}$.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_05_TER}
-\caption{Performances de l'asservissement. \label{fig_05_TER}}
-\end{marginfigure}
+\begin{center}
+\includegraphics[width=\linewidth]{fig_05_BIS}
+%Figure 1 : Modèle de la commande en effort
+\end{center}
 \fi
 
 %L’objectif de ce sujet est d’analyser, de comprendre et de justifier les choix structurels faits par les
@@ -77,7 +97,7 @@ La figure \ref{fig_05_TER} décrit les exigences auxquelles est soumis l'asservi
 %expérimentation et les exigences et/ou performances souhaitées. Les réponses apportées aux questions
 %devront donc être rédigées dans cet esprit.
 
-\subsection*{Validation des performances de l’asservissement d’effort}
+\subsection{Validation des performances de l’asservissement d’effort}
 %On s’intéresse ici à la phase 4. Lors de l’opération envisagée, il est nécessaire de maintenir un effort
 %constant au bout de la pince (4). Pour cela, on réalise un asservissement d’effort de l’axe en translation que
 %l’on se propose d’étudier.
@@ -146,38 +166,32 @@ Modéliser l’asservissement en effort.
 \ifprof
 \else
 
-\marginnote{On note :
+L’équation de mouvement est définie par l’équation différentielle suivante : 
+$J\dfrac{\text{d}^2\theta_m(t)}{\text{d}t^2}=C_m(t)-C_e(t)$  avec :
 \begin{itemize}
 \item $J$, inertie équivalente à l’ensemble en mouvement, ramenée sur l’arbre moteur;
 \item $C_e(t)$, couple regroupant l’ensemble des couples extérieurs ramenés à l’arbre moteur, notamment fonction de la raideur du ressort.
-\end{itemize}}
-
-L’équation de mouvement est définie par l’équation différentielle suivante : 
-$J\dfrac{\text{d}^2\theta_m(t)}{\text{d}t^2}=C_m(t)-C_e(t)$.
-
+\end{itemize}
 
 
 On notera $\theta_m(p)$, $\Omega_m(p)$, $C_m(p)$ et $C_e(p)$ les transformées de Laplace des grandeurs de l’équation de mouvement.
 On pose $C_e(t)=K_{C\theta}\theta_m(t)$ où  $K_{C\theta}$ est une constante positive. On a de plus $\dfrac{\text{d}\theta_m(t)}{\text{d}t}=\omega_m(t)$. La régulation se met alors sous la forme du schéma-blocs à retour unitaire simplifié que l’on
 admettra :
 
-\marginnote[2cm]{Avec :
+\begin{center}
+\includegraphics[width=\linewidth]{fig_06}
+
+\textit{Modèle simplifié du montage du capteur d’effort.}
+\end{center}
+%\end{multicols}
+
+Avec :
 \begin{itemize}
 \item $C_e(p)$, couple de sortie mesuré par le capteur d’effort situé sur le $\text{MC}^2\text{E}$ ;
 \item $C_c(p)$, couple de consigne ;
 \item $C_m(p)$, couple moteur ;
 \item $H_{\text{cor}}(p)$, fonction de transfert du correcteur.
 \end{itemize}
-}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=8cm]{fig_06}
-
-\caption{Modèle simplifié du montage du capteur d’effort.}
-\end{figure}
-%\end{multicols}
-
 Dans un premier temps, on prendra $H_{\text{cor}}(p)=1$.
 \fi
 
@@ -215,21 +229,18 @@ Le coefficient d'amortissement étant nul, il s'agit d'un oscillateur harmonique
 \else
 \fi
 
-
+\vspace{.25cm}
 
 Pour remédier au problème ainsi mis en évidence, le concepteur a choisi de mettre en place une boucle
 interne numérique, dite tachymétrique, de gain $B$. On s’intéresse ici à la définition analytique de $B$.
 Le schéma-blocs modifié est donné figure suivante.
 
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=8cm]{fig_07}
+\begin{center}
+\includegraphics[width=\linewidth]{fig_07}
 
-\caption{Régulation avec retour tachymétrique.}
-\end{figure}
-
-
+\textit{Régulation avec retour tachymétrique}
+\end{center}
 
 
 On règle B de telle façon que, pour $H_{\text{cor}}(p)=1$, la fonction de transfert en boucle ouverte, notée $H_{\text{BO}}(p)$, puisse être mise sous la forme suivante : 
@@ -262,17 +273,17 @@ Au final, ${B}=2\sqrt{JK_{C\theta}}$ et $\tau = \dfrac{B}{2K_{C\theta}} =\dfrac{
 \else
 \fi
 
-
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_08}
-\caption{Régulation avec correcteur PI. \label{fig_08}}
-\end{marginfigure}
+\vspace{.25cm}
 
 Les exigences du cahier des charges sont données plus haut (exigences 1.2.2.1, 1.2.2.3 et 1.2.2.4).
 
-Afin de répondre à ces exigences, on choisit un correcteur proportionnel-intégral de gain $K_i$ et de constante de temps $T_i$. Le schéma-blocs de la régulation se met sous la forme de la figure \ref{fig_08}.
+Afin de répondre à ces exigences, on choisit un correcteur proportionnel-intégral de gain $K_i$ et de constante de temps $T_i$. Le schéma-blocs de la régulation se met sous la forme de la figure qui suit.
 
+\begin{center}
+\includegraphics[width=\linewidth]{fig_08}
+
+\textit{Régulation avec correcteur PI.}
+\end{center}
 
 
 \question{Donner l’expression de l’erreur statique en réponse à un échelon d'amplitude $C_0$. Conclure vis-à-vis du cahier des charges.}
@@ -312,6 +323,7 @@ $\text{FTBO}(p)=\dfrac{K_i (1+\tau p)}{\tau p (1+\tau p)^2}=\dfrac{K_i }{\tau p 
 
 On a alors 
 $\text{FTBF}(p) = \dfrac{\dfrac{K_i }{\tau p (1+\tau p)}}{1+\dfrac{K_i }{\tau p (1+\tau p)}}$
+
 $= \dfrac{K_i}{\tau p (1+\tau p)+K_i }$.
 
 \end{corrige}
@@ -320,16 +332,15 @@ $= \dfrac{K_i}{\tau p (1+\tau p)+K_i }$.
 
 
 
-\begin{marginfigure}
+\question{À partir des courbes suivantes, proposer une valeur de coefficient d'amortissement et de pulsation propre.}
+
+\begin{center}
 \includegraphics[width=\linewidth]{im_01}
-\end{marginfigure}
+\end{center}
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{im_02}
-\end{marginfigure}
-
-\question{À partir des courbes ci-contre, proposer une valeur de coefficient d'amortissement et de pulsation propre.}
-
+\end{center}
 %
 %Sur le document réponse sont tracées les courbes de la réponse fréquentielle en boucle ouverte pour
 %$K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes valeurs de $K_i$.
@@ -367,7 +378,7 @@ On prend $K_i=0,4$, $T_i=\SI{0,01}{s}$ et $\tau =\SI{0,5}{s}$.
 \question{Tracer le diagrame de Bode de la fonction de transfert $G(p)=\dfrac{K_i\left(1+T_i p\right)}{T_i p\left(1+\tau p\right)^2}$.}
 
 
-
+\end{multicols}
 \ifprof
 
 \newpage
