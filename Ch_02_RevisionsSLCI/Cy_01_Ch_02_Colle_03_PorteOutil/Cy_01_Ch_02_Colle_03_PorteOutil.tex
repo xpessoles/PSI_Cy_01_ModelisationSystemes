@@ -1,11 +1,11 @@
 \setchapterimage{fig_00}
-\chapter*{TD \arabic{cptTD} \\ 
-Tête de découpe de tissus -- \ifprof Corrigé \else Sujet \fi}
+\chapter*{Colle \arabic{cptColle} \\ 
+Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Tête de découpe de tissus -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Colle \arabic{cptColle} : Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil  -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptTD} \else
-\ifprof  \stepcounter{cptTD} \else \fi
+\iflivret \stepcounter{cptColle} \else
+\ifprof  \stepcounter{cptColle} \else \fi
 \fi
 \setcounter{question}{0}
 
@@ -14,62 +14,10 @@ Tête de découpe de tissus -- \ifprof Corrigé \else Sujet \fi}
 \UPSTIcompetence[2]{C2-02}}
 \begin{marginfigure}
 \centering
-\includegraphics[width=.9\linewidth]{fig_01}
+\includegraphics[width=.9\linewidth]{fig_00}
 \end{marginfigure}
 
 
-
-
-
-
-%%%% Paramétrage du TD %%%%
-\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
-
-\def\xxcompetences{%
-\textsl{%
-\textbf{Savoirs et compétences :}\\
-\vspace{-.4cm}
-\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
-\item B2-07 : Modéliser un système par schéma-blocs;
-\item C2-02 : Déterminer la réponse fréquentielle.
-\end{itemize}
-}}
-
-\def\xxfigures{
-\ifcolle
-\qrcode{https://github.com/xpessoles/2022_2023_Enseignements/raw/main/PSI_Etoile/Colles/01_RevisionsSLCI/Colles_01_RevisionsSLCI_Cor.pdf}
-\else
-\includegraphics[width=.9\linewidth]{fig_00}
-\fi
-%\textit{}
-}%figues de la page de garde
-
-\def\xxtitreexo{Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil }
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec -- PSI 2018}}
-
-\def\xxactivite{{Colle 03} \ifprof  -- Corrigé \else \fi}
-
-
-\input{\repRel/Style/pagegarde_TD}
-
-
-\setlength{\columnseprule}{.1pt}
-
-\pagestyle{fancy}
-\thispagestyle{plain}
-
-\vspace{5cm}
-
-\def\columnseprulecolor{\color{bleuxp}}
-\setlength{\columnseprule}{0.4pt} 
-\setcounter{numques}{0}
-%%%%%%%%%%%%%%%%%%%%%%%
-
-\ifprof
-\else
-\begin{multicols}{2}
-\fi
 
 \subsection*{Modélisation du mouvement pour la commande}
 \ifprof
@@ -89,12 +37,19 @@ La cahier des charges est donné sur la figure suivante.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{fig_08}
+\includegraphics[width=.8\linewidth]{fig_08}
 \caption{Diagramme des exigences de la chaîne d'asservissement \label{fig_08}}
 \end{figure}
 
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=\linewidth]{fig_10}
+\caption{Modèle de déformation de l'outil avec le porte-outil piloté \label{fig_10}}
+\end{marginfigure}
+
 Les positions du porte-outil et du point $C$  par rapport à leur position de référence sont respectivement paramétrées
-par $z_1(t)\vect{z_0}$ et $z_2(t)\vect{z_0}$, avec $z_1(t)\vect{z_0}$ et $z_2(t)\vect{z_0}$ des grandeurs algébriques ( \autoref{fig_10}). Les conditions initiales
+par $z_1(t)\vect{z_0}$ et $z_2(t)\vect{z_0}$, avec $z_1(t)\vect{z_0}$ et $z_2(t)\vect{z_0}$ des grandeurs algébriques (\autoref{fig_10}). Les conditions initiales
 sont toujours supposées nulles.
 
 
@@ -107,17 +62,11 @@ m_2\ddot{z}_2(t)+\lambda\dot{z}_2(t)+Kz_2(t) = \lambda\dot{z}_1(t)+Kz_1(t)+f_c(t
 \end{array} $$
 Le modèle correspondant est représenté par le schéma bloc de la  \autoref{fig_11}.
 
-\begin{figure}[H]
+\begin{marginfigure}
 \centering
-\includegraphics[width=.7\linewidth]{fig_10}
-\caption{Modèle de déformation de l'outil avec le porte-outil piloté \label{fig_10}}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.9\linewidth]{fig_11}
+\includegraphics[width=\linewidth]{fig_11}
 \caption{Modèle de l'outil et du porte-outil \label{fig_11}}
-\end{figure}
+\end{marginfigure}
 
 \fi
 
@@ -148,12 +97,14 @@ $$
 \ifprof
 
 \else
-Le modèle de la  \autoref{fig_11} est réduit au modèle équivalent de la figure \autoref{fig_12}.
-\begin{figure}[H]
+
+\begin{marginfigure}
 \centering
-\includegraphics[width=.7\linewidth]{fig_12}
+\includegraphics[width=\linewidth]{fig_12}
 \caption{Modèle équivalent \label{fig_12}}
-\end{figure}
+\end{marginfigure}
+
+Le modèle de la  \autoref{fig_11} est réduit au modèle équivalent de la figure \autoref{fig_12}.
 
 \fi
 
@@ -213,15 +164,17 @@ $\xi_2=\lambda\dfrac{\sqrt{m_1+ m_2}}{2\sqrt{Km_1m_2}}$.
 
 \ifprof
 \else
-Le diagramme de Bode associé à la fonction de transfert $N_2(p)$ est représenté ci-après.
 
 
-\begin{figure}[H]
+\begin{marginfigure}
 \centering
 \includegraphics[width=\linewidth]{fig_dr}
 %\caption{Modèle équivalent}
-\end{figure}
+\end{marginfigure}
 \fi
+Le diagramme de Bode associé à la fonction de transfert $N_2(p)$ est représenté ci-contre.
+
+
 
 
 \question{Compléter ce diagramme par les tracés asymptotiques en module et en phase, et conclure sur la
@@ -252,15 +205,17 @@ Le gain dB est donc  $20\log A - 20 \log \omega^2$.  Pour $\omega=\SI{500}{rad.s
 
 \ifprof
 \else
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=\linewidth]{fig_13}
+\caption{Modèle de synthèse de la régulation en position $z_1(t)$ du porte-outil \label{fig_13}}
+\end{marginfigure}
+
 Le modèle approché ($N_{2 \text{app}}(p)$) est retenu pour la suite de l’étude. Le schéma bloc modélisant la régulation de
 la position $z_1(t)$ est donné en figure \autoref{fig_13}, en considérant un correcteur proportionnel de gain $K_p$.
 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.8\linewidth]{fig_13}
-\caption{Modèle de synthèse de la régulation en position $z_1(t)$ du porte-outil \label{fig_13}}
-\end{figure}
 \fi
 
 
@@ -287,10 +242,12 @@ La correction proportionnelle ne permet donc pas de respecter tous les critères
 
 On a d'une part $Q(p) =Q_c (p)-Z_2(p)H_r (p)$. 
 
+\marginnote{D’un point de vue numérique, $K_f = 1,5 \times 10^9 \si{N.m^{-2}}$ et $\tau = \SI{1}{s}$. }
+
 D'autre part, la quantité de matière enlevée est donnée par $q(t)=q_c(t)-z_2(t)+z_2\left( t-\tau\right)$ où $\tau$ est la durée nécessaire à la roue pour effectuer
 un tour complet. 
 
-D’un point de vue numérique, $K_f = 1,5 \times 10^9 \si{N.m^{-2}}$ et $\tau = \SI{1}{s}$. 
+
 
 \question{Déterminer $H_r(p)$ en fonction de $\tau$.}
 \ifprof
@@ -301,15 +258,15 @@ D'après les équations données et en utilisant le théorème du retard, on a $
 \else
 \fi
 
-Le schéma-blocs retenu est le suivant. 
+Le schéma-blocs retenu est donné ci-contre. 
 
 \ifprof
 \else
-\begin{figure}[H]
+\begin{marginfigure}
 \centering
-\includegraphics[width=.65\linewidth]{fig_16}
+\includegraphics[width=\linewidth]{fig_16}
 \caption{Modèle équivalent de la chaîne d'asservissement complète\label{fig_16}}
-\end{figure}
+\end{marginfigure}
 
 
 La \autoref{fig_17} représente le diagramme de Bode de la fonction de transfert en boucle ouverte du système modélisé
@@ -327,7 +284,7 @@ $H\left(j \omega\right)$ est nul.
 \fi
 
 \question{Préciser l’expression de la fonction de transfert en boucle ouverte de la figure 16 puis vérifier la
-cohérence du diagramme de Bode de la\autoref{fig_17}  en analysant les « zéros de transmission ».}
+cohérence du diagramme de Bode de la \autoref{fig_17}  en analysant les « zéros de transmission ».}
 \ifprof
 \begin{corrige}
 $\text{FTBO}(p)=bK_f S(p)H_r(p)= \dfrac{bK_f}{K+\lambda p +m_2 p^2}\left(1-e^{-\tau p}\right) = H_2(p)\cdot H_r(p)$.
@@ -366,8 +323,5 @@ Il faudrait déterminer si une augmentation de $b$ réduit l'amortissement de l'
 \else
 \fi
 
-\ifprof
-\else
-\end{multicols}
-\fi
+
 
