@@ -1,24 +1,51 @@
-%\setchapterimage{fig_00}
-\chapter*{Colle \arabic{cptColle} \\ 
-Gyropode à usage professionnel HUBLEX -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Révisions SLCI}
 
-\addcontentsline{toc}{section}{Colle \arabic{cptColle} : Gyropode à usage professionnel HUBLEX  -- \ifprof Corrigé \else Sujet \fi}
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
+\item B2-04 : Établir un modèle de connaissance par des fonctions de transfert;
+\item C3-03 : Déterminer la réponse fréquentielle.
+\end{itemize}
+}}
 
-\iflivret \stepcounter{cptColle} \else
-\ifprof  \stepcounter{cptColle} \else \fi
+\def\xxfigures{
+\ifcolle
+\qrcode{https://github.com/xpessoles/2022_2023_Enseignements/raw/main/PSI_Etoile/Colles/01_RevisionsSLCI/Colles_01_RevisionsSLCI_Cor.pdf}
+\else
+\includegraphics[width=.15\linewidth]{fig_01}
 \fi
-\setcounter{question}{0}
+%\textit{}
+}%figues de la page de garde
 
-\marginnote{Concours CCINP -- MP 2020.}
-\marginnote{\UPSTIcompetence[2]{B2-04}
-\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=.45\linewidth]{fig_01}
-\end{marginfigure}
+\def\xxtitreexo{Gyropode à usage professionnel HUBLEX}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours CCINP -- MP 2020}}
+
+\def\xxactivite{{Colle 04} \ifprof  -- Corrigé \else \fi}
 
 
+\input{\repRel/Style/pagegarde_TD}
 
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+\setcounter{numques}{0}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 
 \subsection*{Présentation}
 \ifprof
@@ -84,16 +111,6 @@ machines à courant continu.}
 \else
 \fi
 
-\ifprof
-\else
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_dr3}
-\caption{Schéma-blocs \label{fig_dr3}}
-\end{marginfigure}
-\fi
-
-
 \question{Compléter alors le schéma-blocs du moteur dans \autoref{fig_dr3}. On précisera la grandeur associée à
 chaque lien.}
 \ifprof
@@ -105,6 +122,14 @@ chaque lien.}
 \else
 \fi
 
+\ifprof
+\else
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{fig_dr3}
+\caption{Schéma-blocs \label{fig_dr3}}
+\end{figure}
+\fi
 
 \question{Donner l’expression de la fonction de transfert $H_m(p)=\dfrac{I(p)}{U(p)}$. Mettre cette fonction de transfert sous la forme $H_m(p)=K_m\dfrac{1+\tau_m p}{1+\dfrac{2z_m}{\omega_{0m}}p+\dfrac{1}{\omega_{0m}^2}p^2}$.}
 \ifprof
@@ -131,12 +156,6 @@ $\Rightarrow z_m = \dfrac{Lf + RJ}{2\sqrt{LJ}\sqrt{Rf+K_e^2}}$.
 \ifprof
 \else
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_13}
-\caption{Schéma-blocs \label{fig_13}}
-\end{marginfigure}
-
 L’architecture retenue pour contrôler le couple moteur est un asservissement en intensité, image du
 couple moteur (voir équation précédente). Le schéma-blocs est représenté \autoref{fig_13}. Un convertisseur IU
 fournit au calculateur une tension $\indice{u}{ic}(t)$ image de l’intensité de consigne $i_c(t)$, proportionnelle à cette
@@ -146,6 +165,12 @@ coefficient $\indice{K}{capt}$, a pour image $\indice{u}{im}(t)$. L’écart, no
 
 On donne la fonction de transfert du moteur : $H_m(p)=K_m\dfrac{1+\tau_m p}{1+\dfrac{2z_m}{\omega_{0m}}p+\dfrac{1}{\omega_{0m}^2}p^2}$.
 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{fig_13}
+\caption{Schéma-blocs \label{fig_13}}
+\end{figure}
 \fi
 
 \question{Préciser, en justifiant, quelle valeur donner à $\indice{K}{iu}$, caractéristique du convertisseur IU.}
@@ -189,13 +214,6 @@ $= \lim\limits_{p \to 0 } \dfrac{1}{1+\text{FTBO}(p)} = \dfrac{1}{1+K_m K_P \ind
 \else
 
 La \autoref{fig_14} présente les diagrammes de Bode en boucle ouverte de l’asservissement étudié, en prenant $K_p=10$.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.8\linewidth]{fig_14}
-\caption{Diagrammes de Bode en boucle ouverte pour $K_p = 10$\label{fig_14}}
-\end{figure}
-
 \fi
 
 %Q30.
@@ -264,21 +282,6 @@ L'asymptote du gain décibel de << $H_1(p)$ >> coupe l'axe des abscisses en 1000
 \ifprof
 \else
  Une fois le correcteur réglé, on obtient les diagrammes de Bode en boucle ouverte (\autoref{fig_15}) et les réponses temporelles (\autoref{fig_16}), pour un échelon d’intensité $i_c(t)$ de \SI{2}{A}.
- 
- \begin{figure}[H]
-\centering
-\includegraphics[width=.8\linewidth]{fig_15}
-\caption{Diagrammes de Bode en boucle ouverte avec réglage du correcteur PI effectué \label{fig_15}}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.8\linewidth]{fig_16}
-\caption{Réponses temporelles avec réglage du correcteur PI effectué \label{fig_16}}
-\end{figure}
-
-
 \fi
 
 % Q35.
@@ -310,9 +313,34 @@ Le constructeur a ajouté une saturation de $\pm \SI{60}{V}$.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=.8\linewidth]{fig_17}
+\includegraphics[width=\linewidth]{fig_14}
+\caption{Diagrammes de Bode en boucle ouverte pour $K_p = 10$\label{fig_14}}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{fig_15}
+\caption{Diagrammes de Bode en boucle ouverte avec réglage du correcteur PI effectué \label{fig_15}}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{fig_16}
+\caption{Réponses temporelles avec réglage du correcteur PI effectué \label{fig_16}}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{fig_17}
 \caption{Réponses temporelles du système finalement implanté\label{fig_17}}
 \end{figure}
 
 \fi
 
+
+\ifprof
+\else
+\end{multicols}
+\fi

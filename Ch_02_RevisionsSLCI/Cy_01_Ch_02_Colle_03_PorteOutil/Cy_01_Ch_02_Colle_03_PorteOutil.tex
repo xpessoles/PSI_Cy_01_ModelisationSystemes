@@ -1,11 +1,11 @@
 \setchapterimage{fig_00}
-\chapter*{Colle \arabic{cptColle} \\ 
+\chapter*{\ifcolle Colle \arabic{cptColle}  \else TD \arabic{cptTD} \fi \\ 
 Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{Colle \arabic{cptColle} : Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil  -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{\ifcolle Colle \arabic{cptColle}  \else TD \arabic{cptTD} \fi  : Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil  -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptColle} \else
-\ifprof  \stepcounter{cptColle} \else \fi
+\iflivret \ifcolle \stepcounter{cptColle}  \else \stepcounter{cptTD} \fi   \else
+\ifprof  \ifcolle \stepcounter{cptColle}  \else \stepcounter{cptTD} \fi \else \fi
 \fi
 \setcounter{question}{0}
 
@@ -42,7 +42,7 @@ La cahier des charges est donné sur la figure suivante.
 \end{figure}
 
 
-\begin{marginfigure}
+\begin{marginfigure}[-3cm]
 \centering
 \includegraphics[width=\linewidth]{fig_10}
 \caption{Modèle de déformation de l'outil avec le porte-outil piloté \label{fig_10}}
