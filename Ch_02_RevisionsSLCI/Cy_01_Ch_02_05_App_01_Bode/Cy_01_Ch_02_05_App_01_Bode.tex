@@ -32,8 +32,37 @@ $H(p)=\dfrac{0,6}{(p+0,025)(p^2+0,2p+1)}=\dfrac{24}{(1+40p)\left(1+\dfrac{2\cdot
 
 \else
 \begin{center}
-\includegraphics[width=.8\linewidth]{img_04}
+\begin{tikzpicture}[xscale=15/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=6/140]
+\OrdBode{10}
+\semilog{-2}{4}{-60}{60}
+%\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
+%s\BodeAmp[orangexp,ultra thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=-3.5cm,yscale=1/90]
+\UniteDegre
+\OrdBode{45}
+\semilog{-2}{4}{-270}{0}
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
 \end{center}
+
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{img_04}
+%\end{center}
 \fi
 
 %\newpage
@@ -62,8 +91,36 @@ $H(p)\simeq \dfrac{75}{p}$. Ainsi pour $\omega\simeq 0,1\si{rad.s^-1}$, $H_{dB}(
 \end{center}
 \else
 \begin{center}
-\includegraphics[width=.8\linewidth]{img_05}
-\end{center}\fi
+\begin{tikzpicture}[xscale=15/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=6/140]
+\OrdBode{10}
+\semilog{-2}{4}{-60}{60}
+%\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
+%s\BodeAmp[orangexp,ultra thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=-3.5cm,yscale=1/90]
+\UniteDegre
+\OrdBode{45}
+\semilog{-2}{4}{-270}{0}
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\fi
 
 
 
