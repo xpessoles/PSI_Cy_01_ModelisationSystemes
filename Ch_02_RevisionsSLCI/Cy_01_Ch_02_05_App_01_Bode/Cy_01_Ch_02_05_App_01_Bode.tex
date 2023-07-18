@@ -1,13 +1,17 @@
 %\setchapterimage{fig_00}
+\renewcommand{\titrechapitre}{Réponses fréquentielles}
 \chapter*{Application \arabic{cptApplication} \\ 
-Réponses fréquentielles -- \ifprof Corrigé \else Sujet \fi}
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Réponses fréquentielles -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptApplication} \else
 \ifprof  \stepcounter{cptApplication} \else \fi
 \fi
 \setcounter{question}{0}
+
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
 
 \marginnote{D'après Sébastien Grange.}
 %\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
@@ -275,8 +279,13 @@ On applique à l'entrée un échelon d'amplitude $E_0$ égale à \SI{0,2}{V}.
 
 \question{Tracer le diagramme de Bode asymptotique de cette fonction de transfert.}
 %FTBF(p)=981/(1+p+0.2p^2 )=981/(1+0.72p)(1+0.28p) 
-
 \ifprof
 \else
-%\end{multicols}
+\begin{marginfigure}[-3cm]
+\centering
+\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_05_App_01_Bode_Corrige.pdf}
+\end{marginfigure}
 \fi
+
+	
+

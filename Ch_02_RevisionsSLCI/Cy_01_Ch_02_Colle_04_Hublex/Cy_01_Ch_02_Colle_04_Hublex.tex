@@ -1,12 +1,27 @@
 %\setchapterimage{fig_00}
+
+
+\renewcommand{\titrechapitre}{Gyropode à usage professionnel HUBLEX}
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+
+\ifcolle
 \chapter*{Colle \arabic{cptColle} \\ 
-Gyropode à usage professionnel HUBLEX -- \ifprof Corrigé \else Sujet \fi}
-
-\addcontentsline{toc}{section}{Colle \arabic{cptColle} : Gyropode à usage professionnel HUBLEX  -- \ifprof Corrigé \else Sujet \fi}
-
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Colle \arabic{cptColle} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 \iflivret \stepcounter{cptColle} \else
 \ifprof  \stepcounter{cptColle} \else \fi
 \fi
+\else
+\chapter*{TD \arabic{cptTD} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi
+\fi
+\fi
+
 \setcounter{question}{0}
 
 \marginnote{Concours CCINP -- MP 2020.}
@@ -316,3 +331,12 @@ Le constructeur a ajouté une saturation de $\pm \SI{60}{V}$.
 
 \fi
 
+
+
+\ifprof
+\else
+\begin{marginfigure}
+\centering
+\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_Colle_04_Hublex_Corrige.pdf}
+\end{marginfigure}
+\fi

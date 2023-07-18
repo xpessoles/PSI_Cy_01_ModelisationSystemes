@@ -1,8 +1,13 @@
 \setchapterimage{fig_00.jpg}
-\chapter*{TD \arabic{cptTD} \\ 
-Bateau support de ROV -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Bateau support de ROV -- \ifprof Corrigé \else Sujet \fi}
+\renewcommand{\titrechapitre}{Bateau support de ROV}
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\chapter*{TD \arabic{cptTD} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi
@@ -1230,3 +1235,10 @@ $G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ \forall 
 \fi % FI COLLE
 \fi
 
+\ifprof
+\else
+\begin{marginfigure}
+\centering
+\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_Sy_TD_01_SupportRov_Corrige.pdf}
+\end{marginfigure}
+\fi

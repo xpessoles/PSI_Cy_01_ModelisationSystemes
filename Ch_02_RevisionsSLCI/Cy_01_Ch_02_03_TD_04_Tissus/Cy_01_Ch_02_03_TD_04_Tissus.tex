@@ -1,12 +1,18 @@
 \setchapterimage{fig_00}
+
+\renewcommand{\titrechapitre}{Tête de découpe de tissus}
+
 \chapter*{TD \arabic{cptTD} \\ 
-Tête de découpe de tissus -- \ifprof Corrigé \else Sujet \fi}
-
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Tête de découpe de tissus -- \ifprof Corrigé \else Sujet \fi}
-
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi
 \fi
+
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+
 \setcounter{question}{0}
 
 \marginnote{Concours CCINP MP 2018.}
@@ -18,7 +24,7 @@ Tête de découpe de tissus -- \ifprof Corrigé \else Sujet \fi}
 
 \ifprof
 \else
-Un système de découpe automatisé de tissus est composé (figure \ref{fig_02}):
+Un système de découpe automatisé de tissus est composé (figure \ref{cy_01_ch_02_03_td_03_fig_02}):
 \begin{itemize}
 \item d’une table de découpe sur laquelle le tissus à découper (appelé matelas) est maintenu en position
 par aspiration;
@@ -28,12 +34,12 @@ par aspiration;
 \end{itemize}
 
 
-\begin{figure}[!h]
+\begin{marginfigure}%[!h]
 \centering
-\includegraphics[width=8cm]{fig_02}
+\includegraphics[width=\linewidth]{fig_02}
 \caption{Structure d’une table de découpe de tissus}
-\label{fig_02}
-\end{figure}
+\label{cy_01_ch_02_03_td_03_fig_02}
+\end{marginfigure}
 
 \fi
 
@@ -41,14 +47,14 @@ par aspiration;
 \centering
 \includegraphics[width=\linewidth]{fig_04}
 \caption{Exigence 1.2.2.1}
-\label{fig_04}
+\label{cy_01_ch_02_03_td_03_fig_04}
 \end{marginfigure}
 
 
 \subsection*{Modélisation du comportement du moteur de coupe}
 
 \begin{obj} 
-Modéliser la chaîne d’asservissement en vitesse du moteur afin de déterminer les paramètres du correcteur permettant de respecter l’exigence 1.2.2.1 (figure \ref{fig_04}).
+Modéliser la chaîne d’asservissement en vitesse du moteur afin de déterminer les paramètres du correcteur permettant de respecter l’exigence 1.2.2.1 (figure \ref{cy_01_ch_02_03_td_03_fig_04}).
 \end{obj}
 
 \ifprof
@@ -62,7 +68,7 @@ d’alimentation du moteur $\indice{u}{m}(t)$ par l’ensemble correcteur-variat
 
 
 \begin{question}
-Compléter le schéma-bloc fonctionnel en indiquant dans les blocs
+Compléter le schéma-blocs fonctionnel en indiquant dans les blocs
 le nom des composants (moteur, adaptateur, correcteur-variateur, capteur-conditionneur) et les
 paramètres qui transitent entre les blocs.
 \end{question}
@@ -181,7 +187,7 @@ La fonction de transfert du moteur est notée $H_m(p)=\dfrac{\Omega_m(p)}{U_m(p)
 
 \ifprof
 \else
-\marginnote[-5cm]{
+\marginnote{
 Le moteur utilisé est un moteur à courant continu dont les caractéristiques et les grandeurs physique sont sont :
 \begin{itemize}
 \item $R$, résistance de l’induit;
@@ -253,23 +259,23 @@ Le correcteur de l’asservissement en vitesse du moteur est un proportionnel-in
 de transfert $\indice{H}{cor}(p) = K_p+\dfrac{K_i}{p}$.
 
 Les résultats de simulation de la réponse du moteur $\indice{N}{m}(t)$, en boucle fermée, pour une entrée échelon
-d’amplitude $N_0 = \SI{3 000}{tr.min^{-1}}$ pour différentes valeurs de $K_p$ et de $K_i$ sont donnés sur la figure \ref{fig_05}.
+d’amplitude $N_0 = \SI{3 000}{tr.min^{-1}}$ pour différentes valeurs de $K_p$ et de $K_i$ sont donnés sur la figure \ref{cy_01_ch_02_03_td_03_fig_05}.
 
 
 \fi
 
-\begin{marginfigure}[-6cm]
+\begin{marginfigure}[-5.5cm]
 \centering
 \includegraphics[width=\linewidth]{fig_05}
 \caption{Évolutions simulées de $\omega_m(t)$.}
-\label{fig_05}
+\label{cy_01_ch_02_03_td_03_fig_05}
 \end{marginfigure}
 
 
 
 
 \begin{question}
-Pour les courbes 1 et 2 de la figure \ref{fig_05}, préciser, en le justifiant, la simulation qui est associée à la plus grande
+Pour les courbes 1 et 2 de la figure \ref{cy_01_ch_02_03_td_03_fig_05}, préciser, en le justifiant, la simulation qui est associée à la plus grande
 valeur de $K_p$. On pourra exprimer le coefficient d'amortissement de la FTBF ou exprimer l'écart statique.
 \end{question}
 \ifprof
@@ -310,7 +316,7 @@ Lorsque $K_p$ augmente, $ \varepsilon_S$ diminue. La courbe 2 a donc la plus gra
 \fi
 
 \begin{question}
-Pour chaque courbe de la figure \ref{fig_05}, préciser, en le justifiant, si la valeur de $K_i$ est nulle ou non.
+Pour chaque courbe de la figure \ref{cy_01_ch_02_03_td_03_fig_05}, préciser, en le justifiant, si la valeur de $K_i$ est nulle ou non.
 \end{question}
 \ifprof
 \begin{corrige}
@@ -356,7 +362,7 @@ Conclure sur le correcteur à adopter.
 \else
 \ifprof
 \else
-\marginnote[-6cm]{
+\marginnote[-2cm]{
 \begin{solution}
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item .
@@ -373,3 +379,11 @@ $\xi =  \dfrac{R\sqrt{J}}{2 \sqrt{L k_ck_e}} $.
 \fi
 
 
+
+\ifprof
+\else
+\begin{marginfigure}[4.5cm]
+\centering
+\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_03_TD_04_Tissus_Corrige.pdf}
+\end{marginfigure}
+\fi

@@ -1,8 +1,12 @@
 \setchapterimage{fig_00}
+\renewcommand{\titrechapitre}{Banc d'essai BTP}
 \chapter*{TD \arabic{cptTD} \\ 
-Banc d'essai BTP -- \ifprof Corrigé \else Sujet \fi}
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Banc d'essai BTP -- \ifprof Corrigé \else Sujet \fi}
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi
@@ -347,6 +351,14 @@ Dans ce cas, l’application d’un couple perturbateur n’a donc pas d’influ
 \item On montre que l'écart statique est annulé.
 \item $\varepsilon = 0$.
 \end{enumerate}
-\end{solution}}
+\end{solution}
+}
 \fi
 
+\ifprof
+\else
+\begin{marginfigure}[2cm]
+\centering
+\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_03_TD_01_BTP_Corrige.pdf}
+\end{marginfigure}
+\fi
