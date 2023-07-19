@@ -6,21 +6,17 @@ On peut définir un signal sinusoïdal sous la forme $
 f(t)=A \sin(\omega \cdot t + \varphi)
 $ et on note :
 
+
+Une étude harmonique consiste en solliciter le système par des sinusoïdes de pulsations différentes et d'observer son comportement en régime permanent. Le diagramme de Bode est constitué d'un diagramme de gain (rapport des amplitudes des sinus en régime permanent) et d'un diagramme de phase (déphasage des sinus en régime permanent). 
+
 \marginnote{
 \begin{itemize}
 \item $T=\dfrac{2\pi}{\omega}$ : la période de la sinusoïde en $\text{s}$;
 \item $f=\dfrac{1}{T}$ : fréquence de la sinusoïde en $\text{Hz}$.
-\end{itemize}}
-
-
-\begin{itemize}
 \item $A$ : l'amplitude de la sinusoïde;
 \item $\omega$ : la pulsation en $\text{rad/s}$;
 \item $\varphi$ : la phase à l'origine en $\text{rad}$.
-\end{itemize}
-
-
-Une étude harmonique consiste en solliciter le système par des sinusoïdes de pulsations différentes et d'observer son comportement en régime permanent. Le diagramme de Bode est constitué d'un diagramme de gain (rapport des amplitudes des sinus en régime permanent) et d'un diagramme de phase (déphasage des sinus en régime permanent). 
+\end{itemize}}
 
 \begin{defi}[Gain \& Phase]
 Soit $H(p)$ une fonction de transfert. On pose $p=j\omega$ et on note :  
@@ -168,6 +164,8 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \end{resultat}
 
 
+\newpage
+
 \subsection{Systèmes d'ordre 1}
 
 
@@ -283,6 +281,8 @@ $\omega_r = \omega_0\sqrt{1-2\xi^2}$.
 $A_{\text{max}} = \dfrac{K}{2\xi\sqrt{1-\xi^2}}.$
 (Attention, sur le diagramme de Bode, on lit $20\log A_{\text{max}}$ lorsque $\omega=\omega_r$.)
 \end{resultat}
+
+\newpage
 
 \subsection{Retard}
 

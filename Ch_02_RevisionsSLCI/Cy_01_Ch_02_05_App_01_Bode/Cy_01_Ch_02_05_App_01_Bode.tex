@@ -30,8 +30,33 @@ $$
 \begin{corrige}
 $H(p)=\dfrac{0,6}{(p+0,025)(p^2+0,2p+1)}=\dfrac{24}{(1+40p)\left(1+\dfrac{2\cdot 0,1}{1} p+\dfrac{p^2}{1^2}\right)}$
 \end{corrige}
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{cor_01}
+%\end{center}
+
 \begin{center}
-\includegraphics[width=.8\linewidth]{cor_01}
+\begin{tikzpicture}[xscale=20/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=4/140]
+\OrdBode{20}
+\semilog{-3}{1}{-80}{40}
+\BodeAmp[orangexp,thin,samples=150]{-3:1}{\SOAmpAsymp{24}{0.1}{1}+\POAmpAsymp{1}{40}}
+\BodeAmp[orangexp,ultra thick,samples=150]{-3:1}{\SOAmp{24}{0.1}{1}+\POAmp{1}{40}}
+\end{scope}
+\begin{scope}[yshift=-3cm,yscale=1/110]
+\UniteDegre
+\OrdBode{45}
+\semilog{-3}{1}{-270}{0}
+\BodeArg[orangexp,thin,samples=150]{-3:1}{\SOArgAsymp{24}{0.1}{1}+\POArgAsymp{1}{40}}
+\BodeArg[orangexp,ultra thick,samples=150]{-3:1}{\SOArg{24}{0.1}{1}+\POArg{1}{40}}
+\end{scope}
+\end{tikzpicture}
 \end{center}
 
 \else
@@ -90,9 +115,34 @@ Poistionnement du diagramme asymptotique de gain : en $\omega=<< 1\si{rad.s^{-1}
 $H(p)\simeq \dfrac{75}{p}$. Ainsi pour $\omega\simeq 0,1\si{rad.s^-1}$, $H_{dB}(0,1)=20\log(75/0,1)=\SI{57}{dB}$.
 
 \end{corrige}
+
+
 \begin{center}
-\includegraphics[width=.8\linewidth]{cor_02}
+\begin{tikzpicture}[xscale=20/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=4/200]
+\OrdBode{20}
+\semilog{-1}{3}{-120}{60}
+\BodeAmp[orangexp,thin,samples=150]{-1:3}{\POAmpAsymp{75}{1}+\POAmpAsymp{1}{.25}+\IntAmp{1}-\POAmpAsymp{1}{.0167}} 
+\BodeAmp[orangexp,ultra thick,samples=150]{-1:3}{\POAmp{75}{1}+\POAmp{1}{.25}+\IntAmp{1}-\POAmp{1}{.0167}}
+\end{scope}
+\begin{scope}[yshift=-3cm,yscale=1/110]
+\UniteDegre
+\OrdBode{45}
+\semilog{-1}{3}{-270}{0}
+\BodeArg[orangexp,thin,samples=200]{-1:3}{\POArgAsymp{75}{1}+\POArgAsymp{1}{.25}+\IntArg{1}-\POAmpAsymp{1}{.0167}} 
+\BodeArg[orangexp,ultra thick,samples=150]{-1:3}{\POArg{75}{1}+\POArg{1}{.25}+\IntArg{1}-\POArg{1}{.0167}}
+\end{scope}
+\end{tikzpicture}
 \end{center}
+
+
 \else
 \begin{center}
 \begin{tikzpicture}[xscale=15/8]
@@ -150,9 +200,39 @@ Le pôle dominant est le pôle qui met le plus de temps à converger, c’est-à
 $H(p)\simeq \dfrac{1}{p(1+0.01p)}$.
 \end{corrige}
 \else
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{img_01}
+%\end{center}
 \begin{center}
-\includegraphics[width=.8\linewidth]{img_01}
+\begin{tikzpicture}[xscale=15/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=2/140]
+\OrdBode{50}
+\semilog{1}{5}{-200}{0}
+%\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
+\BodeAmp[orangexp,ultra thick,samples=150]{1:5}{\POAmp{1}{0.01}+\POAmp{1}{0.0005}+\IntAmp{1}}
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=-3.5cm,yscale=1/100]
+\UniteDegre
+\OrdBode{45}
+\semilog{1}{5}{-270}{0}
+\BodeArg[orangexp,ultra thick,samples=150]{1:5}{\POArg{1}{0.01}+\POArg{1}{0.0005}+\IntArg{1}}
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
 \end{center}
+
 \fi
 
 \question{On suppose que l'entrée du système est sinusoïdale : $e(t)=3\sin 300 t$. Donner
@@ -206,10 +286,43 @@ $20\log(K⁄0.1)\simeq 33$ et $K\simeq4.5$
 \end{corrige}
 \else
 
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{img_02}
+%\end{center}
+
+
 \begin{center}
-\includegraphics[width=.8\linewidth]{img_02}
+\begin{tikzpicture}[xscale=20/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=6/140]
+\OrdBode{10}
+\semilog{-1}{3}{-30}{40}
+%\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
+\BodeAmp[orangexp,ultra thick,samples=150]{-1:3}{\SOAmp{4.5}{0.1}{80}+\IntAmp{1}-\POAmp{1}{1}}
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=-2cm,yscale=1/100]
+\UniteDegre
+\OrdBode{45}
+\semilog{-1}{3}{-180}{0}
+\BodeArg[orangexp,ultra thick,samples=150]{-1:3}{\SOArg{4.5}{0.1}{80}+\IntArg{1}-\POArg{1}{1}}
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
 \end{center}
+
 \fi
+
 
 \question{Déterminer les marges de stabilité pour ces quatre fonctions de transfert.}
 
@@ -243,24 +356,95 @@ $20\log(K⁄0.1)\simeq 33$ et $K\simeq4.5$
 Un capteur d'accélération de sensibilité S est utilisé dans la chaîne de retour d'un système asservi dont l'objectif est de contrôler l'accélération d'un plateau sur lequel est fixé ce capteur. Le moteur permettant la motorisation du plateau est connu par l'intermédiaire de sa fonction de transfert. 
 
 
-\marginnote{On a  $A = \SI{100}{g.m.s^{-2}.V^{-1}}$, $\tau=\SI{0,2}{s}$ et $S = 10\cdot 10^{-3}/g V/(m/s^2)$ où $g$ est l'accélération de pesanteur. $E(p)$ est la transformée de Laplace de $e(t)$ la tension de consigne de cet asservissement et $\Gamma_b(p)$ la transformée de l'accélération $\gamma_b(t)$.}
+\marginnote{\begin{itemize}
+\item $A = \SI{100}{g.m.s^{-2}.V^{-1}}$;
+\item  $\tau=\SI{0,2}{s}$ et $S = 10g^{-1}\cdot 10^{-3}/ V/(m/s^2)$ où $g$ est l'accélération de pesanteur;
+\item  $E(p)$ est la transformée de Laplace de $e(t)$ la tension de consigne de cet asservissement;
+\item  $\Gamma_b(p)$ la transformée de l'accélération $\gamma_b(t)$.
+\end{itemize}}
 
 
 \subsubsection*{Première étude : $B(p) = 1$}
 On applique à l'entrée un échelon d'amplitude $E_0$ égale à \SI{0,2}{V}.
 
 \question{Calculer la valeur de l'accélération en régime permanent. On voudrait une accélération égale à \SI{20}{g}. Quelle doit être la tension de consigne ?}
+\ifprof
+\begin{corrige}
+En calculant la FTBF on a $FTBF(p)=\dfrac{\dfrac{A}{1+\tau p}}{1+\dfrac{AS}{1+\tau p}}$
+$=\dfrac{A}{1+\tau p+AS\left(1+\tau p\right)}$.
 
-%Γ_b (p)=(A/(1+AS))/(1+τ/(1+AS) p) E(p)
-%
-%C’est un 1er ordre on en déduit que l’accélération en régime permanent vaut :
-%γ_∞=(AE_0)/(1+AS)=10g
-%
-%Il faudrait une consigne E_0=0.4V pour avoir γ_∞=20g
+Par suite $\Gamma_b(p) = \dfrac{A}{1+\tau p+AS\left(1+\tau p\right)} \dfrac{E_0}{p}$.
+
+On a donc 
+$\lim\limits_{t \to +\infty}\Gamma_b(t) =  \lim\limits_{p \to 0} p \dfrac{A}{1+\tau p+AS\left(1+\tau p\right)} \dfrac{E_0}{p} $
+$=  \lim\limits_{p \to 0}  \dfrac{A E_0}{1+\tau p+AS\left(1+\tau p\right)} $
+$=  \dfrac{A E_0}{1+AS} $.
+
+Pour $E_0=\SI{0,2}{V}$, $\Gamma_f = \dfrac{100g\times 0,2}{1+100g\times 10\times 10^{-3}g^{-1}}$ 
+$=10g$.
 
 
-\question{La tension de consigne prend la forme suivante : $e(t) = 0,2 \sin\left(\omega t\right)$ avec $\omega t = \SI{10}{rad.s^{-1}}$. Déterminer $\omega b(t)$ en régime permanent, en précisant l'amplitude et la phase.}
+On veut $ \dfrac{A E_0}{1+AS} = 20g$ soit  
+$ E_0 = 20g \dfrac{1+AS}{A}$ $E_0 = 20g \dfrac{1+100 \times 10 \times 10^{-3}}{100g}$
+$= 0,4$. Il faudrait donc $E_0 = \SI{0,4}{V}$.
 
+
+
+
+\end{corrige}
+\else
+\fi
+
+
+\question{La tension de consigne prend la forme suivante : $e(t) = 0,2 \sin\left(\omega t\right)$ avec $\omega  = \SI{10}{rad.s^{-1}}$. Déterminer $\omega_b(t)$ en régime permanent, en précisant l'amplitude et la phase.}
+
+\ifprof
+\begin{corrige}
+$FTBF(p)=\dfrac{A}{1+\tau p+AS\left(1+\tau p\right)}=\dfrac{\dfrac{A}{1+AS}}{1 +\tau p}$ en faisant l'application numérique,
+$FTBF(p)= \dfrac{50 g}{1 +0,2 p}$.
+
+$\indice{G}{dB}(\omega)=20\log (50g) - 20\log \sqrt{1+0,2^2 \omega^2}$ et 
+$\indice{G}{dB}(10)=20\log (50g) - 20\log \sqrt{5}=20\log (10g\sqrt{5}) \simeq 47 \simeq 20\log 223$.
+
+$\varphi(\omega)=-\arctan0,2 \omega$ et $\varphi(10)=-\arctan2 \simeq -63\degres$.
+
+Au final $\omega_b(t) = 0,2 \times 223 \sin\left(\omega t - 63\right) $.
+
+
+Pour information, on donne le diagramme de Bode de la FTBF.
+\begin{center}
+\begin{tikzpicture}[xscale=15/8]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=6/140]
+\OrdBode{10}
+\semilog{-1}{2}{20}{60}
+%\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
+\BodeAmp[orangexp,ultra thick,samples=150]{-1:2}{\POAmp{500}{0.2}}
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=0cm,yscale=1/90]
+\UniteDegre
+\OrdBode{45}
+\semilog{-1}{2}{-90}{0}
+\BodeArg[orangexp,ultra thick,samples=150]{-1:2}{\POArg{500}{0.2}}
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\end{corrige}
+\else
+\fi
 %γ_b (t)=Γ_b  sin⁡(ωt+φ)
 %Avec :
 %ω=10 rad/s
