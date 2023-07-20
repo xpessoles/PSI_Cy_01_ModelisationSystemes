@@ -81,7 +81,7 @@ On s'intéresse à une grue permettant la dépose sur fond marin d'un robot dont
 \else
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.85\linewidth]{Fig3}
+\includegraphics[width=0.75\linewidth]{Fig3}
 \caption{ROV suspendu à la grue portique}
 \label{Fig3}
 \end{figure}
@@ -150,15 +150,15 @@ $$\boxed{G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ 
 
 \ifprof
 \else
-Le tracé du gain de $B(p)$ dans la figure suivante.
+Le tracé du gain de $B(p)$ dans la figure \ref{cy_01_ch_02_sy_td_01_dra}.
 
 
 
-\begin{center}
+\begin{marginfigure}
 \includegraphics[width=\linewidth]{DR_A}
-%\caption{ROV suspendu à la grue portique}
-%\label{Fig3}
-\end{center}
+\caption{ROV suspendu à la grue portique}
+\label{cy_01_ch_02_sy_td_01_dra}
+\end{marginfigure}
 
 \fi
 
@@ -505,7 +505,7 @@ compensateur de houle passif noté PHC (\autoref{Fig10}).\\
 \begin{marginfigure}
 \centering
 \includegraphics[width=\linewidth]{Fig10}
-\caption{ Schéma d’implantation du PHV (non à l’échelle)}
+\caption{Schéma d’implantation du PHV (non à l’échelle)}
 \label{Fig10}
 \end{marginfigure}
 
@@ -874,7 +874,7 @@ ROV + PHC\} pour quatre réglages. Les volumes du gaz $V_{G0}$ correspondant à 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Fig12}
+\includegraphics[width=.8\linewidth]{Fig12}
 \caption{Courbes de gain $G(p)$ pour différents réglages du PHC}
 \label{Fig12}
 \end{figure}
@@ -1216,10 +1216,19 @@ Le réglage de PHC 4 est celui qui respecte le mieux l’exigence Id1.1.
 
 \ifprof
 \else
+\begin{marginfigure}
+\centering
+\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_Sy_TD_01_SupportRov_Corrige.pdf}
+\end{marginfigure}
+\fi
+
+\ifprof
+\else
 \ifcolle
 \else
-\marginnote{
+%\marginnote{
 \begin{solution}
+\footnotesize
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item  $G_{\text{dB}}(\omega)=20\log \left \vert \dfrac{Y_S(j\omega)}{Y_{\text{vague}}(j\omega)}\right \vert$ et 
 $G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ \forall \ \ \omega\in[0,5;1,7]  \ \text{rad/s}$.
@@ -1230,15 +1239,9 @@ $G_{\text{dB}(\omega)}<20 \log \dfrac{1}{5}\approx - 14 \ \text{dB} \ \ \forall 
 \item .
 \item PHC4.
 \end{enumerate}
-\end{solution}}
+\normalsize
+\end{solution}%}
 
 \fi % FI COLLE
 \fi
 
-\ifprof
-\else
-\begin{marginfigure}
-\centering
-\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_Sy_TD_01_SupportRov_Corrige.pdf}
-\end{marginfigure}
-\fi

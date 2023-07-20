@@ -52,7 +52,7 @@ Modéliser la chaîne d’asservissement en intensité du moteur afin de déterm
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{fig_02}
+\includegraphics[width=.8\linewidth]{fig_02}
 \caption{Diagramme des exigences \label{fig_02}}
 \end{figure}
 \fi
@@ -168,7 +168,6 @@ On donne la fonction de transfert du moteur : $H_m(p)=K_m\dfrac{1+\tau_m p}{1+\d
 \begin{corrige}
 
 Pour avoir $\varepsilon = 0$ lorsque $I_c(p)=I(p)$, il faut nécessairement $\indice{K}{capt}=\indice{K}{IU}$.
-
 \end{corrige}
 \else
 \fi
@@ -332,6 +331,28 @@ Le constructeur a ajouté une saturation de $\pm \SI{60}{V}$.
 \fi
 
 
+\ifprof
+\else
+\ifcolle
+\else
+\marginnote{
+\begin{solution}
+\begin{enumerate}
+\item $U(p) = E(p)+RI(p)+Lp I(p)$, $E(p)=K_e\Omega_m(p)$, $C_m(p)=K_e I(p)$, $\indice{J}{eq} p\Omega_m(p) = C_m(p)-f\Omega_m(p)$.
+\item .
+\item $K_m = \dfrac{f}{Rf+K_e^2}$, $\tau_m=\dfrac{J}{f}$, 
+$\omega_{0m} = \sqrt{\dfrac{Rf+K_e^2}{LJ}} $
+ $ z_m = \dfrac{Lf + RJ}{2\sqrt{LJ}\sqrt{Rf+K_e^2}}$.
+\item $\indice{K}{capt}=\indice{K}{IU}$.
+\item $\varepsilon_s = \dfrac{1}{1+K_m K_P \indice{K}{Capt}} $.
+\item .
+\item .
+\item Saturation.
+\end{enumerate}
+\end{solution}
+}
+\fi
+\fi
 
 \ifprof
 \else
