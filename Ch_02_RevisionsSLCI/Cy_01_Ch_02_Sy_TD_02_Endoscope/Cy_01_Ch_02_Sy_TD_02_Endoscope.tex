@@ -1,8 +1,13 @@
 \setchapterimage{fig_00.jpg}
-\chapter*{TD \arabic{cptTD} \\ 
-Robot pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Robot pour la chirurgie endoscopique -- \ifprof Corrigé \else Sujet \fi}
+\renewcommand{\titrechapitre}{Robot pour la chirurgie endoscopique}
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\chapter*{TD \arabic{cptTD} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi

@@ -1,8 +1,13 @@
 \setchapterimage{fig_00}
-\chapter*{\ifcolle Colle \arabic{cptColle}  \else TD \arabic{cptTD} \fi \\ 
-Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{\ifcolle Colle \arabic{cptColle}  \else TD \arabic{cptTD} \fi  : Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil  -- \ifprof Corrigé \else Sujet \fi}
+\renewcommand{\titrechapitre}{Tour en fosse utilisé pour le reprofilage des roues ferroviaires -- Asservissement du porte-outil}
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\chapter*{\ifcolle Colle \arabic{cptColle}  \else TD \arabic{cptTD} \fi \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\addcontentsline{toc}{section}{\ifcolle Colle \arabic{cptColle}  \else TD \arabic{cptTD} \fi  : \titrechapitre  -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \ifcolle \stepcounter{cptColle}  \else \stepcounter{cptTD} \fi   \else
 \ifprof  \ifcolle \stepcounter{cptColle}  \else \stepcounter{cptTD} \fi \else \fi
@@ -322,6 +327,7 @@ Il faudrait déterminer si une augmentation de $b$ réduit l'amortissement de l'
 \end{corrige}
 \else
 \fi
+
 
 
 

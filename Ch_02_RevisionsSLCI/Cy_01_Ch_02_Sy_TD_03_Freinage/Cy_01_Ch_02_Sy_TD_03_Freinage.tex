@@ -1,8 +1,13 @@
 \setchapterimage{fig_01}
-\chapter*{TD \arabic{cptTD} \\ 
-Système de freinage d’un TGV DUPLEX -- \ifprof Corrigé \else Sujet \fi}
 
-\addcontentsline{toc}{section}{TD \arabic{cptTD} : Système de freinage d’un TGV DUPLEX -- \ifprof Corrigé \else Sujet \fi}
+\renewcommand{\titrechapitre}{Système de freinage d’un TGV DUPLEX}
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\chapter*{TD \arabic{cptTD} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptTD} \else
 \ifprof  \stepcounter{cptTD} \else \fi
