@@ -11,22 +11,22 @@ Une fonction temporelle $f(t)$ vérifie les conditions de Heaviside lorsque les 
 $$
 f({0^{+}})=0 \quad \dfrac{\dd f({0^{+}})}{\dd t} = 0 \quad \dfrac{\dd^2f({0^{+}})}{\dd t^2} = 0 ...
 $$
-On parle de conditions initiales nulles.
+%On parle de conditions initiales nulles.
 \end{defi}
 
+\marginnote{De manière générale on note 
+$\mathcal{L}\left[f(t)\right] = F(p)$,
+$\mathcal{L}\left[e(t)\right] = E(p)$,
+$\mathcal{L}\left[s(t)\right] = S(p)$,
+$\mathcal{L}\left[\omega(t)\right] = \Omega(p)$,
+$\mathcal{L}\left[\theta(t)\right] = \Theta(p)$ ...
+}
 \begin{defi} [Transformée de Laplace]
 À toute fonction du temps $f(t)$, nulle pour $t\leq0$ (fonction causale), on fait correspondre une fonction $F(p)$ de la variable complexe $p$ telle que :
 $$
 \mathcal{L}\left[f(t)\right] = F(p)=\int\limits_{0^{+}}^\infty f(t)e^{-pt}\text{d}t.
 $$
 On note $\mathcal{L}\left[f(t)\right]$ la transformée directe et $\mathcal{L}^{-1}\left[F(p)\right]$ la transformée inverse.
-
-De manière générale on note 
-$\mathcal{L}\left[f(t)\right] = F(p)$,
-$\mathcal{L}\left[e(t)\right] = E(p)$,
-$\mathcal{L}\left[s(t)\right] = S(p)$,
-$\mathcal{L}\left[\omega(t)\right] = \Omega(p)$,
-$\mathcal{L}\left[\theta(t)\right] = \Theta(p)$ ...
 \end{defi}
 
 
