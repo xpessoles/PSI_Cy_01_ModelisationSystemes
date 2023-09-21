@@ -249,6 +249,7 @@ $H_{\text{BO}}(p)=\dfrac{1}{\left(1+\tau p\right)^2}$.
 
 \question{Donner l’expression analytique du gain $B$, en fonction de $J$ et $K_{C\theta}$, permettant d’obtenir cette
 forme de fonction de transfert. En déduire l’expression analytique de la constante de temps $\tau$.}
+
 \ifprof
 \begin{corrige}
 D'une part, $F_1(p)=\dfrac{\dfrac{1}{Jp}}{1+\dfrac{B}{Jp}} = \dfrac{1}{Jp+B}$.
@@ -273,15 +274,17 @@ Au final, ${B}=2\sqrt{JK_{C\theta}}$ et $\tau = \dfrac{B}{2K_{C\theta}} =\dfrac{
 \fi
 
 
+
+Les exigences du cahier des charges sont données plus haut (exigences 1.2.2.1, 1.2.2.3 et 1.2.2.4).
+
+Afin de répondre à ces exigences, on choisit un correcteur proportionnel-intégral de gain $K_i$ et de constante de temps $T_i$. Le schéma-blocs de la régulation se met sous la forme de la figure \ref{fig_08}.
+
 \begin{marginfigure}
 \centering
 \includegraphics[width=\linewidth]{fig_08}
 \caption{Régulation avec correcteur PI. \label{fig_08}}
 \end{marginfigure}
 
-Les exigences du cahier des charges sont données plus haut (exigences 1.2.2.1, 1.2.2.3 et 1.2.2.4).
-
-Afin de répondre à ces exigences, on choisit un correcteur proportionnel-intégral de gain $K_i$ et de constante de temps $T_i$. Le schéma-blocs de la régulation se met sous la forme de la figure \ref{fig_08}.
 
 
 

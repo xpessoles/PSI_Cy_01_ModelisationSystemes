@@ -103,7 +103,7 @@ $m\dfrac{\text{d}^2 x(t) }{\text{d}t^2}=S\Delta p(t)-f\dfrac{\text{d} x(t) }{\te
 \subsection*{Fonction de transfert du vérin}
 \ifprof
 \else
-Pour le type de vérin utilisé, le débit d'alimentation a pour expression : $q(t)=S\dfrac{\text{d}x(t)}{\text{d} t}+\dfrac{V}{2B}\dfrac{\text{d}\Delta p(t)}{\text{d}t}$. $V$ est le volume moyen d'une chambre et $B$ le module d'élasticité de l'huile, (ces deux paramètres sont des constantes).
+Pour le type de vérin utilisé, le débit d'alimentation a pour expression : $q(t)=S\dfrac{\text{d}x(t)}{\text{d} t}+\dfrac{V}{2B}\dfrac{\text{d}\Delta p(t)}{\text{d}t}$. $V$~est le volume moyen d'une chambre et $B$ le module d'élasticité de l'huile, (ces deux paramètres sont des constantes).
 \fi
 
 \question{Transformer les deux équations précédentes dans le domaine de Laplace. En déduire l'expression de la fonction de transfert : $H_v(p)=\dfrac{X(p)}{Q(p)}$, que l'on mettra sous la forme : $H_v(p)=\dfrac{k}{p\left( ap^2 + bp + 1\right)}$}.
@@ -132,7 +132,7 @@ On a donc,
 $H_v(p)
 =\dfrac{1}{p\left(\dfrac{\left(mp+f\right)}{S} \dfrac{Vp}{2B}+S \right)}
 =\dfrac{1}{p\left(\dfrac{Vm}{2BS}p^2+ \dfrac{fV}{2BS}p+S \right)}
-=\dfrac{1/Q}{p\left(\dfrac{Vm}{2BS^2}p^2+ \dfrac{fV}{2BS^2}p+1 \right)}
+=\dfrac{1/S}{p\left(\dfrac{Vm}{2BS^2}p^2+ \dfrac{fV}{2BS^2}p+1 \right)}
 $.
 
 Au final, $k=\dfrac{1}{S}$, $a=\dfrac{Vm}{2BS^2}$ et $b=\dfrac{fV}{2BS^2}$.
