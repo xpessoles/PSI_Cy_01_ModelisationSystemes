@@ -109,7 +109,24 @@ $r=\SI{0,002}{m}$.
 
 L’objectif est d’établir un modèle analytique du véhicule, lors d’une phase de roulement sans glissement sur une ligne droite inclinée d’un angle $\alpha$, en l’absence de vent. En adoptant des conditions particulières d’essai, il sera possible d’identifier précisément, grâce à ce modèle, les actions aérodynamiques. 
 
-L’accélération de la pesanteur $\vect{g}$ telle que $\vect{g}=-g\vect{z_0}$. Le modèle est donné figure suivante. On considère que le véhicule se déplace sur une pente inclinée d’un angle$\alpha$ par rapport à l’horizontale. Le véhicule est constitué :
+ Le modèle est donné figure suivante.
+ 
+%\begin{marginfigure}
+\marginnote{L’accélération de la pesanteur $\vect{g}$ telle que $\vect{g}=-g\vect{z_0}$.}
+
+\begin{center}
+\includegraphics[width=.7 \linewidth]{fig_03}
+\end{center}
+
+
+
+\marginnote{Les roues sont en contact ponctuel avec frottement avec le sol 0. Afin de tenir compte de la résistance au roulement du pneu sur le sol, les actions de contact peuvent être modélisées en dynamique par : 
+$\torseurstat{T}{0}{i}=\torseurl{-T_{0i}\vect{x}+N_{0i}\vect{z}}{-N_{0i}r\vect{y}}{A_i}$ avec $i=4$ ou 23.}
+
+\marginnote{L’ensemble du véhicule dont la carrosserie est soumis lors de son mouvement à un effort de traînée aérodynamique qui peut être modélisée par le torseur 
+$\torseurl{-\dfrac{1}{2}\rho S C_x \dot{x}^2 \vect{x}}{\vect{0}}{O_{23}}$ avec $\rho$ masse volumique du véhicule, $S$ surface alaire, $C_x$ coefficient de traînée du véhicule, $\dot{x}$ vitesse relative du véhicule par rapport à l'air ambiant. }
+
+ On considère que le véhicule se déplace sur une pente inclinée d’un angle$\alpha$ par rapport à l’horizontale. Le véhicule est constitué :
 \begin{itemize}
 \item  d’un châssis avec son pilote : solide 1 de centre d’inertie $G$, de masse $M$ en translation par rapport au repère galiléen $R$ avec $\vect{OG}=x\vect{x}+R\vect{z}$;
 \item de deux roues avant : solide 23 de centre d’inertie $O_{23}$, de masse $2 m$, de rayon $R$, dont le moment d’inertie par rapport à l’axe $\axe{O_{23}}{{y}}$ sera noté $2I$. Le solide 23 est en liaison pivot sans frottement par rapport au châssis 1 d’axe $\axe{O_{23}}{{y}}$ caractérisé par le paramètre $\theta_{23}$;
@@ -118,15 +135,7 @@ L’accélération de la pesanteur $\vect{g}$ telle que $\vect{g}=-g\vect{z_0}$.
 \end{itemize}
 
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_03}
-\end{marginfigure}
 
-Les roues sont en contact ponctuel avec frottement avec le sol 0. Afin de tenir compte de la résistance au roulement du pneu sur le sol, les actions de contact peuvent être modélisées en dynamique par : 
-$\torseurstat{T}{0}{i}=\torseurl{-T_{0i}\vect{x}+N_{0i}\vect{z}}{-N_{0i}r\vect{y}}{A_i}$ avec $i=4$ ou 23.
-
-L’ensemble du véhicule dont la carrosserie est soumis lors de son mouvement à un effort de traînée aérodynamique qui peut être modélisée par le torseur 
-$\torseurl{-\dfrac{1}{2}\rho S C_x \dot{x}^2 \vect{x}}{\vect{0}}{O_{23}}$ avec $\rho$ masse volumique du véhicule, $S$ surface alaire, $C_x$ coefficient de traînée du véhicule, $\dot{x}$ vitesse relative du véhicule par rapport à l'air ambiant. 
 
 
 \fi
@@ -239,7 +248,7 @@ $$C_m=\underbrace{\left(M+3m\right)gr}_{\text{Résistance au roulement}} + \unde
 \includegraphics[width=\linewidth]{fig_04}
 \end{marginfigure}
 On réalise un essai du véhicule sur terrain horizontal, le moteur du véhicule délivrant un couple $C_m$ constant.   
-Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^{-3}}\text{m}$, $R = \SI{0,25}{m}$, $C_m= \SI{3,245}{m.N}$, $g = \SI{10}{ms^{-2}}$. L’acquisition des paramètres vitesse véhicule et distance parcourue sont visualisés par les graphes ci-dessous. 
+Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^{-3}}\text{m}$, $R = \SI{0,25}{m}$, $C_m= \SI{3,245}{m.N}$, $g = \SI{10}{ms^{-2}}$. L’acquisition des paramètres vitesse véhicule et distance parcourue sont visualisés par les graphes ci-contre. 
 
 
 \fi
