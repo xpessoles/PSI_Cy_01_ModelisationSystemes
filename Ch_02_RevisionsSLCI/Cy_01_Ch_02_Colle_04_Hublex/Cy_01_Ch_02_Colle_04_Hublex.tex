@@ -14,7 +14,7 @@
 \ifprof  \stepcounter{cptColle} \else \fi
 \fi
 \else
-\chapter*{TD \arabic,td{cptTD} \\ 
+\chapter*{TD \arabic{cptTD} \\ 
 \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 \addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 \iflivret \stepcounter{cptTD} \else
@@ -351,13 +351,12 @@ $\omega_{0m} = \sqrt{\dfrac{Rf+K_e^2}{LJ}} $
 \end{enumerate}
 \end{solution}
 }
-\fi
-\fi
+\fi\fi
 
 \ifprof
 \else
 \begin{marginfigure}
 \centering
-\fancyqr{http://xpessoles-cpge.fr/pdf/Cy_01_Ch_02_Colle_04_Hublex_Corrige.pdf}
+\includegraphics[width=3cm]{Cy_01_Ch_02_Colle_04_qr}
 \end{marginfigure}
 \fi
