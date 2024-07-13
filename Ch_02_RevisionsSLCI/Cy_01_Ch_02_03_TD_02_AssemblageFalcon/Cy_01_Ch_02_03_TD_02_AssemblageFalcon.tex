@@ -1,4 +1,4 @@
-% "{'chapitre':'slci_blocs','classe':('PSI'),'type':('td'),'titre':'Cellule d\\'assemblage pour avion Falcon', 'source':'Concours E3A - PSI 2015','comp':('B2-07','C2-03'),'corrige':True}"
+% "{'chapitre':'slci_blocs','classe':('PSI'),'type':('td'),'titre':'Cellule d\\'assemblage pour avion Falcon', 'source':'Concours E3A - PSI 2015','comp':('B2-07','C2-03','SLCI-02','SLCI-03','SLCI-09','SLCI-11'),'corrige':True}"
 \setchapterimage{fig_00}
 \chapter*{TD \arabic{cptTD} \\ 
 Cellule d'assemblage pour avion Falcon -- \ifprof Corrigé \else Sujet \fi}
@@ -11,6 +11,7 @@ Cellule d'assemblage pour avion Falcon -- \ifprof Corrigé \else Sujet \fi}
 \setcounter{question}{0}
 
 \marginnote{Concours E3A -- PSI 2015.}
+\marginnote{\xpComp{SLCI}{02}\xpComp{SLCI}{03}\xpComp{SLCI}{09}\xpComp{SLCI}{11}}
 %\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_01}
@@ -76,7 +77,7 @@ Les équations caractéristiques du moteur à courant continu sont rappelées ci
 \item $u(t)=e(t)+L \dfrac{di(t)}{\text{d} t}+Ri(t)$;
 \item $e(t)=K_E \omega_m (t)$ ;
 \item $C_M (t)=K_C i(t)$ ;
-\item $J_{eq}  \dfrac{d\omega_m(t)}{\text{d} t}+f\omega_m (t)=C_M (t)-C_R (t)$.
+\item $\indice{J}{eq}  \dfrac{d\omega_m(t)}{\text{d} t}+f\omega_m (t)=C_M (t)-C_R (t)$.
 \end{itemize}
 
 %Avec : 
@@ -111,7 +112,7 @@ erreur statique par rapport à une consigne de vitesse constante
 \hline
 \end{tabular}
 \end{center}}
-
+\nprmalsize
 \fi
 \subsection*{Choix d'une architecture de la chaine de transmission}
 \question{Proposer sous la forme d'un schéma une autre solution permettant le déplacement du chariot. La conversion de l'énergie électrique en énergie mécanique par un moteur doit être conservée.}

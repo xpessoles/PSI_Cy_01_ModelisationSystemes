@@ -1,19 +1,25 @@
-% "{'chapitre':'slci_revisions','classe':('PSI'),'type':('cours'),'Rappels sur la modélisation des systèmes asservis','source':'','comp':('B2-02','B2-05','B2-06','B2-07','C1-01','C2-01','C2-02','C2-03'),'corrige':True}"
+% "{'chapitre':'slci_revisions','classe':('PSI'),'type':('cours'),'Rappels sur la modélisation des systèmes asservis','source':'','comp':('B2-02','B2-05','B2-06','B2-07','C1-01','C2-01','C2-02','C2-03','SLCI-01','SLCI-02','SLCI-03','SLCI-07','SLCI-08','SLCI-09','SLCI-10','SLCI-11'),'corrige':True}"
 \setchapterimage{Fond_SLCI.png}
 \setchapterpreamble[u]{\margintoc}
 
 \chapter{Rappels sur la modélisation des systèmes asservis}
 
-\marginnote[5cm]{
-\UPSTIcompetence[2]{B2-04}
-\UPSTIcompetence[2]{B2-05}
-\UPSTIcompetence[2]{B2-06}
-\UPSTIcompetence[2]{B2-07}
-\UPSTIcompetence[2]{C1-01}
-\UPSTIcompetence[2]{C2-01}
-\UPSTIcompetence[2]{C2-02}
-\UPSTIcompetence[2]{C2-03}
+
+
+
+\marginnote{
+\xpComp{SLCI}{01}\xpComp{SLCI}{02}\xpComp{SLCI}{03}\xpComp{SLCI}{07}\xpComp{SLCI}{08}\xpComp{SLCI}{09}\xpComp{SLCI}{10}\xpComp{SLCI}{11}
 }
+%\marginnote[5cm]{
+%\UPSTIcompetence[2]{B2-04}
+%\UPSTIcompetence[2]{B2-05}
+%\UPSTIcompetence[2]{B2-06}
+%\UPSTIcompetence[2]{B2-07}
+%\UPSTIcompetence[2]{C1-01}
+%\UPSTIcompetence[2]{C2-01}
+%\UPSTIcompetence[2]{C2-02}
+%\UPSTIcompetence[2]{C2-03}
+%}
 
 
 \section{Définitions préliminaires et détermination des performances}[Premières définitions]
@@ -86,8 +92,8 @@ permet de juger de la qualité de la tâche accomplie.
 
 \vspace{.1cm}
 
-\begin{defi}[Précision en position -- Écart statique $\varepsilon_S$]
-Le système est piloté par un échelon. On définit alors l'écart statique $\varepsilon_S$ comme l'écart entre la consigne fixe et la réponse $s(t)$ en régime permanent.
+\begin{defi}[Précision en position -- Erreur statique $\varepsilon_S$]
+Le système est piloté par un échelon. On définit alors l'erreur statique $\varepsilon_S$ comme la différence entre la consigne (un échelon) et la réponse $s(t)$ en régime permanent.
 \end{defi}
 
 \begin{defi}[Précision en vitesse $\varepsilon_V$]

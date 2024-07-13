@@ -1,4 +1,4 @@
-% "{'chapitre':'slci_laplace','classe':('PSI'),'type':('td'),'titre':'Tête de découpe de tissus', 'source':'Concours CCINP MP 2018','comp':['B2-07',],'corrige':True}"
+% "{'chapitre':'slci_laplace','classe':('PSI'),'type':('td'),'titre':'Tête de découpe de tissus', 'source':'Concours CCINP MP 2018','comp':['B2-07','SLCI-02','SLCI-07','SLCI-08'],'corrige':True}"
 \setchapterimage{fig_00}
 
 \renewcommand{\titrechapitre}{Tête de découpe de tissus}
@@ -16,8 +16,10 @@
 
 \setcounter{question}{0}
 
-\marginnote{Concours CCINP MP 2018.}
-\marginnote{\UPSTIcompetence[2]{B2-07}}
+\marginnote{\textit{Concours CCINP MP 2018.}}
+%\marginnote{\UPSTIcompetence[2]{B2-07}}
+\marginnote{\xpComp{SLCI}{02}\xpComp{SLCI}{07}\xpComp{SLCI}{08}}
+
 \begin{marginfigure}
 \centering
 \includegraphics[width=.9\linewidth]{fig_01}
@@ -112,8 +114,6 @@ paramètres qui transitent entre les blocs.
 
 \end{tikzpicture}
 \end{center}
-
-
 \normalsize
 %%%%%%%%%%%%%%%
 \end{corrige}
@@ -359,11 +359,20 @@ Conclure sur le correcteur à adopter.
 \fi
 
 
+
+\ifprof
+\else
+\begin{marginfigure}
+\centering
+\includegraphics[width=3cm]{Cy_01_Ch_02_03_TD_04_qr}
+\end{marginfigure}
+\fi
+
 \ifcolle
 \else
 \ifprof
 \else
-\marginnote{
+%\marginnote{
 \begin{solution}
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item .
@@ -375,18 +384,11 @@ $\xi =  \dfrac{R\sqrt{J}}{2 \sqrt{L k_ck_e}} $.
 \item $K_i\neq 0 $ pour la courbe 3 uniquemement.
 \item .
 \end{enumerate}
-\end{solution}}
+\end{solution}
+%}
 \fi
 \fi
 
 
-
-\ifprof
-\else
-\begin{marginfigure}
-\centering
-\includegraphics[width=3cm]{Cy_01_Ch_02_03_TD_04_qr}
-\end{marginfigure}
-\fi
 
 

@@ -1,4 +1,5 @@
 \section{Modélisation par fonction de transfert et schéma-blocs}
+\marginnote[-.5cm]{\xpComp{SLCI}{03}}
 
 \subsection{Définitions}
 
@@ -12,6 +13,16 @@ H(p)
 $$
  \end{defi}
 
+
+
+
+\marginnote[2cm]{
+\begin{exemplem}
+\textit{$H(p)=\dfrac{K}{p\left(1+\tau_1 p\right)\left(1+ \tau_2p\right)}$  est d'ordre 3 et de classe 1.}
+\end{exemplem}
+}
+
+
 \begin{defi}[Classe -- Ordre -- Pôles -- Zéros]
 $H(p)$ est une fonction rationnelle en $p$. En factorisant le numérateur et le
 dénominateur, $H(p)$ peut s'écrire sous cette forme :
@@ -20,7 +31,6 @@ H(p) = \dfrac{N(p)}{D(p)} =
 K \dfrac{\left(p-z_1 \right)\left(p-z_2 \right)...\left(p-z_m \right)}{
 p^{\alpha} \left(p-p_1 \right)\left(p-p_2 \right)...\left(p-p_n \right)}
 $$
-
 
  \begin{itemize}
  \item Les $z_i$ sont les \textbf{zéros} de la fonction de transfert (réels ou
@@ -36,15 +46,24 @@ terme $p^\alpha$ apparaît au dénominateur. \textbf{$\alpha$ est la classe (ou 
 la fonction de transfert}. Il correspond au nombre d'intégrations pures du
 système.
 \end{itemize}
+\end{defi}
 
 
+
+\marginnote[-1.5cm]{\begin{exemplem}
+\textit{$H_1(p)=\dfrac{K}{a+1+b p+cp^2} = \dfrac{K}{a+1} \dfrac{1}{1+\dfrac{b}{a+1}p+\dfrac{c}{a+1}p^2}$.} \textit{$H_2(p)=\dfrac{K}{\left(a_1+b_1 p\right)\left(a_2+b_2 p\right)} = \dfrac{K}{a_1a_2} \dfrac{1}{\left(1+\dfrac{b_1}{a_1} p\right)\left(1+\dfrac{b_2}{a_2} p\right)}$.}
+\end{exemplem}}
+
+
+\begin{defi}[Forme canonique]
+On appelle forme canonique d'une fonction de transfert une forme pour laquelle le coefficient du monome de plus bas degré est 1 au numérateur et au dénominateur. On appelle gain la coefficent ainsi mis en facteur.  
 \end{defi}
 
 
 
 
-
-\begin{marginfigure}
+\begin{marginfigure}[1.5cm]
+\centering
 \begin{tikzpicture}
 \sbEntree{E}
 \sbBloc{sys}{$\quad$H(p)$\quad$}{E} \sbRelier[$E(p)\quad$]{E}{sys}
@@ -62,9 +81,9 @@ S(p) = E(p) \cdot H(p).
 $$
 \end{defi}
 
+\newpage
 
-
-\begin{marginfigure}
+\begin{marginfigure}[1cm]
 \resizebox{\columnwidth}{!}{
 \begin{tikzpicture}
 \sbEntree{E}
@@ -81,8 +100,6 @@ $$
 \begin{defi}[Modélisation d'un comparateur]
 Soit l'équation $S(p)=E_1(p)-E_2(p)$. Cette équation se traduit par le schéma ci-contre.
 \end{defi}
-
-\newpage
 
 \subsection{Algèbre de blocs}
 
@@ -286,7 +303,16 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsqu'on modifie une part
 
 \subsection{Fonctions usuelles}
 
-\begin{marginfigure}
+\begin{defi}[Fonction de transfert en boucle fermée -- FTBF]
+\textit{Formule de Black}
+
+$$H(p)=\dfrac{S(p)}{E(p)}=\dfrac{H_1(p)}{1+H_1(p)H_2(p)}$$
+\end{defi}
+
+
+\marginnote[-3cm]{\xpComp{SLCI}{08}}
+
+\begin{marginfigure}[-2cm]
 \resizebox{\columnwidth}{!}{
 \begin{tikzpicture}
 \sbEntree{E}
@@ -304,12 +330,6 @@ Pour modifier un schéma-blocs, il faut s'assurer que lorsqu'on modifie une part
 \sbRelieryx{sys-S}{sys2}
 \end{tikzpicture}}
 \end{marginfigure}
-
-\begin{defi}[Fonction de transfert en boucle fermée -- FTBF]
-\textit{Formule de Black}
-
-$$H(p)=\dfrac{S(p)}{E(p)}=\dfrac{H_1(p)}{1+H_1(p)H_2(p)}$$
-\end{defi}
 
 
 %\begin{marginfigure}
