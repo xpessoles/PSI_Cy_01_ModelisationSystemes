@@ -6,9 +6,9 @@
 \chapter*{TD \arabic{cptTD} \\ 
 \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
 \addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
 \iflivret \stepcounter{cptTD} \else
-\ifprof  \stepcounter{cptTD} \else \fi
-\fi
+\ifprof  \stepcounter{cptTD} \else \fi \fi
 
 \renewcommand{\leftmark}{\titrechapitre}
 \renewcommand{\rightmark}{\titrechapitre}
