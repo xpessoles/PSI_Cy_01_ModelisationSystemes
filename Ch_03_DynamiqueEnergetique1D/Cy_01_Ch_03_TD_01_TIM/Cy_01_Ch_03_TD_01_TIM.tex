@@ -244,9 +244,10 @@ $$C_m=\underbrace{\left(M+3m\right)gr}_{\text{Résistance au roulement}} + \unde
 \ifprof
 \else
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_04}
-\end{marginfigure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.7\linewidth]{fig_04}
+\end{figure}
 \marginnote{Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^{-3}}\text{m}$, $R = \SI{0,25}{m}$, $C_m= \SI{3,245}{m.N}$, $g = \SI{10}{ms^{-2}}$.}
 
 On réalise un essai du véhicule sur terrain horizontal, le moteur du véhicule délivrant un couple $C_m$ constant.   
@@ -289,7 +290,7 @@ $\dfrac{1}{2}\rho S C_x=\dfrac{C_m-\left(M+3m\right)gr}{R\dot{x}^2} =\dfrac{3,24
 \else
 \ifcolle
 \else
-\marginnote{
+%\marginnote{
 \begin{solution}
 \begin{enumerate}
 \item $-T_{01} +mg\sin\alpha = 0$; $N_{01} -mg\cos\alpha = 0$; $C_r=RT_{01}$.
@@ -305,7 +306,7 @@ $\dfrac{1}{2}\rho S C_x=\dfrac{C_m-\left(M+3m\right)gr}{R\dot{x}^2} =\dfrac{3,24
 \item $\dfrac{1}{2}\rho S C_x = \SI{0,025}{kg.m^{-1}}$.
 \item $\alpha=1\degres$.
 \end{enumerate}
-\end{solution}}
+\end{solution}%}
 \fi
 \fi
 
