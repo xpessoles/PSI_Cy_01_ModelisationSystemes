@@ -3,12 +3,6 @@
 \marginnote{\xpComp{SLCI}{11}}
 
 \subsection{Définitions}
-On peut définir un signal sinusoïdal sous la forme $
-f(t)=A \sin(\omega \cdot t + \varphi)
-$ et on note :
-
-
-Une étude harmonique consiste en solliciter le système par des sinusoïdes de pulsations différentes et d'observer son comportement en régime permanent. Le diagramme de Bode est constitué d'un diagramme de gain (rapport des amplitudes des sinus en régime permanent) et d'un diagramme de phase (déphasage des sinus en régime permanent). 
 
 \marginnote{
 \begin{itemize}
@@ -18,6 +12,15 @@ Une étude harmonique consiste en solliciter le système par des sinusoïdes de 
 \item $\omega$ : la pulsation en $\text{rad/s}$;
 \item $\varphi$ : la phase à l'origine en $\text{rad}$.
 \end{itemize}}
+
+
+On peut définir un signal sinusoïdal sous la forme $
+f(t)=A \sin(\omega \cdot t + \varphi)
+$ et on note :
+
+
+Une étude harmonique consiste en solliciter le système par des sinusoïdes de pulsations différentes et d'observer son comportement en régime permanent. Le diagramme de Bode est constitué d'un diagramme de gain (rapport des amplitudes des sinus en régime permanent) et d'un diagramme de phase (déphasage des sinus en régime permanent). 
+
 
 \begin{defi}[Gain \& Phase]
 Soit $H(p)$ une fonction de transfert. On pose $p=j\omega$ et on note :  
@@ -272,7 +275,7 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \end{marginfigure}
 
 
-
+%\marginnote{En utilisant la figure précédente, on lit un gain maximal de }
 \begin{resultat}[Phénomène de résonance]
 
 Le phénomène de résonance s'observe lorsque $\xi<\dfrac{\sqrt{2}}{2}$. La pulsation de résonance est inférieure à la pulsation propre du système :
@@ -334,7 +337,41 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \item Décomposer la fonction de transfert à tracer en fonction de transfert élémentaire (fonctions de transfert élémentaires vues ci-dessus).
 \item Réaliser un tableau de variation : pour chacune des fonctions élémentaires, donner les pulsations de coupure et les pentes.
 \item Sommer les pentes.
+\item Déterminer le gain en basse fréquence si la classe est nulle ou déterminer le gain pour une pulsation donnée si la classe est non nulle.
 \item Tracer le diagramme de Bode.
 \end{enumerate}
 \end{methode}
 
+Application : tracer de $F(p)=\dfrac{10}{p\left(1+0,9p\right)}$.
+
+\begin{center}
+\includegraphics[width=.85\linewidth]{variations}
+\end{center}
+
+Ici le système est de classe 1. Pour $\omega << 1,11$, $F(p)\simeq \dfrac{10}{p}$. Pour $\omega = 0,01$, on a donc $\indice{G}{dB}(0,01) \simeq 20\log 10 - 20\log (0,1) = 20-20\times (-2) = 60$.
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[xscale=14/7]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=3/150]
+\OrdBode{20}
+\semilog{-2}{2}{-60}{60}
+\BodeAmp[bleuxp,thick,samples=150]{-2:2}{\POAmpAsymp{10}{.9}+\IntAmp{1}}
+\BodeAmp[orangexp,ultra thick,samples=150]{-2:2}{\POAmp{10}{.9}+\IntAmp{1}}
+\end{scope}
+\begin{scope}[yshift=-1.7cm,yscale=1/90]
+\UniteDegre
+\OrdBode{45}
+\semilog{-2}{2}{-180}{0}
+\BodeArg[bleuxp,samples=100,thick]{-2:2}{\POArgAsymp{10}{.9}+\IntArg{1}}
+\BodeArg[orangexp,ultra thick]{-2:2}{\POArg{10}{.9}+\IntArg{1}}
+\end{scope}
+\end{tikzpicture}
+\end{figure}
