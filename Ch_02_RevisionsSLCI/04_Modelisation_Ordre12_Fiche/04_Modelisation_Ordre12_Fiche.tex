@@ -37,6 +37,8 @@ On note :
 \end{itemize}
 \end{defi}
 
+\newpage
+\clearpage
 
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_01}
@@ -148,6 +150,7 @@ Suivant la valeur du coefficient d'amortissement, l'allure de la réponse tempor
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{Ordre2_pseudo}
 \end{marginfigure}
+\marginnote{Sur la figure ci dessus, le dépassement est de 0,4 et le dépassement pour cent est $D_{\%} = \dfrac{ 0,4}{0,8} = 0,5$.  En utilisant la formule donnée pour identifier $\xi$, on a alors $\xi \simeq 0,15$.}
 
 \begin{resultat}[$\xi <1$ : système oscillant et amorti (pseudo périodique)]
 \begin{itemize} 
@@ -155,6 +158,9 @@ Suivant la valeur du coefficient d'amortissement, l'allure de la réponse tempor
 \item La tangente à l'origine est nulle.
 \item La pseudo-période est de la forme $T_p=\dfrac{2\pi }{\omega_0 \sqrt{1-\xi^2}}$.
 \item La valeur du premier dépassement vaut :  $D_1=KE_0e^{\dfrac{-\pi \xi }{\sqrt{1-\xi^2}}}$.
+\begin{itemize}
+\item En notant $D_{\%} =\dfrac{D_1}{KE_0}$, on pourra aussi retenir que $\xi = \sqrt{\dfrac{(\ln D_{\%})^2}{\pi^2 + (\ln D_{\%})^2}}$.
+\end{itemize}
 \end{itemize}
 \end{resultat}
 
