@@ -44,7 +44,7 @@ analogique. On parle de conversion analogique numérique (CAN).
 \end{defi}
 
 \begin{center}
-\includegraphics[width=\linewidth]{CAN_CNA}
+\includegraphics[width=.9\linewidth]{CAN_CNA}
 \end{center}
 
 \begin{marginfigure}[1cm]
@@ -67,7 +67,8 @@ La sortie $s(t)$ est une grandeur \textbf{observable} (par des capteurs) qui
 permet de juger de la qualité de la tâche accomplie.
 \end{defi} 
 
-\vspace{.1cm}
+\newpage
+
 
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{suiveur}
@@ -86,11 +87,19 @@ permet de juger de la qualité de la tâche accomplie.
 \end{itemize}
 \end{defi}
 
-\vspace{.1cm}
+
 
 \subsection{Performance des systèmes -- Critères graphiques}
 
-\vspace{.1cm}
+
+
+\begin{defi}[Stabilité]
+
+La stabilité traduit la propriété de convergence temporelle asymptotique vers
+un état d'équilibre. 
+
+On parle parfois de système EBSB (Entrée Bornée -- Sortie Bornée), même si cette définition me convient moyennement.
+\end{defi}
 
 \begin{defi}[Précision en position -- Erreur statique $\varepsilon_S$]
 Le système est piloté par un échelon. On définit alors l'erreur statique $\varepsilon_S$ comme la différence entre la consigne (un échelon) et la réponse $s(t)$ en régime permanent.
@@ -133,12 +142,11 @@ n'en sort plus.
 \caption{Performances sur une réponse à un échelon.}
 \end{figure}
 
-\begin{defi}[Stabilité]
 
-La stabilité traduit la propriété de convergence temporelle asymptotique vers
-un état d'équilibre. 
-
-On parle parfois de système EBSB (Entrée Bornée -- Sortie Bornée), même si cette définition me convient moyennement.
+\begin{defi}[Amortissement]
+L'amortissement caractérise la capacité d'un système à réduire ses oscillations lorsqu'il est soumis à une entrée ou à une perturbation. 
+Il est caractérisé par le dépassement. 
+On peut le définir par $D_{\%} = \dfrac{\indice{s}{max} - s_{\infty} }{\indice{s}{max} - s_{0}}$.
 \end{defi}
 
 
