@@ -50,10 +50,6 @@ L'objectif de cette partie est de valider les choix effectués par la société 
 
 Le déplacement du chariot est assuré par un axe numérique asservi en vitesse et en position. Cet axe est composé d'un moteur à courant continu, d'un système de transmission de puissance de type poulies / courroie et d'un rail.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{image8}
-\end{marginfigure} 
- 
 La modélisation du système de déplacement du chariot est donné ci-contre.
 
 \fi
@@ -64,6 +60,12 @@ La modélisation du système de déplacement du chariot est donné ci-contre.
 \section*{Sélectionner les fixations – Exigence 1.1}
 \ifprof
 \else 
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{image8}
+\end{marginfigure} 
+ 
+
 Afin de sélectionner le type de fixation, la buse d'aspiration doit être déplacée en face de la cassette avec une erreur inférieure à $\SI{0,5}{mm}$ (voir exigences fonctionnelles). Cependant le fabricant du système poulie-courroie du rail indique déjà une erreur de $\pm \SI{0,25}{mm}$ due notamment à l'élasticité de la courroie. Par conséquent, l'erreur en position de la commande doit être nulle. De plus, afin de ne pas perdre de temps lors de la production, le temps maximal de déplacement lors de la sélection est imposé à une seconde.
 
 L'étude se fera dans le cas le plus défavorable c'est-à-dire un déplacement du chariot vers le haut entre les deux cassettes de rivets les plus éloignées. L'axe de déplacement est appelé $\vect{y_c}$
@@ -360,6 +362,19 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \ifprof
 \else
 
+
+\ifprof
+\else
+ 
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{image11}
+\caption{Réponse temporelle système réglé. \label{fig:image11}}
+
+\end{marginfigure} 
+
+\fi
+
+
 Afin de répondre totalement au cahier des charges, l'utilisation d'un correcteur proportionnel intégral dérivé est retenue. En effet, la commande de l'axe intègre directement ce type de correcteur. Dans la suite du problème, le correcteur $C(p)$ sera de la forme : $C(p)=K_I \left(1+\dfrac{1}{(T_I p}\right)\left(1+T_D p\right)$. Le réglage des coefficients a été fait par simulation numérique.
 Afin de vérifier maintenant le critère de rapidité, on donne la réponse temporelle (figure \ref{fig:image11}) de l'axe à un échelon de position de $\SI{1}{m}$.
 
@@ -370,17 +385,6 @@ Afin de vérifier maintenant le critère de rapidité, on donne la réponse temp
 \begin{corrige}
 \end{corrige}
 \else
-\fi
-
-\ifprof
-\else
- 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{image11}
-\caption{Réponse temporelle système réglé.}
-\label{fig:image11}
-\end{marginfigure} 
-
 \fi
  
 
@@ -437,13 +441,13 @@ Afin de vérifier les réglages précédents, un essai sur le système réel est
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{image13}
 %\caption{Réponse temporelle système réglé.}
-\label{fig:image11}
+\label{fig:image13}
 \end{marginfigure} 
 
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{image14}
 %\caption{Réponse temporelle système réglé.}
-\label{fig:image11}
+\label{fig:image14}
 \end{marginfigure} 
 
 
