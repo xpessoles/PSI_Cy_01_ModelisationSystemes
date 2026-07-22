@@ -61,16 +61,18 @@ La modélisation du système de déplacement du chariot est donné ci-contre.
 \ifprof
 \else 
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{image8}
-\end{marginfigure} 
- 
 
 Afin de sélectionner le type de fixation, la buse d'aspiration doit être déplacée en face de la cassette avec une erreur inférieure à $\SI{0,5}{mm}$ (voir exigences fonctionnelles). Cependant le fabricant du système poulie-courroie du rail indique déjà une erreur de $\pm \SI{0,25}{mm}$ due notamment à l'élasticité de la courroie. Par conséquent, l'erreur en position de la commande doit être nulle. De plus, afin de ne pas perdre de temps lors de la production, le temps maximal de déplacement lors de la sélection est imposé à une seconde.
 
 L'étude se fera dans le cas le plus défavorable c'est-à-dire un déplacement du chariot vers le haut entre les deux cassettes de rivets les plus éloignées. L'axe de déplacement est appelé $\vect{y_c}$
 \subsection*{Notations domaine temporel – domaine de Laplace}
 
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{image8}
+\end{marginfigure} 
+ 
+ 
 \marginnote{Les notations entre le domaine temporel et celui de Laplace sont données dans la suite. Ainsi, si la fonction $f(t)$ possède une transformée de Laplace, elle sera notée : $F(p) = \mathcal{L}[f(t)]$.}
 
 Les équations caractéristiques du moteur à courant continu sont rappelées ci-dessous (les conditions de Heaviside sont respectées) :
@@ -240,7 +242,7 @@ $Te=\dfrac{\dfrac{RJ_{eq}}{K_c K_e}-\sqrt{\left(\dfrac{RJ_{eq}}{K_c K_e}\right)^
 La partie précédente a permis de déterminer un modèle du moteur. La suite de l'étude va permettre, par simulation, de déterminer les réglages nécessaires de l'axe vis-à-vis du cahier des charges. La figure suivante présente le principe de l'asservissement de l'axe du chariot.
  
 \begin{center}
-\includegraphics[width=8cm]{image9}
+\includegraphics[width=10cm]{image9}
 \end{center} 
 
 \marginnote{
@@ -294,7 +296,7 @@ Afin de faciliter les calculs, le schéma bloc à retour unitaire est donné fig
 \end{itemize}}
  
 \begin{center}
-\includegraphics[width=7cm]{image10}
+\includegraphics[width=9cm]{image10}
 \end{center} 
 
 
@@ -435,6 +437,8 @@ Afin de vérifier les réglages précédents, un essai sur le système réel est
 \else
 \fi
 
+ \newpage
+ 
  
 \ifprof
 \else

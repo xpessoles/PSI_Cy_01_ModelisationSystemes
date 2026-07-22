@@ -120,11 +120,17 @@ adaptée aux systèmes comportant des retards. La figure suivante montre deux st
 d’une part au schéma réel \ref{fig_04}(a) représentant la réalisation de la commande ($X(p)$ est la transformée de Laplace
 d’une grandeur $x(t)$ interne au régulateur), d’autre part un schéma fictif \ref{fig_04}(b).
 
-\begin{marginfigure}[-2cm]%[!h]
-\includegraphics[width=\linewidth]{fig_04}
+%\begin{marginfigure}[-2cm]%[!h]
+%\includegraphics[width=\linewidth]{fig_04}
+%\caption{Structure de commande adaptée aux systèmes à retard.}
+%\label{fig_04}
+%\end{marginfigure}
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{fig_04_bis}
 \caption{Structure de commande adaptée aux systèmes à retard.}
 \label{fig_04}
-\end{marginfigure}
+\end{figure}
 
 \question{En utilisant le schéma fictif (b) et le diagramme de Bode de la figure B du document réponse, déterminer le
 correcteur de type proportionnel intégral $C(p)= K\left( 1+\dfrac{1}{T_ip}\right)$ permettant d’assurer les performances exprimées
@@ -183,11 +189,18 @@ Pour la conception de la loi de commande :
 \end{itemize}
 
 
-\begin{marginfigure}[-1cm]
-\includegraphics[width=\linewidth]{fig_05}
+%\begin{marginfigure}[-1cm]
+%\includegraphics[width=\linewidth]{fig_05}
+%\caption{Modèle de commande avec une boucle interne intégrée}
+%\label{fig_05}
+%\end{marginfigure}
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{fig_05_bis}
 \caption{Modèle de commande avec une boucle interne intégrée}
 \label{fig_05}
-\end{marginfigure}
+\end{figure}
+
 
 
 \question{En utilisant la même démarche que celle de la question précédente, déterminer la valeur de la grandeur $L^{m}(t)$ en régime permanent, soit 
@@ -199,7 +212,6 @@ $\lim\limits_{t\to\infty} L^{m*}(t)$, en réponse à une perturbation $d(t)$ en 
 \else
 \fi
 
-\newpage
 \subsection*{Retour sur le cahier des charges}
 
 La figure \ref{fig_06_2} montre les évolutions temporelles de la position $L^d(t)$ en réponse
@@ -224,12 +236,6 @@ La figure \ref{fig_06_2} montre les évolutions temporelles de la position $L^d(
 %%\textit{}
 
 
-\begin{center}
-\includegraphics[height=\linewidth]{fig_07}
-%\textit{}
-\end{center}
-
-
 \ifprof
 \else
 \begin{marginfigure}
@@ -237,3 +243,10 @@ La figure \ref{fig_06_2} montre les évolutions temporelles de la position $L^d(
 \includegraphics[width=3cm]{Cy_01_Ch_02_Sy_TD_04_qr}
 \end{marginfigure}
 \fi
+
+\begin{center}
+\includegraphics[height=\linewidth]{fig_07}
+%\textit{}
+\end{center}
+
+

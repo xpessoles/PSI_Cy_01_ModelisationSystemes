@@ -7,7 +7,7 @@
 
 
 
-\marginnote{
+\marginnote[5cm]{
 \xpComp{SLCI}{01}\xpComp{SLCI}{02}\xpComp{SLCI}{03}\xpComp{SLCI}{07}\xpComp{SLCI}{08}\xpComp{SLCI}{09}\xpComp{SLCI}{10}\xpComp{SLCI}{11}
 }
 %\marginnote[5cm]{
@@ -70,6 +70,16 @@ permet de juger de la qualité de la tâche accomplie.
 
 
 
+\newpage
+\clearpage
+
+\begin{defi}[Systèmes suiveurs et régulateurs]
+\begin{itemize}
+\item Pour un système suiveur la consigne $e(t)$ fluctue au cours du temps. Le système doit faire son possible pour qu'à chaque instant la cible soit suivie.
+\item Pour un système régulateur la consigne $e(t)$ est constante. Les perturbations font varier la position du système. Il doit donc de façon automatique revenir à la position commandée.
+\end{itemize}
+\end{defi}
+
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{suiveur}
 \caption{Système suiveur.}
@@ -80,37 +90,34 @@ permet de juger de la qualité de la tâche accomplie.
 \caption{Système régulateur.}
 \end{marginfigure}
 
-\begin{defi}[Systèmes suiveurs et régulateurs]
-\begin{itemize}
-\item Pour un système suiveur la consigne $e(t)$ fluctue au cours du temps. Le système doit faire son possible pour qu'à chaque instant la cible soit suivie.
-\item Pour un système régulateur la consigne $e(t)$ est constante. Les perturbations font varier la position du système. Il doit donc de façon automatique revenir à la position commandée.
-\end{itemize}
-\end{defi}
-
 
 
 \subsection{Performance des systèmes -- Critères graphiques}
 
-
+\vspace{.6cm}
 
 \begin{defi}[Stabilité]
-
 La stabilité traduit la propriété de convergence temporelle asymptotique vers
 un état d'équilibre. 
 
 On parle parfois de système EBSB (Entrée Bornée -- Sortie Bornée), même si cette définition me convient moyennement.
 \end{defi}
 
+\vspace{.6cm}
+
 \begin{defi}[Précision en position -- Erreur statique $\varepsilon_S$]
 Le système est piloté par un échelon. On définit alors l'erreur statique $\varepsilon_S$ comme la différence entre la consigne (un échelon) et la réponse $s(t)$ en régime permanent.
 \end{defi}
+
+\vspace{.6cm}
 
 \begin{defi}[Précision en vitesse $\varepsilon_V$]
 Encore appelé écart de traînage ou écart de poursuite, il représente la différence entre une consigne variable de type rampe et la réponse en régime permanent. 
 \end{defi}
 
-\begin{defi}[Rapidité]
+\vspace{.6cm}
 
+\begin{defi}[Rapidité]
 La rapidité est caractérisée par le temps que met le système à réagir à une
 variation brusque de la grandeur d'entrée (temps de réponse). Cette notion est
 fortement liée à la notion de précision dynamique.
@@ -121,8 +128,8 @@ fortement liée à la notion de précision dynamique.
 \caption{Erreur de trainage.}
 \end{marginfigure}
 
+\vspace{.6cm}
 
-\vspace{1cm}
 \begin{methode}[Détermination du temps de réponse 5\,\%]% à $n\%$ (En pratique $n=5$)]
 
 \begin{enumerate}
