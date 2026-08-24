@@ -1,0 +1,85 @@
+% "{'chapitre':'slci_blocs','classe':('PSI'),'type':('td'),'titre':'Calculs','source':'Concours CCS - PSI 2026','comp':('SLCI-03'),'corrige':False}"
+%\setchapterimage{fig_00}
+\renewcommand{\titrechapitre}{Applications -- Calculs}
+\chapter*{Applications \arabic{cptApplication} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\addcontentsline{toc}{section}{Applications \arabic{cptApplication} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi \fi
+
+\setcounter{question}{0}
+
+\marginnote{\textit{Concours CCS -- PSI 2026.}}
+%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
+\marginnote{\xpComp{SLCI}{03}}
+
+
+On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_01_fig_01}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_01_fig_01}
+
+\caption{Schéma bloc de l'asservissement de l'angle de roulis $\beta$ avec un correcteur proportionnel.}
+
+\label{cy_01_ch_02_03_app_01_fig_01}
+\end{figure}
+
+\question{Exprimer sous forme canonique la fonction de transfert en boucle fermée $\dfrac{\beta(p)}{\beta_{c}(p)}$.}
+
+
+
+On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_01_fig_02}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_01_fig_02}
+
+\caption{Schéma-bloc de l'asservissement de l'angle de roulis $\beta$ avec exploitation de trois mesures.}
+
+\label{cy_01_ch_02_03_app_01_fig_02}
+\end{figure}
+
+
+
+Il est décidé de placer les pôles $p_{1}, p_{2}$ et $p_{3}$ du système asservi en angle de roulis $\beta$ aux emplacements $p_{1,2}=-\omega_{0}\left(\xi \pm i \sqrt{1-\xi^{2}}\right)$ et $p_{3}=-60 \mathrm{~s}^{-1}$ avec $\omega_{0}=6 \mathrm{rad} \cdot \mathrm{s}^{-1}$ et $\xi=0,9$.\\
+Il est donc nécessaire de déterminer les valeurs de $k_{1}, k_{2}$ et $k_{3}$ de façon à vérifier que les valeurs des emplacements polaires en boucle fermée correspondent aux valeurs retenues précédemment.
+
+
+\begin{question}
+Établir l'expression de la fonction de transfert en boucle fermée $H(p)$ et la mettre sous la forme :
+$$
+H(p)=\frac{\beta(p)}{\beta_{c}(p)}=\frac{A_{V} \omega_{v}}{A\left(k_{1}, k_{3}\right)+B\left(k_{2}\right) p-C\left(k_{3}\right) p^{2}-D p^{3}}
+$$
+
+Préciser les termes $A, B, C$ et $D$ en fonction de $k_{1}, k_{2}, k_{3}$ et des paramètres du système.\\
+\end{question}
+
+Afin que les pôles $p_{i}$ souhaités précédemment soient obtenus, l'équation (3) doit être vérifiée :
+
+
+\begin{equation*}
+A\left(k_{1}, k_{3}\right)+B\left(k_{2}\right) p_{i}-C\left(k_{3}\right) p_{i}^{2}-D p_{i}^{3}=0 \quad \forall p_{i} \tag{3}
+\end{equation*}
+
+
+
+\begin{question}
+Reformuler l'équation (3) sous la forme :
+
+\begin{equation*}
+E_{0}\left(p_{i}\right)+E_{1}\left(p_{i}\right) k_{1}+E_{2}\left(p_{i}\right) k_{2}+E_{3}\left(p_{i}\right) k_{3}=0 \tag{4}
+\end{equation*}
+
+Préciser les expressions des fonctions $E_{0}, E_{1}, E_{2}$ et $E_{3}$.
+\end{question}
+
+
+
+
+
