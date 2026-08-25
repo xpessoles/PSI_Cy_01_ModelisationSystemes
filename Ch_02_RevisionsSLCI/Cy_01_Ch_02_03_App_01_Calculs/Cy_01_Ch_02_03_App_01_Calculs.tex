@@ -32,7 +32,39 @@ On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_01_fig_01}.
 
 \question{Exprimer sous forme canonique la fonction de transfert en boucle fermée $\dfrac{\beta(p)}{\beta_{c}(p)}$.}
 
+\ifprof
+\begin{corrige}
+On décale le point de prélèvement vers la droite. 
+On a alors la première boucle imbriquée : $F_1(p) = \dfrac{\dfrac{1}{\left( \indice{I}{1y} + \indice{B}{V}\right)p^2}}{1+\dfrac{1}{\left( \indice{I}{1y} + \indice{B}{V}\right)p^2}Mgh_2}$
+$= \dfrac{1}{\left( \indice{I}{1y} + \indice{B}{V}\right)p^2+Mgh_2}$.
 
+Pour la deuxième boucle, 
+
+$F_2(p) = \dfrac{\dfrac{\indice{A}{V}\indice{\omega}{v}p} {\indice{B}{V} p^2}F_1(p)}{1-\dfrac{\indice{A}{V}\indice{\omega}{v}p} {\indice{B}{V} p^2}F_1(p) \indice{A}{V}\indice{\omega}{v}p}$
+$= \dfrac{\indice{A}{V}\indice{\omega}{v}p F_1(p)}{\indice{B}{V} p^2-\indice{A}{V}^2 \indice{\omega}{v}^2 p^2  F_1(p) }$
+
+$= \dfrac{\indice{A}{V}\indice{\omega}{v}p }{\left(\left( \indice{I}{1y} + \indice{B}{V}\right)p^2+Mgh_2\right)\indice{B}{V} p^2-\indice{A}{V}^2 \indice{\omega}{v}^2 p^2 }$
+
+
+Pour la troisième boucle, 
+$ F_3(p) = \dfrac{\indice{K}{cor}F_2(p)}{1+\indice{K}{cor}F_2(p)}$.
+
+Ainsi, 
+$ F_3(p) = \dfrac{\indice{K}{cor}\indice{A}{V}\indice{\omega}{v}p }{\left(\left( \indice{I}{1y} + \indice{B}{V}\right)p^2+Mgh_2\right)\indice{B}{V} p^2-\indice{A}{V}^2 \indice{\omega}{v}^2 p^2+\indice{K}{cor} \indice{A}{V}\indice{\omega}{v}p} $
+
+$ F_3(p) = \dfrac{\indice{K}{cor}\indice{A}{V}\indice{\omega}{v} }{\left(\left( \indice{I}{1y} + \indice{B}{V}\right)p^2+Mgh_2\right)\indice{B}{V} p-\indice{A}{V}^2 \indice{\omega}{v}^2 p+\indice{K}{cor} \indice{A}{V}\indice{\omega}{v}} $
+$= \dfrac{\indice{K}{cor}\indice{A}{V}\indice{\omega}{v} }{\left( \indice{I}{1y} + \indice{B}{V}\right)\indice{B}{V} p^3+Mgh_2\indice{B}{V} p-\indice{A}{V}^2 \indice{\omega}{v}^2 p+\indice{K}{cor} \indice{A}{V}\indice{\omega}{v}} $
+
+
+$= \dfrac{1 }{
+\dfrac{\left( \indice{I}{1y} + \indice{B}{V}\right)\indice{B}{V}}
+{\indice{K}{cor} \indice{A}{V}\indice{\omega}{v}} p^3
++\dfrac{Mgh_2\indice{B}{V}  -\indice{A}{V}^2 \indice{\omega}{v}^2 }
+{\indice{K}{cor} \indice{A}{V}\indice{\omega}{v}} p +1}
+ $
+
+\end{corrige}
+\else\fi
 
 On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_01_fig_02}.
 
