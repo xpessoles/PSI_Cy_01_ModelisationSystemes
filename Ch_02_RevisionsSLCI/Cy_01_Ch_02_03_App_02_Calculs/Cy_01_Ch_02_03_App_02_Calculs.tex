@@ -1,0 +1,165 @@
+% "{'chapitre':'slci_blocs','classe':('PSI'),'type':('td'),'titre':'Calculs','source':'Concours CCS - PSI 2025','comp':('SLCI-03'),'corrige':False}"
+%\setchapterimage{fig_00}
+\renewcommand{\titrechapitre}{Applications -- Calculs}
+\chapter*{Applications \arabic{cptApplication} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+\addcontentsline{toc}{section}{Applications \arabic{cptApplication} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi \fi
+
+\setcounter{question}{0}
+
+\marginnote{\textit{Concours CCS -- PSI 2025.}}
+%\marginnote{\UPSTIcompetence[2]{B2-07}\UPSTIcompetence[2]{C2-03}}
+\marginnote{\xpComp{SLCI}{03}}
+\begin{obj}
+Exprimer une fonction de transfert simplifiée de la boucle ouverte de l'asservissement de vitesse horizontale, utilisable dans le cadre de la synthèse du correcteur de cette même boucle.
+\end{obj}
+
+Pour la synthèse du correcteur de la chaine d'asservissement horizontale il est envisagé d'utiliser un modèle simplifié issu de la réduction du schéma-bloc couplé donné à la figure \ref{cy_01_ch_02_03_app_02_fig_06} de façon à considérer $\Delta V_{x}^{*}(p)$ comme la consigne de variation de vitesse horizontale et d'assimiler $\Delta V_{z}^{*}(p)$ à une perturbation.
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_06}
+\caption{Schéma-bloc couplé de l'asservissement des vitesses horizontale et verticale}
+\label{cy_01_ch_02_03_app_02_fig_06}
+\centering
+\end{figure}
+
+La boucle d'asservissement de la variation de vitesse verticale linéarisée et découplée est représentée sous forme de schéma-bloc sur la figure \label{cy_01_ch_02_03_app_02_fig_07}.
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_07}
+\caption{Boucle de vitesse verticale linéarisée et découplée}
+\label{cy_01_ch_02_03_app_02_fig_07}
+\centering
+\end{figure}
+
+\begin{question}
+Exprimer la fonction de transfert de la boucle fermée de l'asservissement de vitesse verticale découplée, notée $H_{B F v_{z}}(p)$, en fonction de $H_{4}(p)$ et $C_{H z}(p)$.
+\end{question}
+
+Dans le cadre de l'étude de l'asservissement de $\Delta V_{x}$, le schéma bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_06} 
+peut se ramener sous la forme du schéma bloc intermédiaire de la figure \ref{cy_01_ch_02_03_app_02_fig_10}.
+
+
+\begin{question}
+Déterminer l'expression de $A(p)$ en fonction de $H_{4}(p)$ et $H_{B F v_{z}}(p)$ permettant le passage du schéma bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_06} au schéma bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_10}.
+\end{question}
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_10}
+\caption{Schéma-bloc intermédiaire}
+\label{cy_01_ch_02_03_app_02_fig_10}
+\centering
+\end{figure}
+
+\begin{question}
+Montrer enfin, à partir de la forme précédente donnée figure \ref{cy_01_ch_02_03_app_02_fig_10}, que le schéma-bloc couplé peut se mettre sous la forme de la figure \ref{cy_01_ch_02_03_app_02_fig_11}. Donner l'expression de $B(p)$ en fonction de $H_{4}(p), H_{2}(p), H_{3}(p)$ et $H_{B F v_{z}}(p)$.
+\end{question}
+
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_11}
+\caption{Boucle de vitesse horizontale perturbée}
+\label{cy_01_ch_02_03_app_02_fig_11}
+\centering
+\end{figure}
+
+
+Le schéma-bloc mis sous la forme de la figure \ref{cy_01_ch_02_03_app_02_fig_11} permet ainsi d'exprimer la fonction de transfert en boucle ouverte de l'asservissement de vitesse horizontale $H_{B O v_{x}}(p)=\frac{\Delta V_{x}(p)}{\varepsilon_{x}(p)}$ :
+
+$$
+H_{B O v_{x}}(p)=C_{H x}(p) H_{m}(p)\left(H_{1}(p)-B(p)\right)
+$$
+
+Le temps de réponse à 5\% attendu pour la boucle d'asservissement de la vitesse horizontale est d'environ 3 secondes. En conséquence, dans le cadre du réglage du correcteur, le modèle de la caractéristique fréquentielle du système au voisinage de $1 \mathrm{rad} \cdot \mathrm{s}^{-1}$, plus précisément entre $0,8 \mathrm{rad} \cdot \mathrm{s}^{-1}$ et $8 \mathrm{rad} \cdot \mathrm{s}^{-1}$, sera plus particulièrement considéré.
+
+%La figure 16, annexe D, 
+La figure \ref{cy_01_ch_02_03_app_02_fig_16} représente le diagramme de Bode de la fonction de transfert $H_{1}(p)-B(p)$.\\
+%Q23. 
+
+\begin{question}
+Déterminer une expression numérique simplifiée de $H_{1}(p)-B(p)$, notée $\tilde{H}_{1}(p)$, sous la forme $\tilde{H}_{1}(p)=\frac{K_{1 a}}{p}$ $\left(K_{1 a}>0\right)$, utilisable pour le réglage du correcteur de la boucle de variation de vitesse horizontale.
+\end{question}
+
+\begin{figure}[!h]
+\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_16}
+\caption{Diagramme de Bode de $H_1(p)-B(p)$}
+\label{cy_01_ch_02_03_app_02_fig_16}
+\centering
+\end{figure}
+
+%
+%
+%
+%
+%
+%On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_01}.
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_01}
+%
+%\caption{Schéma bloc de l'asservissement de l'angle de roulis $\beta$ avec un correcteur proportionnel.}
+%
+%\label{cy_01_ch_02_03_app_02_fig_01}
+%\end{figure}
+%
+%\question{Exprimer sous forme canonique la fonction de transfert en boucle fermée $\dfrac{\beta(p)}{\beta_{c}(p)}$.}
+%
+%
+%
+%On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_02}.
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_02}
+%
+%\caption{Schéma-bloc de l'asservissement de l'angle de roulis $\beta$ avec exploitation de trois mesures.}
+%
+%\label{cy_01_ch_02_03_app_02_fig_02}
+%\end{figure}
+%
+%
+%
+%Il est décidé de placer les pôles $p_{1}, p_{2}$ et $p_{3}$ du système asservi en angle de roulis $\beta$ aux emplacements $p_{1,2}=-\omega_{0}\left(\xi \pm i \sqrt{1-\xi^{2}}\right)$ et $p_{3}=-60 \mathrm{~s}^{-1}$ avec $\omega_{0}=6 \mathrm{rad} \cdot \mathrm{s}^{-1}$ et $\xi=0,9$.\\
+%Il est donc nécessaire de déterminer les valeurs de $k_{1}, k_{2}$ et $k_{3}$ de façon à vérifier que les valeurs des emplacements polaires en boucle fermée correspondent aux valeurs retenues précédemment.
+%
+%
+%\begin{question}
+%Établir l'expression de la fonction de transfert en boucle fermée $H(p)$ et la mettre sous la forme :
+%$$
+%H(p)=\frac{\beta(p)}{\beta_{c}(p)}=\frac{A_{V} \omega_{v}}{A\left(k_{1}, k_{3}\right)+B\left(k_{2}\right) p-C\left(k_{3}\right) p^{2}-D p^{3}}
+%$$
+%
+%Préciser les termes $A, B, C$ et $D$ en fonction de $k_{1}, k_{2}, k_{3}$ et des paramètres du système.\\
+%\end{question}
+%
+%Afin que les pôles $p_{i}$ souhaités précédemment soient obtenus, l'équation (3) doit être vérifiée :
+%
+%
+%\begin{equation*}
+%A\left(k_{1}, k_{3}\right)+B\left(k_{2}\right) p_{i}-C\left(k_{3}\right) p_{i}^{2}-D p_{i}^{3}=0 \quad \forall p_{i} \tag{3}
+%\end{equation*}
+%
+%
+%
+%\begin{question}
+%Reformuler l'équation (3) sous la forme :
+%
+%\begin{equation*}
+%E_{0}\left(p_{i}\right)+E_{1}\left(p_{i}\right) k_{1}+E_{2}\left(p_{i}\right) k_{2}+E_{3}\left(p_{i}\right) k_{3}=0 \tag{4}
+%\end{equation*}
+%
+%Préciser les expressions des fonctions $E_{0}, E_{1}, E_{2}$ et $E_{3}$.
+%\end{question}
+
+
+
+
+
