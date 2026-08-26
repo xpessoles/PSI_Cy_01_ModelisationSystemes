@@ -1,8 +1,10 @@
 % "{'chapitre':'slci_blocs','classe':('PSI'),'type':('td'),'titre':'Calculs','source':'Concours CCS - PSI 2026','comp':('SLCI-03'),'corrige':False}"
 %\setchapterimage{fig_00}
+
+
 \renewcommand{\titrechapitre}{Applications -- Calculs}
 \chapter*{Applications \arabic{cptApplication} \\ 
-\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+\titrechapitre \,-- \ifprof Corrigé \else Sujet \fi}
 
 \renewcommand{\leftmark}{\titrechapitre}
 \renewcommand{\rightmark}{\titrechapitre}
@@ -79,8 +81,8 @@ On donne le schéma-bloc de la figure \ref{cy_01_ch_02_03_app_01_fig_02}.
 
 
 
-Il est décidé de placer les pôles $p_{1}, p_{2}$ et $p_{3}$ du système asservi en angle de roulis $\beta$ aux emplacements $p_{1,2}=-\omega_{0}\left(\xi \pm i \sqrt{1-\xi^{2}}\right)$ et $p_{3}=-60 \mathrm{~s}^{-1}$ avec $\omega_{0}=6 \mathrm{rad} \cdot \mathrm{s}^{-1}$ et $\xi=0,9$.\\
-Il est donc nécessaire de déterminer les valeurs de $k_{1}, k_{2}$ et $k_{3}$ de façon à vérifier que les valeurs des emplacements polaires en boucle fermée correspondent aux valeurs retenues précédemment.
+%Il est décidé de placer les pôles $p_{1}, p_{2}$ et $p_{3}$ du système asservi en angle de roulis $\beta$ aux emplacements $p_{1,2}=-\omega_{0}\left(\xi \pm i \sqrt{1-\xi^{2}}\right)$ et $p_{3}=\SI{-60}{s.^{-1}}$ avec $\omega_{0}=\SI{6}{rad} \cdot \mathrm{s}^{-1}$ et $\xi=0,9$.\\
+%Il est donc nécessaire de déterminer les valeurs de $k_{1}, k_{2}$ et $k_{3}$ de façon à vérifier que les valeurs des emplacements polaires en boucle fermée correspondent aux valeurs retenues précédemment.
 
 
 \begin{question}
@@ -91,27 +93,87 @@ $$
 
 Préciser les termes $A, B, C$ et $D$ en fonction de $k_{1}, k_{2}, k_{3}$ et des paramètres du système.\\
 \end{question}
+\ifprof
+\begin{corrige}
+On déplace les points de prélèvement à droite (ce qui rajoute des facteurs $p$ dans les retours). 
+On permute le comparteur 3 et le comparateur 4. 
 
-Afin que les pôles $p_{i}$ souhaités précédemment soient obtenus, l'équation (3) doit être vérifiée :
+L'ensemble des retours << du haut >> est équivalent à $k_1 +p k_2 - p\indice{A}{V}\indice{\omega}{v}$.
+
+On a une première FTBF 
+
+$F_1(p) =\dfrac{\dfrac{1}{\indice{B}{V}}\dfrac{1}{p}}{1+\indice{k}{3}\dfrac{1}{\indice{B}{V}}\dfrac{1}{p}}
+=\dfrac{1}{\indice{B}{V} p + k_3}$. 
+
+et 
+
+$F_2(p) =\dfrac{\dfrac{1}{\indice{I}{1y} +\indice{B}{V}} \dfrac{1}{p^2} }{1+\dfrac{1}{\indice{I}{1y}+\indice{B}{V}} \dfrac{1}{p^2} Mgh_2}$
+$=\dfrac{1}{\left(\indice{I}{1y} +\indice{B}{V} \right)p^2- Mgh_2}$. 
+
+On a donc dans la chaîne directe : $-F_1(p) \indice{A}{V}\indice{\omega}{V} F_2(p)$.
+
+Au final, $H(p) = \dfrac{- \indice{A}{V}\indice{\omega}{V} F_1(p) F_2(p)}{1-F_1(p) \indice{A}{V}\indice{\omega}{V} F_2(p) \left(k_1 +p k_2 - p\indice{A}{V}\indice{\omega}{v}\right)}$.
+
+Et donc 
+$H(p) = \dfrac{- \indice{A}{V}\indice{\omega}{V} \dfrac{1}{\indice{B}{V} p + k_3} \dfrac{1}{\left(\indice{I}{1y} +\indice{B}{V} \right)p^2- Mgh_2}}{1-\dfrac{1}{\indice{B}{V} p + k_3} \indice{A}{V}\indice{\omega}{V} \dfrac{1}{\left(\indice{I}{1y} +\indice{B}{V} \right)p^2- Mgh_2} \left(k_1 +p k_2 - p\indice{A}{V}\indice{\omega}{v}\right)}$
+
+$= \dfrac{- \indice{A}{V}\indice{\omega}{V} }{\left(\indice{B}{V} p + k_3 \right) \left(\left(\indice{I}{1y} +\indice{B}{V} \right)p^2 - Mgh_2 \right)- \indice{A}{V}\indice{\omega}{V} \left(k_1 +p k_2 - p\indice{A}{V}\indice{\omega}{v}\right)}$
 
 
-\begin{equation*}
-A\left(k_{1}, k_{3}\right)+B\left(k_{2}\right) p_{i}-C\left(k_{3}\right) p_{i}^{2}-D p_{i}^{3}=0 \quad \forall p_{i} \tag{3}
-\end{equation*}
+$= \dfrac{- \indice{A}{V}\indice{\omega}{V} }{
+ p^3\left( \indice{B}{V} \left(\indice{I}{1y} +\indice{B}{V} \right) \right)
++p^2\left( k_3 \left(\indice{I}{1y} +\indice{B}{V} \right) \right) 
++p \left( - Mgh_2 \indice{B}{V} - \indice{A}{V}\indice{\omega}{v} k_2 + \indice{A}{V}^2\indice{\omega}{v}^2\right)
+- \indice{A}{V}\indice{\omega}{v} k_1 - Mgh_2 k_3 
+}$
+
+$= \dfrac{ \indice{A}{V}\indice{\omega}{V} }{
+ - p^3\left( \indice{B}{V} \left(\indice{I}{1y} +\indice{B}{V} \right) \right)
+- p^2\left( k_3 \left(\indice{I}{1y} +\indice{B}{V} \right) \right) 
+ + p \left(  Mgh_2 \indice{B}{V} + \indice{A}{V}\indice{\omega}{v} k_2 - \indice{A}{V}^2\indice{\omega}{v}^2\right)
++ \indice{A}{V}\indice{\omega}{v} k_1 + Mgh_2 k_3 
+}$
+
+On a alors :
+
+$A\left(k_1,k_3\right)= \indice{A}{V}\indice{\omega}{v} k_1 + Mgh_2 k_3$,
+
+$B\left(k_2\right) = Mgh_2 \indice{B}{V} + \indice{A}{V}\indice{\omega}{v} k_2 - \indice{A}{V}^2\indice{\omega}{v}^2$
+
+$C\left(k_3\right) = k_3 \left(\indice{I}{1y} +\indice{B}{V} \right)$
+
+$D = -  \indice{B}{V} \left(\indice{I}{1y} +\indice{B}{V} \right) $
 
 
+\textbf{Signe à vérifier sur D.}
 
-\begin{question}
-Reformuler l'équation (3) sous la forme :
-
-\begin{equation*}
-E_{0}\left(p_{i}\right)+E_{1}\left(p_{i}\right) k_{1}+E_{2}\left(p_{i}\right) k_{2}+E_{3}\left(p_{i}\right) k_{3}=0 \tag{4}
-\end{equation*}
-
-Préciser les expressions des fonctions $E_{0}, E_{1}, E_{2}$ et $E_{3}$.
-\end{question}
+\end{corrige}
+\else
+\fi
 
 
+ $
+ $
+ 
+ 
 
-
-
+%
+%Afin que les pôles $p_{i}$ souhaités précédemment soient obtenus, l'équation (3) doit être vérifiée :
+%
+%
+%\begin{equation*}
+%A\left(k_{1}, k_{3}\right)+B\left(k_{2}\right) p_{i}-C\left(k_{3}\right) p_{i}^{2}-D p_{i}^{3}=0 \quad \forall p_{i} \tag{3}
+%\end{equation*}
+%
+%
+%
+%\begin{question}
+%Reformuler l'équation (3) sous la forme :
+%
+%\begin{equation*}
+%E_{0}\left(p_{i}\right)+E_{1}\left(p_{i}\right) k_{1}+E_{2}\left(p_{i}\right) k_{2}+E_{3}\left(p_{i}\right) k_{3}=0 \tag{4}
+%\end{equation*}
+%
+%Préciser les expressions des fonctions $E_{0}, E_{1}, E_{2}$ et $E_{3}$.
+%\end{question}
+%
