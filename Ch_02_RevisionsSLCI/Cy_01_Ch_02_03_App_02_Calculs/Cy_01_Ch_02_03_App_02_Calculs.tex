@@ -40,12 +40,14 @@ La boucle d'asservissement de la variation de vitesse verticale linéarisée et 
 \end{figure}
 
 \begin{question}
-Exprimer la fonction de transfert de la boucle fermée de l'asservissement de vitesse verticale découplée, notée $H_{B F v_{z}}(p)$, en fonction de $H_{4}(p)$ et $C_{H z}(p)$.
+Exprimer la fonction de transfert de la boucle fermée de l'asservissement de vitesse verticale découplée, notée $H_{B F v_{z}}(p)$, en fonction de $H_{4}(p)$ et $\indice{C}{Hz}(p)$.
 \end{question}
-%\ifprof
-
-%\else
-%\fi
+\ifprof
+\begin{corrige}
+$H_{B F v_{z}}(p) = \dfrac{\Delta V_Z(p)}{\Delta V_Z^{\star}(p)} =  \dfrac{\indice{C}{Hz}(p) H_{4}(p)}{1+\indice{C}{Hz}(p) H_{4}(p)}$.
+\end{corrige}
+\else
+\fi
 
 
 Dans le cadre de l'étude de l'asservissement de $\Delta V_{x}$, le schéma bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_06} 
@@ -55,6 +57,20 @@ peut se ramener sous la forme du schéma bloc intermédiaire de la figure \ref{c
 \begin{question}
 Déterminer l'expression de $A(p)$ en fonction de $H_{4}(p)$ et $H_{B F v_{z}}(p)$ permettant le passage du schéma bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_06} au schéma bloc de la figure \ref{cy_01_ch_02_03_app_02_fig_10}.
 \end{question}
+\ifprof
+\begin{corrige}
+En recherchant à rapprocher les deux schémas blocs, on obtient la figure suivante.
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{cor_01.png}
+\end{center}
+
+On peut donc en conclure que $A(p)=\indice{C}{Hz}(p) K_t H_t(p)$.
+\end{corrige}
+\else
+\fi
+
+
 
 \begin{figure}[!h]
 \includegraphics[width=\linewidth]{cy_01_ch_02_03_app_02_fig_10}
