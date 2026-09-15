@@ -224,7 +224,7 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 
 \begin{resultat}[Diagramme de Bode d'un système du deuxième ordre]
 \begin{itemize}
-\item Fonction de transfert : $H(p)=\dfrac{K}{1+\dfrac{2\xi}{\omega_0}+\dfrac{p^2}{\omega_0^2}}$.
+\item Fonction de transfert : $H(p)=\dfrac{K}{1+\dfrac{2\xi}{\omega_0}p+\dfrac{p^2}{\omega_0^2}}$.
 \end{itemize}
 \begin{center}
 \textbf{Cas où $\xi<1$.}
@@ -320,7 +320,7 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \begin{itemize}
 \item Fonction de transfert : $H(p)=e^{-Tp}$.
 \item Diagramme de gain  : gain nul.
-\item Diagramme de phase : $\text{arg}\left( H(p) \right)=-\tau\omega$.
+\item Diagramme de phase : $\text{arg}\left( H(p) \right)=-T\omega$.
 \end{itemize}
 \end{resultat}
 
