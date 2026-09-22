@@ -1,0 +1,87 @@
+% "{'chapitre':'slci_multiphy','classe':('PSI'),'type':('application'),'titre':'Mise à l\\'eau d\\'un robot sous-marin','source':'Concours Centrale - MP 2019','comp':['B2-02',],'corrige':True}"
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Moissonneuse-batteuse LAVERDA 2350 -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Moissonneuse-batteuse LAVERDA 2350 -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{Concours CCMP -- PSI}
+
+
+
+
+
+\subsection*{Question de cours}
+\question{Donner la strucutre de la chaîne de puissance. On précisera en particulier le nom de chacune des fonctions.}
+
+\question{Donner 3 exemples de composants permettant de réaliser chacune des fonctions.}
+
+\subsection*{Moissonneuse-batteuse LAVERDA 2350}
+\marginnote{D'après ressources de Florestan Mathurin.}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_01}
+\end{marginfigure}
+
+On s’intéresse au système de moissonnage battage
+d’une moissonneuse dont on donne une description
+structurelle ainsi qu’un extrait de son modèle SysML.
+Le céréalier, installé dans la cabine de conduite,
+parcourt la surface du champ par bandes parallèles
+de la largeur de la coupe de la moissonneuse–
+batteuse. La céréale est coupée puis battue, c'est-àdire
+que le grain est séparé de son enveloppe (la
+balle) et de la paille. Nettoyés des impuretés, les
+grains sont transvasés dans la remorque qui roule à
+coté de la moissonneuse batteuse. La paille et les
+balles sont déposées, en andains, sur les chaumes.
+
+L'actionneur de la prothèse est un moteur à courant
+continu alimenté par une batterie rechargeable de 16
+Volts. L'énergie mécanique est transmise par un
+réducteur de type poulies-courroie suivi d'un système
+vis-écrou qui adapte cette énergie mécanique pour la
+prothèse (ensemble de liaisons entre le pied artificiel
+constitué d'une semelle en fibres de carbone et le
+manchon ou tibia artificiel). Des ressorts permettent
+d'ajuster également l'énergie mécanique fournie au
+pied artificiel. L'effort exercé par les ressorts est
+directement relié au couple exercé par l'actionneur.
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
+
+Lors de la récolte, la céréale est coupée, couchée puis rassemblée par la coupe (A) avant d’être acheminée par
+le convoyeur (B) vers le batteur (C) pour le battage. Sous l’effet de la pression, une grande partie des grains et
+des balles traverse la paroi du batteur et tombe à l’entrée du caisson de nettoyage (E). La paille, une partie des
+balles et le reste des grains passent sur les secoueurs (D). Alors que la paille et les balles sont éjectées à
+l’arrière de la moissonneuse-batteuse et répandues en andains sur le champ, les grains, plus lourds
+descendent dans la paille, traversent les alvéoles puis glissent au fond des secoueurs pour être ramenés à
+l’entrée du caisson de nettoyage. Le caisson de nettoyage (E) comprend trois niveaux : le plan supérieur percé
+d’alvéoles, l’étage médian (la grille) percé de trous calibrés et un fond plat. Installée au fond du caisson, une
+soufflerie génère un vent qui traverse la grille et les alvéoles ; ce vent est destiné à mettre les balles et les
+impuretés en suspension et à les expulser hors de la moissonneuse. Les grains après être passés au travers des
+alvéoles, passent au travers de la grille puis sont acheminés par une vis d’Archimède dans un réservoir de 8
+m3, la trémie (F), en attente de vidange. Lorsqu’elle est pleine, la trémie est vidée dans une remorque en
+déployant la goulotte de vidange (G). Cette opération peut être réalisée à l’arrêt ou en pendant le battage.
+On donne le diagramme de définition de bloc du modèle SysML correspondant au système de moissonnage.
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_03}
+\end{center}
+
+\question{A partir du diagramme de définition de bloc disponible, compléter le diagramme de bloc interne.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_04}
+\end{center}
+
+

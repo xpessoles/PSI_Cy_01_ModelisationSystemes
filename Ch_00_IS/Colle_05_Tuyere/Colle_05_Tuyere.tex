@@ -1,0 +1,147 @@
+% "{'chapitre':'slci_multiphy','classe':('PSI'),'type':('application'),'titre':'Mise à l\\'eau d\\'un robot sous-marin','source':'Concours Centrale - MP 2019','comp':['B2-02',],'corrige':True}"
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Etude d’une tuyère à ouverture variable pour banc d’essais de turboréacteur -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Etude d’une tuyère à ouverture variable pour banc d’essais de turboréacteur -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{Concours Banque PT.}
+
+
+
+
+
+\subsection*{Question de cours}
+\question{Donner la strucutre de la chaîne de puissance. On précisera en particulier le nom de chacune des fonctions.}
+
+\question{Donner 3 exemples de composants permettant de réaliser chacune des fonctions.}
+
+\subsection*{Etude d’une tuyère à ouverture variable}
+\marginnote{D'après ressources de Florestan Mathurin.}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_01}
+\end{marginfigure}
+Les propulseurs utilisés dans les applications militaires ou
+civiles subissent, avant leur mise en service, des tests de
+certification visant à contrôler leur bon fonctionnement et le
+respect des normes de sécurité. Ces tests consistent à simuler
+au sol les conditions de vol subies par le propulseur et à
+observer les réactions de celui-ci consécutives à des
+commandes de pilotage. La DGA (Direction Générale de
+l'Armement) dispose dans son centre d'essais des propulseurs,
+situé à Saclay, de bancs d'essais dédiés à la certification et à la
+mise au point de différents types de propulseurs d'avions ou de
+missiles.
+
+
+Un turboréacteur est un propulseur fonctionnant sur le principe d'action-réaction. La différence de vitesse
+entre l'air entrant et les gaz produits entraîne une variation de quantité de mouvement et donc un effort de
+poussée (voir document 1 ci-dessous).
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
+
+\subsubsection*{Description structurelle du banc d’essais étudié}
+
+Le banc d'essais de turboréacteur étudié est constitué de trois compartiments (voir document 2) :
+\begin{itemize}
+\item le premier compartiment (A) est alimenté par une soufflerie et a pour fonction de conditionner le flux
+d'air en amont de la turbomachine testée. Il est ainsi possible de contrôler le débit, la température et
+la pression de l'air en admission;
+\item le deuxième compartiment (B) contient le propulseur à tester. Celui-ci est maintenu par une structure
+porteuse permettant entre autres les mesures des efforts de poussée. Il est séparé du compartiment
+(A) par une cloison étanche munie d'un orifice permettant le passage de l'air calibré. Le flux d'air peut
+alors être laissé libre en amont du réacteur ou guidé par un raccordement jusqu'à l'entrée de celui-ci,
+permettant ainsi des essais dits en "veine forcée";
+\item le troisième compartiment (C) permet la collecte et l'évacuation des gaz produits lors de la
+combustion.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_03}
+\end{center}
+
+La pression à l'intérieur du compartiment B est régulée afin de simuler différentes conditions d'altitude. Des
+vannes inter-compartiments permettent d'assurer une circulation d'air autour du réacteur afin de simuler le
+refroidissement externe du moteur en fonctionnement. La pression du compartiment A est ajustable de 0,05 à
+3 bar. Celle des compartiments B et C de 0,05 à 1,05 bar. La température d'alimentation du compartiment A
+est variable de -56°C à +150°C. La capacité de ventilation est réglable de 27 à 40 kg/s. En réglant ces différents
+paramètres, il est possible de simuler sur ce type de banc l'ensemble des conditions d'utilisation d'un
+turboréacteur.
+
+\question{Compléter, document réponse 1, le diagramme de définition de bloc du banc d’essais de turboréacteur.}
+
+
+\subsubsection*{Description structurelle de la tuyère à ouverture variable étudiée}
+
+Un banc d'essais nécessite pour fonctionner correctement une phase de calibration permettant d'affiner les
+réglages utilisés lors des tests et d'étalonner les appareils de mesures. On s'assure notamment dans cette
+phase que le compartiment A possède un comportement conforme aux besoins des tests. Les coûts en
+carburant et en matériel liés à l'utilisation d'un turboréacteur sont tels que, pour ces phases de calibration, les
+ingénieurs de la DGA ont imaginé une solution consistant à remplacer le propulseur réel par une structure
+simulant sa présence (voir document 3).
+
+
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_04}
+\end{marginfigure}
+
+Cette structure est composée d'un tube
+représentant le corps du réacteur et d'une tuyère à
+ouverture variable actionnée par quatre vérins
+hydrauliques et permettant de faire varier la vitesse
+de l'air éjecté. On notera que dans ce cas, il n'y a pas
+de combustion interne au dispositif. Le tube est fixé
+sur la structure porteuse réelle avec les mêmes
+points d'encrage que le propulseur et est raccordé
+directement à la veine forcée. La tuyère à ouverture
+variable montée sur le tube, en aval de
+l'écoulement, a pour fonction de faire varier la
+section de la veine de fluide en sortie de tube.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_05}
+\end{marginfigure}
+
+
+La solution imaginée consiste à disposer seize volets
+articulés sur la périphérie du tube qui permettent
+ainsi de réduire la section de passage du fluide (voir
+documents 4 et 5 ci-dessous). Ces volets sont mis en
+mouvement par seize biellettes toutes identiques
+reliées à une pièce de forme torique (tore) elle-même
+mise en translation par quatre vérins hydrauliques
+répartis régulièrement autour du tube.
+Les commandes de ces vérins sont synchronisées et
+asservies en position. La DGA a confié la réalisation
+de cette commande à la société Bosch-Rexroth.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_06}
+\end{center}
+
+La consigne d'ouverture de la tuyère est élaborée au niveau de la console de pilotage. Elle est transmise à des
+des servo-distributeurs hydrauliques à commande électrique associés à chaque vérin. Un contrôle de la
+position est effectué par un capteur à magnétostriction intégré dans le corps du vérin.
+
+\question{Compléter le diagramme chaîne de puissance/chaîne d’information de la tuyère à ouverture variable pour banc d’essais de turboréacteur document réponse 2.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_07}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_08}
+\end{center}
+
+

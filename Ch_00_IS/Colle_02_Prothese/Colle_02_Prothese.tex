@@ -1,0 +1,79 @@
+% "{'chapitre':'slci_multiphy','classe':('PSI'),'type':('application'),'titre':'Mise à l\\'eau d\\'un robot sous-marin','source':'Concours Centrale - MP 2019','comp':['B2-02',],'corrige':True}"
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Prothèse active transtibiale -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Prothèse active transtibiale-- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{Concours CCMP -- PSI}
+
+
+
+
+
+\subsection*{Question de cours}
+\question{Donner la strucutre de la chaîne de puissance. On précisera en particulier le nom de chacune des fonctions.}
+
+\question{Donner 3 exemples de composants permettant de réaliser chacune des fonctions.}
+
+\subsection*{Prothèse active transtibiale}
+\marginnote{D'après ressources de Florestan Mathurin.}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_01}
+\end{marginfigure}
+
+La majorité des prothèses transtibiales (pour une amputation en
+dessous du genou) utilisées aujourd'hui sont purement passives, c'està-
+dire que leurs propriétés mécaniques restent fixes pendant la
+marche. Ces prothèses sont constituées en général de semelles ressorts
+en carbone profilées qui emmagasinent et restituent l'énergie
+mécanique pendant la marche par déformation.
+On s’intéresse ici à un prototype mis au point par des ingénieurs du
+MIT qui a permis la mise au point d’une nouvelle génération de
+prothèse, dite active. Cette prothèse active transtibiale est capable de
+proposer un comportement similaire à celui des membres non
+amputés.
+
+L'actionneur de la prothèse est un moteur à courant
+continu alimenté par une batterie rechargeable de 16
+Volts. L'énergie mécanique est transmise par un
+réducteur de type poulies-courroie suivi d'un système
+vis-écrou qui adapte cette énergie mécanique pour la
+prothèse (ensemble de liaisons entre le pied artificiel
+constitué d'une semelle en fibres de carbone et le
+manchon ou tibia artificiel). Des ressorts permettent
+d'ajuster également l'énergie mécanique fournie au
+pied artificiel. L'effort exercé par les ressorts est
+directement relié au couple exercé par l'actionneur.
+
+
+
+\begin{center}
+\includegraphics[width=.45\linewidth]{fig_02}
+\includegraphics[width=.45\linewidth]{fig_03}
+\end{center}
+
+Les informations délivrées par les capteurs sont
+traitées par un calculateur qui élabore la commande
+du moteur.
+
+
+La chaîne d'informations est constituée d'un ensemble de capteurs permettant d'acquérir différentes informations :
+\begin{itemize}
+\item un potentiomètre linéaire qui mesure l'allongement/écrasement des ressorts;
+\item un codeur incrémental placé au niveau de l'articulation pied/tibia;
+\item plusieurs capteurs capacitifs disposés sous la semelle du pied au niveau du talon (2 capteurs) et à l'avant du pied (4 capteurs).
+\end{itemize}
+\question{Compléter le diagramme chaîne d’information / chaîne de puissance.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_04}
+\end{center}
+
+

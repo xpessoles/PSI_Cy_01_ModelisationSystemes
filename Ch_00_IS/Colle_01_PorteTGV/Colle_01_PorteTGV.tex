@@ -1,0 +1,50 @@
+% "{'chapitre':'slci_multiphy','classe':('PSI'),'type':('application'),'titre':'Mise à l\\'eau d\\'un robot sous-marin','source':'Concours Centrale - MP 2019','comp':['B2-02',],'corrige':True}"
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Système d’ouverture de porte de TGV -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Système d’ouverture de porte de TGV -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{Concours Centrale -- MP}
+
+
+
+
+
+\subsection*{Question de cours}
+\question{Donner la strucutre de la chaîne de puissance. On précisera en particulier le nom de chacune des fonctions.}
+
+\question{Donner 3 exemples de composants permettant de réaliser chacune des fonctions.}
+
+\subsection*{Système d’ouverture de porte de TGV}
+\marginnote{D'après ressources de Florestan Mathurin.}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_01}
+\end{marginfigure}
+
+
+La figure suivante montre l’interface assurant, à partir des informations
+délivrées par l’unité centrale de commande, la fermeture hermétique et le verrouillage d’une porte de TGV.
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
+
+L’ordre de fermeture de la porte est donné soit par appui sur le bouton situé sur la porte soit via un ordre
+fourni par le conducteur du TGV depuis son pupitre. L’information est traitée par l’unité centrale qui pilote un
+moteur électrique permettant, dans un premier temps, de fermer la porte grâce à un mécanisme pignoncrémaillère
+puis, dans un deuxième temps, lorsque la position de fermeture est détectée, de verrouiller la
+porte. La détection de la position fermée enclenche également le gonflage des joints assurant l’herméticité de
+la fermeture. L’information de fin d’opération est transmise au conducteur sur son pupitre.
+
+\question{Réaliser le diagramme de définition du bloc du système.}
+
+\question{Lister les composants appartenant à la chaîne d’information et les composants appartenant à la
+chaîne de puissance.}
+

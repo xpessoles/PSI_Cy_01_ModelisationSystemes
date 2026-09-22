@@ -1,0 +1,78 @@
+% "{'chapitre':'slci_multiphy','classe':('PSI'),'type':('application'),'titre':'Mise à l\\'eau d\\'un robot sous-marin','source':'Concours Centrale - MP 2019','comp':['B2-02',],'corrige':True}"
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Actionneur ElectroMécanique (EMA) de la tuyère de la fusée VEGA -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : 
+Actionneur ElectroMécanique (EMA) de la tuyère de la fusée VEGA -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+%\marginnote{Concours Banque PT.}
+
+
+
+
+
+\subsection*{Question de cours}
+\question{Donner la strucutre de la chaîne de puissance. On précisera en particulier le nom de chacune des fonctions.}
+
+\question{Donner 3 exemples de composants permettant de réaliser chacune des fonctions.}
+
+\subsection*{Actionneur ElectroMécanique (EMA) de la tuyère de la fusée VEGA}
+\marginnote{D'après ressources de Florestan Mathurin.}
+
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_01}
+\end{marginfigure}
+
+Le développement du lanceur européen VEGA a démarré en 1998 et s’est achevé en 2011. Ce projet répondait
+à une demande de mise en orbite basse et polaire, à coûts réduits, de satellites scientifiques ou d’observation
+de la terre, dont la masse peut aller jusqu’à 2000 kg. On s’intéresse ici à l’Actionneur ElectroMécanique (EMA)
+de la tuyère de cette fusée.
+Lors du programme de développement, la minimisation des coûts
+s’est appuyée sur l’implémentation de technologies avancées déjà
+disponibles et l’utilisation des installations des lanceurs Ariane.
+Cependant certaines parties ont fait l’objet d’innovation comme le
+système de contrôle vectoriel de poussée (en Anglais : « Thrust
+Vector Control ») du premier étage de propulsion P80. D’une
+longueur de dix mètres, le P80 est chargé de 88 tonnes de
+propergol solide. Ceci lui permet de disposer d’une poussée
+maximale de 3000 kN et d’un temps de combustion de 107
+secondes. Afin de bien contrôler la trajectoire de la fusée il est
+indispensable d’orienter très rapidement et très précisément la
+tuyère du P80. Alors que sur Ariane 5 le pilotage vectoriel de la
+poussée est assuré par des dispositifs à source de puissance
+hydraulique, sur le P80 cette tâche est assurée par des dispositifs à
+source de puissance électrique (en Anglais : « Power By Wire »).
+On donne la structure du système de l’actionneur sous la forme
+d’un diagramme de définition de blocs (bdd).
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
+
+
+On donne sur le document réponse DR1 le diagramme de bloc interne (ibd).
+
+
+\question{Sur ce diagramme de bloc interne DR1, colorier en rouge les flux correspondants à l’énergie électrique de puissance, en bleu les flux correspondants à l’énergie mécanique de puissance et en vert les flux
+correspondant à des informations. Il peut rester des traits en noirs !}
+
+\question{Compléter sur le document réponse DR2, le diagramme chaîne de puissance/chaîne d’information
+correspondant au système tuyère orientable VEGA.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_03}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_04}
+\end{center}
+
+

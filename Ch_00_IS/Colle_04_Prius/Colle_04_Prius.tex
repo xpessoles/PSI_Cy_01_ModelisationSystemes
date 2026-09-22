@@ -1,0 +1,80 @@
+% "{'chapitre':'slci_multiphy','classe':('PSI'),'type':('application'),'titre':'Mise à l\\'eau d\\'un robot sous-marin','source':'Concours Centrale - MP 2019','comp':['B2-02',],'corrige':True}"
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{Application \arabic{cptApplication} \\ 
+Véhicule hybride TOYOTA PRIUS -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Véhicule hybride TOYOTA PRIUS -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{Concours CCS -- PSI}
+
+
+
+
+
+\subsection*{Question de cours}
+\question{Donner la strucutre de la chaîne de puissance. On précisera en particulier le nom de chacune des fonctions.}
+
+\question{Donner 3 exemples de composants permettant de réaliser chacune des fonctions.}
+
+\subsection*{Véhicule hybride TOYOTA PRIUS}
+\marginnote{D'après ressources de Florestan Mathurin.}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_01}
+\end{marginfigure}
+Dans le contexte actuel d’économie des énergies fossiles et de
+réduction des émissions de gaz nocifs, le système de propulsion
+hybride constitue une alternative intéressante à la propulsion
+classique par moteur thermique seul car il permet de réduire la
+consommation.
+
+La spécificité de la solution retenue sur la Prius consiste à :
+\begin{itemize}
+\item récupérer l’énergie du véhicule lors du freinage;
+\item exploiter le moteur thermique à son rendement optimal.
+\end{itemize}
+
+La technologie hybride de TOYOTA, nommée HSD (Hybrid
+Synergy Drive) associe un moteur thermique à essence et
+sa transmission, à deux machines électriques et une
+batterie de puissance.
+
+Le schéma de principe ci-contre met en évidence les deux
+machines électriques (le moteur électrique et la
+génératrice) reliées au moteur thermique par un réducteur
+à train épicycloïdal.
+
+A partir de la position de la pédale d’accélérateur et de la
+vitesse du véhicule, le calculateur détermine la vitesse de
+rotation optimale du moteur thermique et la consigne
+d’ouverture du papillon des gaz.
+
+La puissance en sortie du moteur thermique est transmise, grâce à un train épicycloïdal, à la chaîne silencieuse
+et à la génératrice. Un asservissement en vitesse de la génératrice permet de contrôler la vitesse de rotation
+du moteur thermique.
+
+Le répartiteur de puissance gère les échanges de puissance électrique entre la génératrice, le moteur
+électrique et la batterie. Le moteur électrique entraîne la chaîne silencieuse, seul ou en complément du
+moteur thermique. Il récupère également l’énergie cinétique ou potentielle du véhicule lors des phases de
+ralentissement.
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
+
+\question{Compléter le diagramme chaîne d’information / chaîne de puissance.}
+
+\question{Dans la chaîne de puissance, repasser en rouge sur le diagramme les flèches représentant les flux
+correspondant à une puissance mécanique et en rose les flèches représentant les flux correspondant à une
+puissance électrique.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_03}
+\end{center}
+
+
